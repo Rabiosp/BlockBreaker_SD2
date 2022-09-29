@@ -1,0 +1,88 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/user/MIPS_Spartan6MimasV2/mips_tb2_isim_beh.exe -prj C:/Users/user/MIPS_Spartan6MimasV2/mips_tb2_beh.prj mips_tb2 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/general.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/uart_tx.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/uart_rx.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/salida_par.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/md.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/lcd.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/entrada.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/decodificador.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/control_prog.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/barrel_shifter.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/alu_parcial.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/suma_4.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/sumador32.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/shift_left_j.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/shift_left16.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/shift_left.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/reg.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/prog.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/pc.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/mux5_4a1.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/mux32_4a1.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/mux32.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/mi.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/md_io.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/JR_detect.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/exten_signo_cero.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/divisorCLK.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/control_branch.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/control1.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/antirebote.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/alu_control.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/alu.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/mips.vhd" into library work
+Parsing VHDL file "C:/Users/user/MIPS_Spartan6MimasV2/MIPS_2020/mips_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package general
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling package textio
+Compiling package std_logic_textio
+Compiling architecture behavioral of entity control_prog [control_prog_default]
+Compiling architecture behavioral of entity uart_tx [uart_tx_default]
+Compiling architecture behavioral of entity uart_rx [uart_rx_default]
+Compiling architecture behavioral of entity prog [prog_default]
+Compiling architecture behavioral of entity divisorCLK [divisorclk_default]
+Compiling architecture behavioral of entity antirebote [antirebote_default]
+Compiling architecture behavioral of entity pc [pc_default]
+Compiling architecture behavioral of entity suma_4 [suma_4_default]
+Compiling architecture behavioral of entity mi [mi_default]
+Compiling architecture behavioral of entity mux5_4a1 [mux5_4a1_default]
+Compiling architecture behavioral of entity reg [reg_default]
+Compiling architecture behavioral of entity shift_left16 [shift_left16_default]
+Compiling architecture behavioral of entity alu_parcial [alu_parcial_default]
+Compiling architecture rtl of entity barrel_shifter [barrel_shifter_default]
+Compiling architecture behavioral of entity alu [alu_default]
+Compiling architecture behavioral of entity exten_signo_cero [exten_signo_cero_default]
+Compiling architecture behavioral of entity control_branch [control_branch_default]
+Compiling architecture behavioral of entity entrada [entrada_default]
+Compiling architecture behavioral of entity decodificador [decodificador_default]
+Compiling architecture behavioral of entity md [md_default]
+Compiling architecture behavioral of entity salida_par [salida_par_default]
+Compiling architecture behavioral of entity lcd [lcd_default]
+Compiling architecture behavioral of entity md_io [md_io_default]
+Compiling architecture behavioral of entity mux32 [mux32_default]
+Compiling architecture behavioral of entity mux32_4a1 [mux32_4a1_default]
+Compiling architecture behavioral of entity shift_left [shift_left_default]
+Compiling architecture behavioral of entity shift_left_j [shift_left_j_default]
+Compiling architecture behavioral of entity sumador32 [sumador32_default]
+Compiling architecture behavioral of entity alu_control [alu_control_default]
+Compiling architecture behavioral of entity JR_detect [jr_detect_default]
+Compiling architecture behavioral of entity control1 [control1_default]
+Compiling architecture behavioral of entity mips [mips_default]
+Compiling architecture behavior of entity mips_tb2
+Time Resolution for simulation is 1ps.
+Waiting for 32 sub-compilation(s) to finish...
+Compiled 73 VHDL Units
+Built simulation executable C:/Users/user/MIPS_Spartan6MimasV2/mips_tb2_isim_beh.exe
+Fuse Memory Usage: 41048 KB
+Fuse CPU Usage: 1014 ms

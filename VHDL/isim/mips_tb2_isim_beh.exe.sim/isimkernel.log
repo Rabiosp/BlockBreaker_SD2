@@ -1,0 +1,30 @@
+Command line:
+   mips_tb2_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  56611
+
+Wed Sep 28 15:30:11 2022
+
+
+ Elaboration Time: 0.265625 sec
+
+ Current Memory Usage: 5994.15 Meg
+
+ Total Signals          : 345
+ Total Nets             : 22680
+ Total Signal Drivers   : 133
+ Total Blocks           : 43
+ Total Primitive Blocks : 38
+ Total Processes        : 96
+ Total Traceable Variables  : 48
+ Total Scalar Nets and Variables : 23898
+In process reg.vhd:51 
+ 
+
+ Total Simulation Time: 0.28125 sec
+
+ Current Memory Usage: 5994.15 Meg
+
+Wed Sep 28 15:30:25 2022
+
