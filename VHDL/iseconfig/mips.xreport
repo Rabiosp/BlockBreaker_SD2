@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2022-09-28T16:08:31</DateModified>
+  <DateModified>2022-09-29T14:45:13</DateModified>
   <ModuleName>mips</ModuleName>
   <SummaryTimeStamp>2022-09-28T14:38:04</SummaryTimeStamp>
-  <SavedFilePath>F:/MIPS_Spartan6MimasV2/iseconfig/mips.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>F:/MIPS_Spartan6MimasV2\</ImplementationReportsDirectory>
+  <SavedFilePath>/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/iseconfig/mips.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/</ImplementationReportsDirectory>
   <DateInitialized>2022-09-28T14:26:14</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
