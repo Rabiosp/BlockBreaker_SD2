@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> 
 Reading design: mips.prj
@@ -108,103 +108,103 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/general.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/general.vhd" into library work
 Parsing package <general>.
 Parsing package body <general>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/uart_tx.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/uart_tx.vhd" into library work
 Parsing entity <uart_tx>.
 Parsing architecture <Behavioral> of entity <uart_tx>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/uart_rx.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/uart_rx.vhd" into library work
 Parsing entity <uart_rx>.
 Parsing architecture <Behavioral> of entity <uart_rx>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/salida_par.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/salida_par.vhd" into library work
 Parsing entity <salida_par>.
 Parsing architecture <Behavioral> of entity <salida_par>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/md.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/md.vhd" into library work
 Parsing entity <md>.
 Parsing architecture <Behavioral> of entity <md>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/lcd.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/lcd.vhd" into library work
 Parsing entity <lcd>.
 Parsing architecture <Behavioral> of entity <lcd>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/entrada.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/entrada.vhd" into library work
 Parsing entity <entrada>.
 Parsing architecture <Behavioral> of entity <entrada>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/decodificador.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/decodificador.vhd" into library work
 Parsing entity <decodificador>.
 Parsing architecture <Behavioral> of entity <decodificador>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/control_prog.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/control_prog.vhd" into library work
 Parsing entity <control_prog>.
 Parsing architecture <Behavioral> of entity <control_prog>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/barrel_shifter.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/barrel_shifter.vhd" into library work
 Parsing entity <barrel_shifter>.
 Parsing architecture <RTL> of entity <barrel_shifter>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/alu_parcial.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/alu_parcial.vhd" into library work
 Parsing entity <alu_parcial>.
 Parsing architecture <Behavioral> of entity <alu_parcial>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/suma_4.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/suma_4.vhd" into library work
 Parsing entity <suma_4>.
 Parsing architecture <Behavioral> of entity <suma_4>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/sumador32.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/sumador32.vhd" into library work
 Parsing entity <sumador32>.
 Parsing architecture <Behavioral> of entity <sumador32>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/shift_left_j.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/shift_left_j.vhd" into library work
 Parsing entity <shift_left_j>.
 Parsing architecture <Behavioral> of entity <shift_left_j>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/shift_left16.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/shift_left16.vhd" into library work
 Parsing entity <shift_left16>.
 Parsing architecture <Behavioral> of entity <shift_left16>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/shift_left.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/shift_left.vhd" into library work
 Parsing entity <shift_left>.
 Parsing architecture <Behavioral> of entity <shift_left>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/reg.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/reg.vhd" into library work
 Parsing entity <reg>.
 Parsing architecture <Behavioral> of entity <reg>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/prog.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/prog.vhd" into library work
 Parsing entity <prog>.
 Parsing architecture <Behavioral> of entity <prog>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/pc.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/pc.vhd" into library work
 Parsing entity <pc>.
 Parsing architecture <Behavioral> of entity <pc>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mux5_4a1.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mux5_4a1.vhd" into library work
 Parsing entity <mux5_4a1>.
 Parsing architecture <Behavioral> of entity <mux5_4a1>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mux32_4a1.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mux32_4a1.vhd" into library work
 Parsing entity <mux32_4a1>.
 Parsing architecture <Behavioral> of entity <mux32_4a1>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mux32.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mux32.vhd" into library work
 Parsing entity <mux32>.
 Parsing architecture <Behavioral> of entity <mux32>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mi.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mi.vhd" into library work
 Parsing entity <mi>.
 Parsing architecture <Behavioral> of entity <mi>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/md_io.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/md_io.vhd" into library work
 Parsing entity <md_io>.
 Parsing architecture <Behavioral> of entity <md_io>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/JR_detect.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/JR_detect.vhd" into library work
 Parsing entity <JR_detect>.
 Parsing architecture <Behavioral> of entity <jr_detect>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/exten_signo_cero.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/exten_signo_cero.vhd" into library work
 Parsing entity <exten_signo_cero>.
 Parsing architecture <Behavioral> of entity <exten_signo_cero>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/divisorCLK.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/divisorCLK.vhd" into library work
 Parsing entity <divisorCLK>.
 Parsing architecture <Behavioral> of entity <divisorclk>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/control_branch.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/control_branch.vhd" into library work
 Parsing entity <control_branch>.
 Parsing architecture <Behavioral> of entity <control_branch>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/control1.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/control1.vhd" into library work
 Parsing entity <control1>.
 Parsing architecture <Behavioral> of entity <control1>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/antirebote.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/antirebote.vhd" into library work
 Parsing entity <antirebote>.
 Parsing architecture <Behavioral> of entity <antirebote>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/alu_control.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/alu_control.vhd" into library work
 Parsing entity <alu_control>.
 Parsing architecture <Behavioral> of entity <alu_control>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/alu.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/alu.vhd" into library work
 Parsing entity <alu>.
 Parsing architecture <Behavioral> of entity <alu>.
-Parsing VHDL file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mips.vhd" into library work
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mips.vhd" into library work
 Parsing entity <mips>.
 Parsing architecture <Behavioral> of entity <mips>.
 
@@ -217,14 +217,14 @@ Elaborating entity <mips> (architecture <Behavioral>) from library <work>.
 Elaborating entity <prog> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <control_prog> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/control_prog.vhd" Line 409. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/control_prog.vhd" Line 409. Case statement is complete. others clause is never selected
 
 Elaborating entity <uart_tx> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/uart_tx.vhd" Line 194. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/uart_tx.vhd" Line 194. Case statement is complete. others clause is never selected
 
 Elaborating entity <uart_rx> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/uart_rx.vhd" Line 160. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/uart_rx.vhd" Line 188. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/uart_rx.vhd" Line 160. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/uart_rx.vhd" Line 188. Case statement is complete. others clause is never selected
 
 Elaborating entity <divisorCLK> (architecture <Behavioral>) from library <work>.
 
@@ -259,14 +259,14 @@ Elaborating entity <entrada> (architecture <Behavioral>) from library <work>.
 Elaborating entity <decodificador> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <md> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/md.vhd" Line 95. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/md.vhd" Line 117. Case statement is complete. others clause is never selected
-INFO:HDLCompiler:679 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/md.vhd" Line 159. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/md.vhd" Line 95. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/md.vhd" Line 117. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/md.vhd" Line 159. Case statement is complete. others clause is never selected
 
 Elaborating entity <salida_par> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <lcd> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/lcd.vhd" Line 209. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/lcd.vhd" Line 209. Case statement is complete. others clause is never selected
 
 Elaborating entity <mux32> (architecture <Behavioral>) from library <work>.
 
@@ -289,24 +289,23 @@ Elaborating entity <control1> (architecture <Behavioral>) from library <work>.
 =========================================================================
 
 Synthesizing Unit <mips>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mips.vhd".
-INFO:Xst:3210 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mips.vhd" line 412: Output port <salida> of the instance <Inst_md_io> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mips.vhd" line 412: Output port <LCD_DB> of the instance <Inst_md_io> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mips.vhd" line 412: Output port <LCD_E> of the instance <Inst_md_io> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mips.vhd" line 412: Output port <LCD_RS> of the instance <Inst_md_io> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mips.vhd" line 412: Output port <LCD_RW> of the instance <Inst_md_io> is unconnected or connected to loadless signal.
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mips.vhd".
+INFO:Xst:3210 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mips.vhd" line 412: Output port <LCD_DB> of the instance <Inst_md_io> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mips.vhd" line 412: Output port <LCD_E> of the instance <Inst_md_io> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mips.vhd" line 412: Output port <LCD_RS> of the instance <Inst_md_io> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mips.vhd" line 412: Output port <LCD_RW> of the instance <Inst_md_io> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <mips> synthesized.
 
 Synthesizing Unit <prog>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/prog.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/prog.vhd".
     Summary:
 	no macro.
 Unit <prog> synthesized.
 
 Synthesizing Unit <control_prog>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/control_prog.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/control_prog.vhd".
     Found 9-bit register for signal <dirMIreg>.
     Found 16-bit register for signal <cantMSBLSB>.
     Found 8-bit register for signal <pal<3>>.
@@ -341,7 +340,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <cargaPal>. Latches may be genera
 Unit <control_prog> synthesized.
 
 Synthesizing Unit <uart_tx>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/uart_tx.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/uart_tx.vhd".
     Found 11-bit register for signal <cont_ciclos>.
     Found 4-bit register for signal <cont_bits>.
     Found 2-bit register for signal <state>.
@@ -371,7 +370,7 @@ Synthesizing Unit <uart_tx>.
 Unit <uart_tx> synthesized.
 
 Synthesizing Unit <uart_rx>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/uart_rx.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/uart_rx.vhd".
     Found 11-bit register for signal <cont_ciclos>.
     Found 4-bit register for signal <cont_bits>.
     Found 2-bit register for signal <state>.
@@ -401,21 +400,21 @@ Synthesizing Unit <uart_rx>.
 Unit <uart_rx> synthesized.
 
 Synthesizing Unit <divisorCLK>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/divisorCLK.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/divisorCLK.vhd".
     Found 1-bit register for signal <tmp>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <divisorCLK> synthesized.
 
 Synthesizing Unit <antirebote>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/antirebote.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/antirebote.vhd".
     Found 1-bit register for signal <reset>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <antirebote> synthesized.
 
 Synthesizing Unit <pc>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/pc.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/pc.vhd".
     Found 32-bit register for signal <s>.
     Summary:
 	inferred  32 D-type flip-flop(s).
@@ -423,27 +422,27 @@ Synthesizing Unit <pc>.
 Unit <pc> synthesized.
 
 Synthesizing Unit <suma_4>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/suma_4.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/suma_4.vhd".
     Found 32-bit adder for signal <s> created at line 38.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 Unit <suma_4> synthesized.
 
 Synthesizing Unit <mi>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mi.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mi.vhd".
     Found 512x32-bit dual-port RAM <Mram_mi> for signal <mi>.
     Summary:
 	inferred   1 RAM(s).
 Unit <mi> synthesized.
 
 Synthesizing Unit <mux5_4a1>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mux5_4a1.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mux5_4a1.vhd".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux5_4a1> synthesized.
 
 Synthesizing Unit <reg>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/reg.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/reg.vhd".
     Found 32-bit register for signal <reg<1>>.
     Found 32-bit register for signal <reg<2>>.
     Found 32-bit register for signal <reg<3>>.
@@ -489,19 +488,19 @@ INFO:Xst:3019 - HDL ADVISOR - 1024 flip-flops were inferred for signal <reg>. Yo
 Unit <reg> synthesized.
 
 Synthesizing Unit <shift_left16>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/shift_left16.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/shift_left16.vhd".
     Summary:
 	no macro.
 Unit <shift_left16> synthesized.
 
 Synthesizing Unit <alu>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/alu.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/alu.vhd".
     Summary:
 	inferred   5 Multiplexer(s).
 Unit <alu> synthesized.
 
 Synthesizing Unit <alu_parcial>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/alu_parcial.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/alu_parcial.vhd".
     Found 32-bit adder for signal <n0037> created at line 56.
     Found 32-bit adder for signal <suma> created at line 56.
     Found 32-bit comparator greater for signal <op2[31]_op1[31]_LessThan_9_o> created at line 71
@@ -513,7 +512,7 @@ Synthesizing Unit <alu_parcial>.
 Unit <alu_parcial> synthesized.
 
 Synthesizing Unit <barrel_shifter>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/barrel_shifter.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/barrel_shifter.vhd".
     Found 32-bit shifter arithmetic right for signal <e[31]_control[4]_shift_right_3_OUT> created at line 47
     Found 32-bit shifter logical right for signal <e[31]_control[4]_shift_right_5_OUT> created at line 46
     Found 32-bit shifter logical left for signal <e[31]_control[4]_shift_left_7_OUT> created at line 45
@@ -524,37 +523,37 @@ Synthesizing Unit <barrel_shifter>.
 Unit <barrel_shifter> synthesized.
 
 Synthesizing Unit <exten_signo_cero>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/exten_signo_cero.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/exten_signo_cero.vhd".
     Summary:
 	inferred   2 Multiplexer(s).
 Unit <exten_signo_cero> synthesized.
 
 Synthesizing Unit <control_branch>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/control_branch.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/control_branch.vhd".
     Summary:
 	no macro.
 Unit <control_branch> synthesized.
 
 Synthesizing Unit <md_io>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/md_io.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/md_io.vhd".
     Summary:
 	inferred   2 Multiplexer(s).
 Unit <md_io> synthesized.
 
 Synthesizing Unit <entrada>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/entrada.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/entrada.vhd".
     Summary:
 	no macro.
 Unit <entrada> synthesized.
 
 Synthesizing Unit <decodificador>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/decodificador.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/decodificador.vhd".
     Summary:
 	no macro.
 Unit <decodificador> synthesized.
 
 Synthesizing Unit <md>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/md.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/md.vhd".
     Found 128x8-bit single-port RAM <Mram_mem01> for signal <mem01>.
     Found 128x8-bit single-port RAM <Mram_mem00> for signal <mem00>.
     Found 128x8-bit single-port RAM <Mram_mem11> for signal <mem11>.
@@ -570,14 +569,14 @@ Synthesizing Unit <md>.
 Unit <md> synthesized.
 
 Synthesizing Unit <salida_par>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/salida_par.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/salida_par.vhd".
     Found 8-bit register for signal <salida>.
     Summary:
 	inferred   8 D-type flip-flop(s).
 Unit <salida_par> synthesized.
 
 Synthesizing Unit <lcd>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/lcd.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/lcd.vhd".
     Found 1-bit register for signal <RS>.
     Found 4-bit register for signal <state>.
     Found 1-bit register for signal <enableWrite>.
@@ -607,51 +606,51 @@ WARNING:Xst:737 - Found 1-bit latch for signal <E_i>. Latches may be generated f
 Unit <lcd> synthesized.
 
 Synthesizing Unit <mux32>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mux32.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mux32.vhd".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux32> synthesized.
 
 Synthesizing Unit <mux32_4a1>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mux32_4a1.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mux32_4a1.vhd".
     Found 32-bit 4-to-1 multiplexer for signal <s> created at line 38.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux32_4a1> synthesized.
 
 Synthesizing Unit <shift_left>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/shift_left.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/shift_left.vhd".
     Summary:
 	no macro.
 Unit <shift_left> synthesized.
 
 Synthesizing Unit <shift_left_j>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/shift_left_j.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/shift_left_j.vhd".
     Summary:
 	no macro.
 Unit <shift_left_j> synthesized.
 
 Synthesizing Unit <sumador32>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/sumador32.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/sumador32.vhd".
     Found 32-bit adder for signal <s> created at line 39.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 Unit <sumador32> synthesized.
 
 Synthesizing Unit <alu_control>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/alu_control.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/alu_control.vhd".
     Summary:
 	inferred  13 Multiplexer(s).
 Unit <alu_control> synthesized.
 
 Synthesizing Unit <JR_detect>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/JR_detect.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/JR_detect.vhd".
     Summary:
 	no macro.
 Unit <JR_detect> synthesized.
 
 Synthesizing Unit <control1>.
-    Related source file is "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/control1.vhd".
+    Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/control1.vhd".
     Summary:
 	inferred  15 Multiplexer(s).
 Unit <control1> synthesized.
@@ -712,8 +711,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1290 - Hierarchical block <Inst_salida_par> is unconnected in block <Inst_md_io>.
-   It will be removed from the design.
 WARNING:Xst:1290 - Hierarchical block <Inst_lcd> is unconnected in block <Inst_md_io>.
    It will be removed from the design.
 WARNING:Xst:1710 - FF/Latch <cargaPal> (without init value) has a constant value of 1 in block <Inst_control_prog>. This FF/Latch will be trimmed during the optimization process.
@@ -855,7 +852,6 @@ Macro Statistics
 =========================================================================
 WARNING:Xst:1710 - FF/Latch <cargaPal> (without init value) has a constant value of 1 in block <control_prog>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2973 - All outputs of instance <Inst_md_io/Inst_lcd> of block <lcd> are unconnected in block <mips>. Underlying logic will be removed.
-WARNING:Xst:2973 - All outputs of instance <Inst_md_io/Inst_salida_par> of block <salida_par> are unconnected in block <mips>. Underlying logic will be removed.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_3> on signal <state[1:16]> with one-hot encoding.
 -----------------------------------
@@ -980,8 +976,8 @@ Optimizing unit <control1> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block mips, actual ratio is 46.
-FlipFlop Inst_pc/s_10 has been replicated 4 time(s)
-FlipFlop Inst_pc/s_9 has been replicated 4 time(s)
+FlipFlop Inst_pc/s_10 has been replicated 3 time(s)
+FlipFlop Inst_pc/s_9 has been replicated 3 time(s)
 
 Final Macro Processing ...
 
@@ -989,8 +985,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 1164
- Flip-Flops                                            : 1164
+# Registers                                            : 1170
+ Flip-Flops                                            : 1170
 
 =========================================================================
 
@@ -1013,22 +1009,22 @@ Top Level Output File Name         : mips.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2384
+# BELS                             : 2432
 #      GND                         : 1
 #      INV                         : 8
 #      LUT1                        : 56
-#      LUT2                        : 45
-#      LUT3                        : 41
-#      LUT4                        : 263
-#      LUT5                        : 217
-#      LUT6                        : 1375
+#      LUT2                        : 44
+#      LUT3                        : 38
+#      LUT4                        : 279
+#      LUT5                        : 231
+#      LUT6                        : 1393
 #      MUXCY                       : 175
-#      MUXF7                       : 63
+#      MUXF7                       : 67
 #      VCC                         : 1
 #      XORCY                       : 139
-# FlipFlops/Latches                : 1164
-#      FD                          : 78
-#      FDE                         : 1000
+# FlipFlops/Latches                : 1170
+#      FD                          : 76
+#      FDE                         : 1008
 #      FDR                         : 5
 #      FDRE                        : 81
 # RAMS                             : 160
@@ -1037,9 +1033,9 @@ Primitive and Black Box Usage:
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 11
+# IO Buffers                       : 19
 #      IBUF                        : 10
-#      OBUF                        : 1
+#      OBUF                        : 9
 
 Device utilization summary:
 ---------------------------
@@ -1048,22 +1044,22 @@ Selected Device : 6slx9csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1164  out of  11440    10%  
- Number of Slice LUTs:                 2581  out of   5720    45%  
-    Number used as Logic:              2005  out of   5720    35%  
+ Number of Slice Registers:            1170  out of  11440    10%  
+ Number of Slice LUTs:                 2625  out of   5720    45%  
+    Number used as Logic:              2049  out of   5720    35%  
     Number used as Memory:              576  out of   1440    40%  
        Number used as RAM:              576
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   3389
-   Number with an unused Flip Flop:    2225  out of   3389    65%  
-   Number with an unused LUT:           808  out of   3389    23%  
-   Number of fully used LUT-FF pairs:   356  out of   3389    10%  
-   Number of unique control sets:        47
+ Number of LUT Flip Flop pairs used:   3431
+   Number with an unused Flip Flop:    2261  out of   3431    65%  
+   Number with an unused LUT:           806  out of   3431    23%  
+   Number of fully used LUT-FF pairs:   364  out of   3431    10%  
+   Number of unique control sets:        48
 
 IO Utilization: 
- Number of IOs:                          12
- Number of bonded IOBs:                  12  out of    200     6%  
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    200    10%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
@@ -1090,7 +1086,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk50mhz                           | BUFGP                  | 1     |
-Inst_divisorCLK/tmp                | BUFG                   | 1323  |
+Inst_divisorCLK/tmp                | BUFG                   | 1329  |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1101,8 +1097,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 15.820ns (Maximum Frequency: 63.211MHz)
-   Minimum input arrival time before clock: 4.262ns
+   Minimum period: 15.907ns (Maximum Frequency: 62.867MHz)
+   Minimum input arrival time before clock: 3.939ns
    Maximum output required time after clock: 5.164ns
    Maximum combinational path delay: No path found
 
@@ -1134,10 +1130,10 @@ Delay:               1.913ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Inst_divisorCLK/tmp'
-  Clock period: 15.820ns (frequency: 63.211MHz)
-  Total number of paths / destination ports: 3000517757 / 3768
+  Clock period: 15.907ns (frequency: 62.867MHz)
+  Total number of paths / destination ports: 2580559911 / 3782
 -------------------------------------------------------------------------
-Delay:               15.820ns (Levels of Logic = 15)
+Delay:               15.907ns (Levels of Logic = 13)
   Source:            Inst_pc/s_9_1 (FF)
   Destination:       Inst_reg/reg_0_25 (FF)
   Source Clock:      Inst_divisorCLK/tmp rising
@@ -1147,52 +1143,47 @@ Delay:               15.820ns (Levels of Logic = 15)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              23   0.447   1.258  Inst_pc/s_9_1 (Inst_pc/s_9_1)
-     LUT6:I4->O            2   0.203   0.845  inst_LPM_MUX321101_1 (inst_LPM_MUX321101)
-     LUT4:I1->O           10   0.205   1.221  Inst_reg/Msub_GND_21_o_GND_21_o_sub_2_OUT<4:0>_xor<3>11_1 (Inst_reg/Msub_GND_21_o_GND_21_o_sub_2_OUT<4:0>_xor<3>11)
-     LUT6:I0->O            1   0.203   0.000  Inst_reg/mux11_2_f7_G (N776)
-     MUXF7:I1->O           2   0.140   0.617  Inst_reg/mux11_2_f7 (Inst_reg/GND_21_o_X_21_o_wide_mux_2_OUT<1>)
-     LUT6:I5->O           15   0.205   0.982  Inst_reg/Mmux_rd1121 (lee_reg1<1>)
-     LUT6:I5->O           19   0.205   1.072  Inst_alu/Mmux_shift_amount21_2 (Inst_alu/Mmux_shift_amount211)
-     LUT2:I1->O            1   0.205   0.827  Inst_alu/Sh40_SW0 (N342)
-     LUT6:I2->O            2   0.203   0.721  Inst_alu/Sh40 (Inst_alu/Sh40)
-     LUT5:I3->O            1   0.203   0.580  Inst_alu/Mmux_s_mux318 (Inst_alu/Mmux_s_mux317)
-     LUT6:I5->O            1   0.205   0.000  Inst_alu/Mmux_s_mux319_G (N714)
-     MUXF7:I1->O          35   0.140   1.334  Inst_alu/Mmux_s_mux319 (salida_alu<8>)
-     RAM128X1S:A6->O       4   0.148   0.912  Inst_md_io/Inst_md/Mram_mem108 (Inst_md_io/Inst_md/hwtemp2<7>1)
-     LUT6:I3->O            5   0.205   0.715  Inst_md_io/Inst_md/dir<1>181 (Inst_md_io/Inst_md/dir<1>_mmx_out4)
-     LUT6:I5->O           17   0.205   1.028  Inst_md_io/Inst_md/Mmux_dataout1013 (Inst_md_io/Inst_md/Mmux_dataout1013)
-     LUT6:I5->O           16   0.205   0.000  Inst_mux32_lui/Mmux_s30 (escribe_reg<25>)
-     FDE:D                     0.102          Inst_reg/reg_1_25
+     FD:C->Q              27   0.447   1.325  Inst_pc/s_9_1 (Inst_pc/s_9_1)
+     LUT6:I4->O          268   0.203   2.068  inst_LPM_MUX32121 (instruccion<16>)
+     LUT4:I3->O           17   0.205   1.028  Inst_reg/Msub_GND_21_o_GND_21_o_sub_6_OUT<4:0>_xor<3>11_2 (Inst_reg/Msub_GND_21_o_GND_21_o_sub_6_OUT<4:0>_xor<3>111)
+     LUT6:I5->O            3   0.205   0.755  Inst_reg/mux61_3 (Inst_reg/mux61_3)
+     LUT6:I4->O           13   0.203   1.277  Inst_mux32_ALU/Mmux_s301 (sal_mult_alu<7>)
+     LUT6:I1->O            4   0.203   0.931  Inst_alu/Sh91 (Inst_alu/Sh9)
+     LUT6:I2->O            1   0.203   0.580  Inst_alu/Mmux_s_mux93 (Inst_alu/Mmux_s_mux92)
+     LUT6:I5->O            1   0.205   0.580  Inst_alu/Mmux_s_mux94 (Inst_alu/Mmux_s_mux93)
+     LUT6:I5->O            5   0.205   1.079  Inst_alu/Mmux_s_mux98 (salida_alu<17>)
+     LUT6:I0->O           10   0.203   0.857  Inst_md_io/Inst_decodificador/csMem<31>1_SW0 (N384)
+     LUT6:I5->O           14   0.205   0.958  Inst_md_io/Inst_decodificador/csMem<31>3_1 (Inst_md_io/Inst_decodificador/csMem<31>3)
+     LUT4:I3->O           17   0.205   1.256  Inst_mux32_lui/Mmux_s1021 (Inst_mux32_lui/Mmux_s102)
+     LUT6:I3->O           16   0.205   0.000  Inst_mux32_lui/Mmux_s35 (escribe_reg<10>)
+     FDE:D                     0.102          Inst_reg/reg_1_10
     ----------------------------------------
-    Total                     15.820ns (3.708ns logic, 12.112ns route)
-                                       (23.4% logic, 76.6% route)
+    Total                     15.837ns (3.143ns logic, 12.694ns route)
+                                       (19.8% logic, 80.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Inst_divisorCLK/tmp'
   Total number of paths / destination ports: 222 / 221
 -------------------------------------------------------------------------
-Offset:              4.262ns (Levels of Logic = 4)
-  Source:            sw<3> (PAD)
-  Destination:       Inst_reg/reg_0_5 (FF)
+Offset:              3.939ns (Levels of Logic = 2)
+  Source:            atn (PAD)
+  Destination:       inst_prog/inst_uart_tx/state_FSM_FFd1 (FF)
   Destination Clock: Inst_divisorCLK/tmp rising
 
-  Data Path: sw<3> to Inst_reg/reg_0_5
+  Data Path: atn to inst_prog/inst_uart_tx/state_FSM_FFd1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.222   0.924  sw_3_IBUF (sw_3_IBUF)
-     LUT5:I0->O            1   0.203   0.684  Inst_mux32_lui/Mmux_s119_SW0 (N633)
-     LUT6:I4->O            2   0.203   0.721  Inst_mux32_lui/Mmux_s501 (Inst_mux32_lui/Mmux_s50)
-     LUT6:I4->O           16   0.203   0.000  Inst_mux32_lui/Mmux_s507 (escribe_reg<5>)
-     FDE:D                     0.102          Inst_reg/reg_1_5
+     IBUF:I->O            19   1.222   1.176  atn_IBUF (atn_IBUF)
+     LUT6:I4->O           12   0.203   0.908  inst_prog/Inst_control_prog/Mmux_ResetTx11 (inst_prog/ResetRx)
+     FDR:R                     0.430          inst_prog/inst_uart_tx/state_FSM_FFd2
     ----------------------------------------
-    Total                      4.262ns (1.933ns logic, 2.329ns route)
-                                       (45.4% logic, 54.6% route)
+    Total                      3.939ns (1.855ns logic, 2.084ns route)
+                                       (47.1% logic, 52.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Inst_divisorCLK/tmp'
-  Total number of paths / destination ports: 3 / 1
+  Total number of paths / destination ports: 11 / 9
 -------------------------------------------------------------------------
 Offset:              5.164ns (Levels of Logic = 2)
   Source:            inst_prog/inst_uart_tx/state_FSM_FFd2 (FF)
@@ -1220,7 +1211,7 @@ Clock to Setup on destination clock Inst_divisorCLK/tmp
                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------+---------+---------+---------+---------+
-Inst_divisorCLK/tmp|   15.820|         |         |         |
+Inst_divisorCLK/tmp|   15.907|         |         |         |
 -------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk50mhz
@@ -1234,15 +1225,15 @@ clk50mhz       |    1.913|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 77.00 secs
-Total CPU time to Xst completion: 73.59 secs
+Total REAL time to Xst completion: 81.00 secs
+Total CPU time to Xst completion: 76.95 secs
  
 --> 
 
 
-Total memory usage is 408900 kilobytes
+Total memory usage is 408824 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   10 (   0 filtered)
-Number of infos    :   12 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
 

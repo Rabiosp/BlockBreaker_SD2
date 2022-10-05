@@ -5,7 +5,8 @@ Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
 ise -dd _ngo -nt timestamp -uc MIPS_2020/mips.ucf -p xc6slx9-csg324-3 mips.ngc
 mips.ngd
 
-Reading NGO file "/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/mips.ngc" ...
+Reading NGO file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/mips.ngc"
+...
 Gathering constraint information from source properties...
 Done.
 
@@ -31,7 +32,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 410880 kilobytes
+Total memory usage is 411056 kilobytes
 
 Writing NGD file "mips.ngd" ...
 Total REAL time to NGDBUILD completion:  15 sec

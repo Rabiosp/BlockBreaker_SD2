@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: Universidad Catolica
--- Engineer: Vicente González
+-- Engineer: Vicente Gonzlez
 -- 
 -- Create Date:    17:23:17 04/08/2010 
 -- Design Name: MIPS
@@ -15,8 +15,8 @@
 -- Revision: 13/6/2016
 -- Revision 0.01 - File Created
 -- Additional Comments: 
--- Se modificó este archivo para que la constante declarada en general.vhd, que define el tamaño de la 
--- ROM de instrucciones, afecte también aquí. Lo mismo se hizo para la memoria de datos. 
+-- Se modific este archivo para que la constante declarada en general.vhd, que define el tamao de la 
+-- ROM de instrucciones, afecte tambin aqu. Lo mismo se hizo para la memoria de datos. 
 -- 
 --
 -- ERRORES CONOCIDOS:
@@ -46,7 +46,7 @@ entity mips is
 		-- llaves de dos posiciones en la placa
 		sw       : in std_logic_vector (3 downto 0);
 		-- interfaz con el LCD de la placa
-		--salida   : out std_logic_vector(7 downto 0);
+		salida   : out std_logic_vector(7 downto 0);
 		--LCD_E    : out std_logic;
 		--LCD_RS   : out std_logic;
 		--LCD_RW   : out std_logic;
@@ -64,7 +64,7 @@ architecture Behavioral of mips is
            dirMI    : out  STD_LOGIC_VECTOR (NUM_BITS_MEMORIA_INSTRUCCIONES-1 downto 0);
            writeMI  : out  STD_LOGIC;
            rstMIPS  : out  STD_LOGIC;
-			  -- líneas de control
+			  -- lneas de control
 			  clk      : in STD_LOGIC;
 			  -- puerto serial
 			  rx       : in std_logic;
@@ -179,7 +179,7 @@ architecture Behavioral of mips is
 		datain   : in  STD_LOGIC_VECTOR (31 downto 0);
 		memwrite : in  STD_LOGIC;
 		memread  : in  STD_LOGIC;
-  	   tipoAcc  : in STD_LOGIC_VECTOR (2 downto 0); --tipo de operación a realizar, cargar bytes, half word y word
+  	   tipoAcc  : in STD_LOGIC_VECTOR (2 downto 0); --tipo de operacin a realizar, cargar bytes, half word y word
 		clk      : in  STD_LOGIC;
 		clk50mhz : in STD_LOGIC;
 		reset    : in STD_LOGIC;
@@ -187,11 +187,11 @@ architecture Behavioral of mips is
 		south    : in STD_LOGIC;
 		sw       : in STD_LOGIC_VECTOR (3 downto 0);
 		dataout  : out  STD_LOGIC_VECTOR (31 downto 0);
-		salida   : out std_logic_vector(7 downto 0);
-		LCD_E    : out std_logic;
-		LCD_RS   : out std_logic;
-		LCD_RW   : out std_logic;
-		LCD_DB   : out std_logic_vector(7 downto 0)
+		salida   : out std_logic_vector(7 downto 0)
+		--LCD_E    : out std_logic;
+		--LCD_RS   : out std_logic;
+		--LCD_RW   : out std_logic;
+		--LCD_DB   : out std_logic_vector(7 downto 0)
 		 );
 	END COMPONENT;
 	COMPONENT mux32
@@ -263,7 +263,7 @@ architecture Behavioral of mips is
 	END COMPONENT;
 
 
-	-- Definimos señales para interconexión
+	-- Definimos seales para interconexin
 	signal nuevo_pc : std_logic_vector(31 downto 0);
 	signal dir_ins : std_logic_vector(31 downto 0);
 	signal instruccion : std_logic_vector(31 downto 0);
@@ -296,7 +296,7 @@ architecture Behavioral of mips is
 	signal writeMIProg : std_logic;
 	signal rstMIPSProg : std_logic;
 	
-	-- señales de control
+	-- seales de control
 	signal regdst : STD_LOGIC_VECTOR (1 downto 0);
 	signal branch : std_logic;
 	signal bne : std_logic;
@@ -323,7 +323,7 @@ begin
 		dirMI    => dirMIprog,
 		writeMI  => writeMIProg,
 		rstMIPS  => rstMIPSProg,
-		-- líneas de control
+		-- lneas de control
 		clk      => clk,
 		-- puerto serial
 		rx       => rx,
@@ -344,7 +344,7 @@ begin
 	);
 	
 	-- el reset del MIPS se activa o por los botones de reset externos 
-	-- o por el reset del circuito de programación
+	-- o por el reset del circuito de programacin
 	reset <= reset_boton or rstMIPSProg;
 	
 	Inst_pc: pc PORT MAP(
@@ -421,8 +421,8 @@ begin
 		north    => north,
 		south    => south,
 		sw       => sw,
-		dataout  => salida_mem
-		--salida   => salida
+		dataout  => salida_mem,
+		salida   => salida
 		--LCD_E    => LCD_E,
 		--LCD_RS   => LCD_RS,
 		--LCD_RW   => LCD_RW,
