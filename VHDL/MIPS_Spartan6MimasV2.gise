@@ -131,10 +131,15 @@
     <transform xil_pn:end_ts="1664996134" xil_pn:in_ck="4731174239060413936" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-3547857065955293743" xil_pn:start_ts="1664996134">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1664996154" xil_pn:in_ck="-5491985937145778097" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-3629996699526266682" xil_pn:start_ts="1664996134">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
       <outfile xil_pn:name="mips.bld"/>
@@ -144,6 +149,11 @@
     <transform xil_pn:end_ts="1664996230" xil_pn:in_ck="-5491985937145778096" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1405206279585514545" xil_pn:start_ts="1664996154">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
       <outfile xil_pn:name="mips.pcf"/>
       <outfile xil_pn:name="mips_map.map"/>
@@ -157,6 +167,9 @@
     <transform xil_pn:end_ts="1664996328" xil_pn:in_ck="4262517154715314025" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="93661965788626211" xil_pn:start_ts="1664996230">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
       <outfile xil_pn:name="mips.ncd"/>
       <outfile xil_pn:name="mips.pad"/>
@@ -171,6 +184,7 @@
     <transform xil_pn:end_ts="1664996372" xil_pn:in_ck="4785535742428" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="4970201210546912173" xil_pn:start_ts="1664996333">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="mips.bgn"/>
       <outfile xil_pn:name="mips.bin"/>
@@ -184,6 +198,9 @@
     <transform xil_pn:end_ts="1664996328" xil_pn:in_ck="-5491985937145778228" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1664996314">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
       <outfile xil_pn:name="mips.twr"/>
       <outfile xil_pn:name="mips.twx"/>
