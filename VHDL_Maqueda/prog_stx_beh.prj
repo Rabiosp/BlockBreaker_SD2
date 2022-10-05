@@ -1,0 +1,5 @@
+vhdl isim_temp "../../../MIPS-2020/general.vhd"
+vhdl isim_temp "../../../MIPS-2020/uart_tx.vhd"
+vhdl isim_temp "../../../MIPS-2020/uart_rx.vhd"
+vhdl isim_temp "../../../MIPS-2020/control_prog.vhd"
+vhdl isim_temp "../../../MIPS-2020/prog.vhd"

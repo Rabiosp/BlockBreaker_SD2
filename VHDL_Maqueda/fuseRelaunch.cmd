@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/edgar/OneDrive/Escritorio/Carpetas/Clases/FIUNA/Sistemas Digitales 2/Clases/Clase 7/Mips_1/decodificador_isim_beh.exe" -prj "C:/Users/edgar/OneDrive/Escritorio/Carpetas/Clases/FIUNA/Sistemas Digitales 2/Clases/Clase 7/Mips_1/decodificador_beh.prj" "work.decodificador" 

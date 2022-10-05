@@ -9,16 +9,17 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/mips - Behavioral C:|Users|user|MIPS_Spartan6MimasV2|MIPS_2020|mips.vhd</ClosedNode>
          <ClosedNode>/mips - Behavioral F:|MIPS_Spartan6MimasV2|MIPS_2020|mips.vhd/inst_prog - prog - Behavioral</ClosedNode>
+         <ClosedNode>/mips - Behavioral |home|maxi|Documentos|GitHub|BlockBreaker_SD2|VHDL|MIPS_2020|mips.vhd/inst_prog - prog - Behavioral</ClosedNode>
          <ClosedNode>PROJECT</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>mips - Behavioral (/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mips.vhd)</SelectedItem>
+         <SelectedItem>mips - Behavioral (/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mips.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000257000000020000000000000000000000000200000064ffffffff000000810000000300000002000002570000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>mips - Behavioral (/media/maxi/SanDiskUSB/MIPS_Spartan6MimasV2/MIPS_2020/mips.vhd)</CurrentItem>
+      <CurrentItem>mips - Behavioral (/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL/MIPS_2020/mips.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -30,13 +31,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Synthesize - XST</SelectedItem>
+         <SelectedItem>Generate Programming File</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Synthesize - XST</CurrentItem>
+      <CurrentItem>Generate Programming File</CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -118,13 +119,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f4000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f40000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
