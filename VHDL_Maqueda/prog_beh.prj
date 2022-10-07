@@ -1,5 +1,0 @@
-vhdl work "../../../MIPS-2020/general.vhd"
-vhdl work "../../../MIPS-2020/uart_tx.vhd"
-vhdl work "../../../MIPS-2020/uart_rx.vhd"
-vhdl work "../../../MIPS-2020/control_prog.vhd"
-vhdl work "../../../MIPS-2020/prog.vhd"

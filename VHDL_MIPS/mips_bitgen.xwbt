@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS/mips.ncd
+OUTFILE=/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS/mips.bit
+FAMILY=Spartan6
+PART=xc6slx9-3csg324
+WORKINGDIR=/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS
+LICENSE=WebPack
+USER_INFO=174169581_174169582_0_836
