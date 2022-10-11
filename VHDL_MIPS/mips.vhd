@@ -36,7 +36,7 @@ use work.general.all;
 
 entity mips is
 	port (
-		clk50mhz : in std_logic;
+		clk100mhz : in std_logic;
 		-- pines de reset externos los pines west y east de alrededor de la perilla de la placa
 		reset1   : in std_logic;
 		reset0   : in std_logic;
@@ -77,6 +77,12 @@ architecture Behavioral of mips is
     Port ( 
 		clk50mhz : in  STD_LOGIC;
       clk : out  STD_LOGIC
+		);
+	END COMPONENT;
+	COMPONENT divCLK100a50 is
+    Port ( 
+		clk100mhz : in  STD_LOGIC;
+      clk50mhz : out  STD_LOGIC
 		);
 	END COMPONENT;
 	COMPONENT JR_detect
@@ -315,6 +321,7 @@ architecture Behavioral of mips is
 	signal reset_boton : std_logic;
 	signal reset : std_logic;
 	signal clk : std_logic;
+	signal clk50mhz : std_logic;
 begin
 
 	inst_prog : prog PORT MAP (
@@ -334,6 +341,11 @@ begin
 	Inst_divisorCLK :  divisorCLK PORT MAP(
 		clk50mhz => clk50mhz,
       clk      => clk
+	);
+	
+	Inst_divCLK100a50 :  divCLK100a50 PORT MAP(
+		clk100mhz => clk100mhz,
+      clk50mhz  => clk50mhz
 	);
 
 	Inst_antirebote: antirebote PORT MAP(

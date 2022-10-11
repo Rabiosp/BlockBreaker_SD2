@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: UC
--- Engineer: Vicente González
+-- Engineer: Vicente Gonzlez
 -- 
 -- Create Date:    	15:22:03 06/15/2017 
 -- Design Name: 
@@ -45,18 +45,18 @@ architecture Behavioral of alu_parcial is
 	signal cin : STD_LOGIC_VECTOR (0 downto 0);
 	signal temp : STD_LOGIC_VECTOR (31 downto 0);
 begin
-	-- implementamos un único sumador para la suma y la resta.
+	-- implementamos un nico sumador para la suma y la resta.
 	-- Para implementar la resta negamos uno de los operandos y le sumamos uno
 	sumando2 <= not (op2) when control = "0001" else	-- si es resta ponemos op2 negado
 	            op2;
 	cin <= "1" when control = "0001" else	-- si es resta ponemos 1
 	       "0";
-	-- suma será op1 + op2 + 0
-	-- resta será op1 + op2 negado + 1
+	-- suma ser op1 + op2 + 0
+	-- resta ser op1 + op2 negado + 1
 	suma <= std_logic_vector(unsigned (op1) + unsigned (sumando2) + unsigned (cin));
 	
 	-- proceso que implementa los operaciones de la ALU
-	process (op1, op2, suma, control) is
+	process (op1, op2, suma, control, temp) is
 	begin
 		case control is
 			when "0000" | "0001" => -- suma o resta

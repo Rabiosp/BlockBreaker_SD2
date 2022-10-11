@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: Universidad Católica
--- Engineer: Vicente González
+-- Company: Universidad Catlica
+-- Engineer: Vicente Gonzlez
 -- 
 -- Create Date:    16:27:29 03/25/2020 
 -- Design Name: 
@@ -47,12 +47,12 @@ entity control_prog is
            ReadyRx : in  STD_LOGIC;
            ResetTx : out  STD_LOGIC;
            ResetRx : out  STD_LOGIC;
-			  -- Señales generales
+			  -- Seales generales
            clk : in  STD_LOGIC);
 end control_prog;
 
 architecture Behavioral of control_prog is
-	-- Estados de la máquina de estados del control
+	-- Estados de la mquina de estados del control
 								--- Espera comando
 	type state_type is (st1_esperaAtn0, st2_esperaAtn1, st3_esperaComando,
 								--- Comando C
@@ -63,7 +63,7 @@ architecture Behavioral of control_prog is
 								--- Comando V
 							  st14_V_esperaTam1, st15_V_esperaTam2, st16_V_recibeDatos, st17_V_verificaMI, st18_V_recibeResto, 
 									st19_V_enviaRespE, st20_V_esperaEnviaRespE, st21_V_enviaRespC, st22_V_esperaEnviaRespC); 
-   -- FF de la variable de estados y señal para el estado siguiente							  
+   -- FF de la variable de estados y seal para el estado siguiente							  
    signal state, next_state : state_type; 
 
 	-- registro que almacena la cantidad de datos recibidos por el UART (16 its)
@@ -71,7 +71,7 @@ architecture Behavioral of control_prog is
 	signal nextCantMSB, nextCantLSB : std_logic_vector (7 downto 0);
 	signal decCantMSBLSB, cargaCantMSB, cargaCantLSB : std_logic;
 	-- registro que almacena la palabra recibida por el UART de cara al MIPS (32 bits)
-	-- se accede por bytes en función de contBytes
+	-- se accede por bytes en funcin de contBytes
 	type pal32bits is array (3 downto 0) of std_logic_vector (7 downto 0);
 	signal pal : pal32bits; -- para acceder pal(3), pal(2)... Para convertir std_logic_vector a entero to_integer(unsgined())
 	signal nextPal : pal32bits;
@@ -79,7 +79,7 @@ architecture Behavioral of control_prog is
 	-- registro que cuenta los bytes de la palabra anterior ( 2 bits)
 	signal contBytes : std_logic_vector (1 downto 0);
 	signal rstContBytes, incContBytes : std_logic;
-	-- registro que almacena la posición de la memoria de instrucciones del MIPS que será escrito
+	-- registro que almacena la posicin de la memoria de instrucciones del MIPS que ser escrito
 	signal dirMIreg : std_logic_vector (NUM_BITS_MEMORIA_INSTRUCCIONES-1 downto 0);
 	signal rstDirMI, incDirMI : std_logic;
 --	signal numeroPosicionesMI : std_logic_vector (15 downto 0) := X"00FF";	-- Cantidad de posiciones (palabras) de la memoria del MIPS
@@ -144,7 +144,7 @@ begin
 	end process;
 	
 	-- circuito de salida Mealy y Moore
-   OUTPUT_DECODE: process (state, atn, readyRx, rxData, pal, cantMSBLSB)
+   OUTPUT_DECODE: process (state, atn, readyRx, rxData, pal, cantMSBLSB, contBytes)
    begin
 		-- salidas por defecto para evitar latches
 		resetTx <= '0';	-- no reset del UART TX
@@ -154,7 +154,7 @@ begin
 		rstMIPS <= '0';	-- no hacemos reset al MIPS
 		writeMI <= '0';	-- no escribimos en la MI del MIPS
 		rstDirMI <= '0';	-- no reset a Direccion de MI del MIPS
-		incDirMI <= '0';	-- no incrementa la dirección del MI del MIPS
+		incDirMI <= '0';	-- no incrementa la direccin del MI del MIPS
 		rstContBytes <= '0';	-- no reset a ContBytes 
 		incContBytes <= '0';	-- no se incrementa ContBytes 
 		cargaCantLSB <= '0';	-- no cargamos CantMSBLSB
@@ -187,12 +187,12 @@ begin
 				
 			--------- Comando C
 			when st4_C_enviaTam1 =>
-				txData <= numeroPosicionesMI(15 downto 8);	-- enviamos MSB del tamaño
+				txData <= numeroPosicionesMI(15 downto 8);	-- enviamos MSB del tamao
 				readyTx <= '1';
 			when st5_C_esperaEnviaTam1 =>	-- no hace nada, espera envio
 				txData <= numeroPosicionesMI(15 downto 8);
 			when st6_C_enviaTam2 =>
-				txData <= numeroPosicionesMI(7 downto 0);	-- enviamos LSB del tamaño
+				txData <= numeroPosicionesMI(7 downto 0);	-- enviamos LSB del tamao
 				readyTx <= '1';
 			when st7_C_esperaEnviaTam2 =>	-- no hace nada, espera envio
 				txData <= numeroPosicionesMI(7 downto 0);
@@ -283,7 +283,7 @@ begin
             end if;
          when st3_esperaComando =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif readyRx = '1' then
 					if rxData = std_logic_vector(to_unsigned(character'pos('C'), 8)) then
 						next_state <= st4_C_enviaTam1;
@@ -296,44 +296,44 @@ begin
 			--------- Comando C
 			when st4_C_enviaTam1 =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				else
 					next_state <= st5_C_esperaEnviaTam1;
 				end if;
 			when st5_C_esperaEnviaTam1 =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif enviado = '1' then
 					next_state <= st6_C_enviaTam2;
 				end if;
 			when st6_C_enviaTam2 =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				else
 					next_state <= st7_C_esperaEnviaTam2;
 				end if;
 			when st7_C_esperaEnviaTam2 =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif enviado = '1' then
 					next_state <= st1_esperaAtn0;	-- volvemos al estado inicial
 				end if;
 			--------- Comando P
 			when st8_P_esperaTam1 =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif readyRx = '1' then
 					next_state <= st9_P_esperaTam2;
 				end if;
 			when st9_P_esperaTam2 =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif readyRx = '1' then
 					next_state <= st10_P_recibeDatos;
 				end if;
 			when st10_P_recibeDatos =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif readyRx = '1' and contBytes = "11" then
 					next_state <= st11_P_escribeMI;	-- escribe en memoria
 				end if;
@@ -347,26 +347,26 @@ begin
 				next_state <= st13_P_esperaEnviaRespC;
 			when st13_P_esperaEnviaRespC =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif enviado = '1' then
 					next_state <= st1_esperaAtn0;
 				end if;
 			--------- Comando V
 			when st14_V_esperaTam1 =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif readyRx = '1' then
 					next_state <= st15_V_esperaTam2;
 				end if;
 			when st15_V_esperaTam2=>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif readyRx = '1' then
 					next_state <= st16_V_recibeDatos;
 				end if;
 			when st16_V_recibeDatos =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif readyRx = '1' and contBytes = "11" then
 					next_state <= st17_V_verificaMI;
 				end if;
@@ -384,7 +384,7 @@ begin
 				end if;
 			when st18_V_recibeResto =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif readyRx = '1' and cantMSBLSB = X"0001" then
 					next_state <= st19_V_enviaRespE;
 				end if;
@@ -392,7 +392,7 @@ begin
 				next_state <= st20_V_esperaEnviaRespE;
 			when st20_V_esperaEnviaRespE =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif enviado = '1' then
 					next_state <= st1_esperaAtn0;
 				end if;
@@ -400,7 +400,7 @@ begin
 				next_state <= st22_V_esperaEnviaRespC;
 			when st22_V_esperaEnviaRespC =>
 				if atn = '0' then
-					next_state <= st2_esperaAtn1;	-- reiniciamos esta máquina
+					next_state <= st2_esperaAtn1;	-- reiniciamos esta mquina
 				elsif enviado = '1' then
 					next_state <= st1_esperaAtn0;
 				end if;

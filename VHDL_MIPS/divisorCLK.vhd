@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: Universidad Católica
--- Engineer: Vicente González
+-- Company: Universidad Catlica
+-- Engineer: Vicente Gonzlez
 -- 
 -- Create Date:    14:53:12 06/24/2019 
 -- Design Name: MIPS

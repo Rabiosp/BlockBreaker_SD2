@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: Universidad Católica
--- Engineer: Vicente González
+-- Company: Universidad Catlica
+-- Engineer: Vicente Gonzlez
 -- 
 -- Create Date:    14:44:35 06/14/2017 
 -- Design Name: 
@@ -35,7 +35,7 @@ entity md_io is
            datain    : in  STD_LOGIC_VECTOR (31 downto 0);
            memwrite  : in  STD_LOGIC;
            memread   : in  STD_LOGIC;
-			  tipoAcc   : in STD_LOGIC_VECTOR (2 downto 0); --tipo de operación a realizar, cargar bytes, half word y word
+			  tipoAcc   : in STD_LOGIC_VECTOR (2 downto 0); --tipo de operacin a realizar, cargar bytes, half word y word
            clk       : in  STD_LOGIC;
 			  clk50mhz  : in STD_LOGIC;
 			  reset     : in STD_LOGIC;
@@ -43,11 +43,7 @@ entity md_io is
 			  south     : in STD_LOGIC;
 			  sw        : in STD_LOGIC_VECTOR (3 downto 0);
            dataout   : out  STD_LOGIC_VECTOR (31 downto 0);
-			  salida    : out std_logic_vector(7 downto 0);
-			  LCD_E     : out std_logic;
-			  LCD_RS    : out std_logic;
-			  LCD_RW    : out std_logic;
-		     LCD_DB    : out std_logic_vector(7 downto 0));
+			  salida    : out std_logic_vector(7 downto 0));
 end md_io;
 
 architecture Behavioral of md_io is
@@ -89,20 +85,8 @@ architecture Behavioral of md_io is
 			);
 	END COMPONENT;
 
-	COMPONENT lcd
-    Port ( dataOut  : in  STD_LOGIC_VECTOR (8 downto 0);
-           memWrite : in  STD_LOGIC;
-           cs       : in  STD_LOGIC;
-           clk      : in  STD_LOGIC;
-           reset    : in  STD_LOGIC;
-           E        : out  STD_LOGIC;
-           RS       : out  STD_LOGIC;
-           RW       : out  STD_LOGIC;
-           DB       : out  STD_LOGIC_VECTOR (7 downto 0)
-			);
-	END COMPONENT;
 
--- Definimos señales para interconexión interna en este módulo
+-- Definimos seales para interconexin interna en este mdulo
 	signal csMem       : STD_LOGIC;
 	signal csSalidaPar : STD_LOGIC;
 	signal csLCD       : STD_LOGIC;
@@ -151,17 +135,6 @@ begin
       salida => salida
 	);
 
-	Inst_lcd: lcd PORT MAP(
-		dataOut => datain(8 downto 0),
-		memWrite => memwrite,
-		cs => csLCD,
-		clk => clk50mhz,
-		reset => reset,
-		E => LCD_E,
-		RS => LCD_RS,
-		RW => LCD_RW,
-		DB => LCD_DB
-	);
 
 end Behavioral;
 

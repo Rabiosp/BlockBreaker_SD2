@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: Universidad Católica
--- Engineer: Vicente González
+-- Company: Universidad Catlica
+-- Engineer: Vicente Gonzlez
 -- 
 -- Create Date:    14:25:15 06/14/2017 
 -- Design Name: MIPS
@@ -54,7 +54,7 @@ architecture Behavioral of md is
 	signal mem01 : mem_byte;
 	signal mem10 : mem_byte;
 	signal mem11 : mem_byte;	-- bytes mas significativos
-	-- señales intermedias para medias palabras
+	-- seales intermedias para medias palabras
 	signal hwtemp1 : STD_LOGIC_VECTOR (15 downto 0);
 	signal hwtemp2 : STD_LOGIC_VECTOR (15 downto 0);
 begin
@@ -62,7 +62,7 @@ begin
 	hwtemp1 <= mem01(to_integer(unsigned(dir(NUM_BITS_MEMORIA_DATOS -1 +2 downto 2)))) & mem00(to_integer(unsigned(dir(NUM_BITS_MEMORIA_DATOS -1 +2 downto 2))));
 	hwtemp2 <= mem11(to_integer(unsigned(dir(NUM_BITS_MEMORIA_DATOS -1 +2 downto 2)))) & mem10(to_integer(unsigned(dir(NUM_BITS_MEMORIA_DATOS -1 +2 downto 2))));
 	
-	leer : process (dir, memread, cs, mem00, mem01, mem10, mem11, tipoAcc) is
+	leer : process (dir, memread, cs, mem00, mem01, mem10, mem11, tipoAcc, hwtemp1, hwtemp2) is
 	begin
 		if cs = '1' and memread = '1' then
 			case tipoAcc is
