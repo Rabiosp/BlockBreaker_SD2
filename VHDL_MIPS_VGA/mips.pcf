@@ -1,9 +1,12 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Oct 11 14:46:47 2022
+// Written by: Map P.20131013 on Wed Oct 12 16:47:33 2022
 //! **************************************************************************
 
 SCHEMATIC START;
 CONFIG VCCAUX = "3.3";
+COMP "B" LOCATE = SITE "A11" LEVEL 1;
+COMP "G" LOCATE = SITE "C11" LEVEL 1;
+COMP "R" LOCATE = SITE "C9" LEVEL 1;
 COMP "rx" LOCATE = SITE "H17" LEVEL 1;
 COMP "tx" LOCATE = SITE "H18" LEVEL 1;
 COMP "reset1" LOCATE = SITE "F17" LEVEL 1;
@@ -12,8 +15,10 @@ COMP "sw<0>" LOCATE = SITE "C17" LEVEL 1;
 COMP "sw<1>" LOCATE = SITE "C18" LEVEL 1;
 COMP "sw<2>" LOCATE = SITE "D17" LEVEL 1;
 COMP "sw<3>" LOCATE = SITE "D18" LEVEL 1;
+COMP "hsync" LOCATE = SITE "B12" LEVEL 1;
 COMP "north" LOCATE = SITE "E18" LEVEL 1;
 COMP "south" LOCATE = SITE "E16" LEVEL 1;
+COMP "vsync" LOCATE = SITE "A12" LEVEL 1;
 COMP "salida<0>" LOCATE = SITE "P15" LEVEL 1;
 COMP "salida<1>" LOCATE = SITE "P16" LEVEL 1;
 COMP "salida<2>" LOCATE = SITE "N15" LEVEL 1;

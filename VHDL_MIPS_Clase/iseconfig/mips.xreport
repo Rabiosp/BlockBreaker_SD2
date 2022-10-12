@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2022-10-05T15:03:08</DateModified>
+  <DateModified>2022-10-12T14:21:45</DateModified>
   <ModuleName>mips</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_Clase/iseconfig/mips.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_Clase</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_Clase/</ImplementationReportsDirectory>
   <DateInitialized>2022-10-05T15:03:07</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

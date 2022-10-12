@@ -1,0 +1,97 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> 
+Parameter xsthdpdir set to /home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> 
+Reading design: md_io.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/vga_gen_imagen.vhd" into library work
+Parsing entity <image_generator>.
+Parsing architecture <Behavioral> of entity <image_generator>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/vga_generador_vsync.vhd" into library work
+Parsing entity <generador_vsync>.
+Parsing architecture <comportamiento> of entity <generador_vsync>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/vga_generador_hsync.vhd" into library work
+Parsing entity <generador_hsync>.
+Parsing architecture <comportamiento> of entity <generador_hsync>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/vga_generador_blank.vhd" into library work
+Parsing entity <generador_blank>.
+Parsing architecture <Behavioral> of entity <generador_blank>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/vga_cont_vert.vhd" into library work
+Parsing entity <contador_vertical>.
+Parsing architecture <comportamiento> of entity <contador_vertical>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/vga_cont_horiz.vhd" into library work
+Parsing entity <contador_horizontal>.
+Parsing architecture <comportamiento> of entity <contador_horizontal>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/general.vhd" into library work
+Parsing package <general>.
+Parsing package body <general>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/vga_controlador.vhd" into library work
+Parsing entity <vga_controlador>.
+Parsing architecture <Behavioral> of entity <vga_controlador>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/salida_par.vhd" into library work
+Parsing entity <salida_par>.
+Parsing architecture <Behavioral> of entity <salida_par>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/md.vhd" into library work
+Parsing entity <md>.
+Parsing architecture <Behavioral> of entity <md>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/entrada.vhd" into library work
+Parsing entity <entrada>.
+Parsing architecture <Behavioral> of entity <entrada>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/decodificador.vhd" into library work
+Parsing entity <decodificador>.
+Parsing architecture <Behavioral> of entity <decodificador>.
+Parsing VHDL file "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/md_io.vhd" into library work
+Parsing entity <md_io>.
+Parsing architecture <Behavioral> of entity <md_io>.
+
+
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 14.93 secs
+ 
+--> 
+
+
+Total memory usage is 300824 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

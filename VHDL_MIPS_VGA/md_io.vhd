@@ -43,7 +43,13 @@ entity md_io is
 			  south     : in STD_LOGIC;
 			  sw        : in STD_LOGIC_VECTOR (3 downto 0);
            dataout   : out  STD_LOGIC_VECTOR (31 downto 0);
-			  salida    : out std_logic_vector(7 downto 0));
+			  salida    : out std_logic_vector(7 downto 0);
+			  hsync     : out STD_LOGIC;
+			  vsync     : out STD_LOGIC;
+			  R     : out STD_LOGIC;
+			  G     : out STD_LOGIC;
+			  B     : out STD_LOGIC
+			  );
 end md_io;
 
 architecture Behavioral of md_io is
@@ -83,6 +89,18 @@ architecture Behavioral of md_io is
            data       : in  STD_LOGIC_VECTOR (7 downto 0);
            salida     : out  STD_LOGIC_VECTOR (7 downto 0)
 			);
+	END COMPONENT;
+	
+	COMPONENT vga_controlador
+	PORT(
+		clk50mhz : IN std_logic;
+		reset : IN std_logic;    
+		hsync : OUT std_logic;      
+		vsync : OUT std_logic;
+		R : OUT std_logic;
+		G : OUT std_logic;
+		B : OUT std_logic
+		);
 	END COMPONENT;
 
 
@@ -133,6 +151,16 @@ begin
       clk => clk,
       data=> datain(7 downto 0),
       salida => salida
+	);
+	
+	Inst_vga_controlador: vga_controlador PORT MAP(
+		clk50mhz => clk50mhz,
+		reset => reset,
+		hsync => hsync,
+		vsync => vsync,
+		R => R,
+		G => G,
+		B => B
 	);
 
 

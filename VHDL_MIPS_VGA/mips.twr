@@ -2,9 +2,8 @@
 Release 14.7 Trace  (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-/media/Programas/Aplicaciones/Linux/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce
--intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips.twx mips.ncd -o mips.twr
-mips.pcf -ucf mips.ucf
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml mips.twx mips.ncd -o mips.twr mips.pcf -ucf mips.ucf
 
 Design file:              mips.ncd
 Physical constraint file: mips.pcf
@@ -34,7 +33,7 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
  Minimum period is   1.730ns.
 --------------------------------------------------------------------------------
 
-Paths for end point Inst_divCLK100a50/tmp (SLICE_X22Y23.A6), 1 path
+Paths for end point Inst_divCLK100a50/tmp (SLICE_X14Y30.A6), 1 path
 --------------------------------------------------------------------------------
 Slack (setup path):     9.089ns (requirement - (data path - clock path skew + uncertainty))
   Source:               Inst_divCLK100a50/tmp (FF)
@@ -56,10 +55,10 @@ Slack (setup path):     9.089ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y23.AQ      Tcko                  0.408   Inst_divCLK100a50/tmp
+    SLICE_X14Y30.AQ      Tcko                  0.408   Inst_divCLK100a50/tmp
                                                        Inst_divCLK100a50/tmp
-    SLICE_X22Y23.A6      net (fanout=2)        0.127   Inst_divCLK100a50/tmp
-    SLICE_X22Y23.CLK     Tas                   0.341   Inst_divCLK100a50/tmp
+    SLICE_X14Y30.A6      net (fanout=2)        0.127   Inst_divCLK100a50/tmp
+    SLICE_X14Y30.CLK     Tas                   0.341   Inst_divCLK100a50/tmp
                                                        Inst_divCLK100a50/tmp_INV_49_o1_INV_0
                                                        Inst_divCLK100a50/tmp
     -------------------------------------------------  ---------------------------
@@ -71,7 +70,7 @@ Slack (setup path):     9.089ns (requirement - (data path - clock path skew + un
 Hold Paths: NET "clk100mhz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point Inst_divCLK100a50/tmp (SLICE_X22Y23.A6), 1 path
+Paths for end point Inst_divCLK100a50/tmp (SLICE_X14Y30.A6), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.415ns (requirement - (clock path skew + uncertainty - data path))
   Source:               Inst_divCLK100a50/tmp (FF)
@@ -87,10 +86,10 @@ Slack (hold path):      0.415ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X22Y23.AQ      Tcko                  0.200   Inst_divCLK100a50/tmp
+    SLICE_X14Y30.AQ      Tcko                  0.200   Inst_divCLK100a50/tmp
                                                        Inst_divCLK100a50/tmp
-    SLICE_X22Y23.A6      net (fanout=2)        0.025   Inst_divCLK100a50/tmp
-    SLICE_X22Y23.CLK     Tah         (-Th)    -0.190   Inst_divCLK100a50/tmp
+    SLICE_X14Y30.A6      net (fanout=2)        0.025   Inst_divCLK100a50/tmp
+    SLICE_X14Y30.CLK     Tah         (-Th)    -0.190   Inst_divCLK100a50/tmp
                                                        Inst_divCLK100a50/tmp_INV_49_o1_INV_0
                                                        Inst_divCLK100a50/tmp
     -------------------------------------------------  ---------------------------
@@ -114,7 +113,7 @@ Slack: 9.570ns (period - min period limit)
   Min period limit: 0.430ns (2325.581MHz) (Tcp)
   Physical resource: Inst_divCLK100a50/tmp/CLK
   Logical resource: Inst_divCLK100a50/tmp/CK
-  Location pin: SLICE_X22Y23.CLK
+  Location pin: SLICE_X14Y30.CLK
   Clock network: clk100mhz_BUFGP
 --------------------------------------------------------------------------------
 
@@ -149,14 +148,14 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Tue Oct 11 14:47:10 2022 
+Analysis completed Wed Oct 12 16:49:16 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 403 MB
+Peak Memory Usage: 401 MB
 
 
 

@@ -1,13 +1,11 @@
 Release 14.7 ngdbuild P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line:
-/media/Programas/Aplicaciones/Linux/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/n
-gdbuild -intstyle ise -dd _ngo -nt timestamp -uc mips.ucf -p xc6slx9-csg324-3
-mips.ngc mips.ngd
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -uc mips.ucf -p xc6slx9-csg324-3 mips.ngc mips.ngd
 
 Reading NGO file
-"/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS/mips.ngc" ...
+"/home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/mips.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -33,10 +31,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 407432 kilobytes
+Total memory usage is 411412 kilobytes
 
 Writing NGD file "mips.ngd" ...
-Total REAL time to NGDBUILD completion:  2 sec
-Total CPU time to NGDBUILD completion:   2 sec
+Total REAL time to NGDBUILD completion:  15 sec
+Total CPU time to NGDBUILD completion:   14 sec
 
 Writing NGDBUILD log file "mips.bld"...

@@ -41,102 +41,116 @@ end vga_controlador;
 
 architecture Behavioral of vga_controlador is
 
-	component contador_horizontal
-	Port ( clk50MHz : in std_logic; -- reloj principal
-			reset : in std_logic; -- reset global
-			h_cuenta : out std_logic_vector (10 downto 0)
-			);
-	END COMPONENT;
-	
-	component contador_vertical
-	Port ( hsync : in std_logic; -- horizontal sync signal
-			clk50MHz: in std_logic; -- main clock
-			reset : in std_logic; -- global reset
-			v_cuenta : out std_logic_vector (9 downto 0)
-			);
-	END COMPONENT;
-	
-	component generador_hsync
-	Port ( h_cuenta : in std_logic_vector (10 downto 0);
-			clk50MHz : in std_logic;
-			reset : in std_logic;
-			hsync : out std_logic);
-	END COMPONENT;
-	
-	component generador_vsync
-	Port ( v_cuenta : in std_logic_vector (9 downto 0);
-			clk50MHz : in std_logic;
-			reset : in std_logic;
-			vsync : out std_logic);
-	END COMPONENT;
-	
-	component generador_blank
-	Port ( hctr : in std_logic_vector (10 downto 0);
-			vctr : in std_logic_vector (9 downto 0);
-			blank : out std_logic
-			);
-	END COMPONENT;
-	
-	component image_generator
-	Port (
-			hctr : in std_logic_vector (10 downto 0);
-			vctr : in std_logic_vector (9 downto 0);
-			blank : in std_logic; -- blank interval signal
-			clk50MHz : in std_logic; -- main clock
-			reset : in std_logic; -- global reset
-			R : out std_logic; -- Red colour signal
-			G : out std_logic; -- Green colour signal
-			B : out std_logic); -- Blue colour signal
-	END COMPONENT;
-	
+	signal hsync_temp : std_logic;
 
+	COMPONENT contador_horizontal
+	PORT(
+		clk50MHz : IN std_logic;
+		reset : IN std_logic;          
+		h_cuenta : OUT std_logic_vector(10 downto 0)
+		);
+	END COMPONENT;
+	
+	COMPONENT contador_vertical
+	PORT(
+		hsync : IN std_logic;
+		clk50MHz : IN std_logic;
+		reset : IN std_logic;          
+		v_cuenta : OUT std_logic_vector(9 downto 0)
+		);
+	END COMPONENT;
+	
+	COMPONENT generador_blank
+	PORT(
+		hctr : IN std_logic_vector(10 downto 0);
+		vctr : IN std_logic_vector(9 downto 0);          
+		blank : OUT std_logic
+		);
+	END COMPONENT;
+	
+	COMPONENT generador_hsync
+	PORT(
+		h_cuenta : IN std_logic_vector(10 downto 0);
+		clk50MHz : IN std_logic;
+		reset : IN std_logic;          
+		hsync : OUT std_logic
+		);
+	END COMPONENT;
+	
+	COMPONENT generador_vsync
+	PORT(
+		v_cuenta : IN std_logic_vector(9 downto 0);
+		clk50MHz : IN std_logic;
+		reset : IN std_logic;          
+		vsync : OUT std_logic
+		);
+	END COMPONENT;
+	
+	COMPONENT image_generator
+	PORT(
+		hctr : IN std_logic_vector(10 downto 0);
+		vctr : IN std_logic_vector(9 downto 0);
+		blank : IN std_logic;
+		clk50MHz : IN std_logic;
+		reset : IN std_logic;          
+		R : OUT std_logic;
+		G : OUT std_logic;
+		B : OUT std_logic
+		);
+	END COMPONENT;
+	
+	--señales necesarias
+	signal hcnt : std_logic_vector(10 downto 0);
+	signal vcnt : std_logic_vector(9 downto 0);
+	signal blank : std_logic;
+	
 begin
 
-	Inst_contador_horizontal :  contador_horizontal PORT MAP(
-		clk50MHz => clk50MHz,
-		reset  => reset,
-      h_cuenta      => h_cuenta
+	Inst_contador_horizontal: contador_horizontal PORT MAP(
+		clk50MHz => clk50mhz,
+		reset => reset,
+		h_cuenta => hcnt
 	);
 	
-	Inst_contador_vertical :  contador_vertical PORT MAP(
-		hsync => hsync,
-		clk50MHz => clk50MHz,
-		reset  => reset,
-      v_cuenta      => v_cuenta
+	Inst_contador_vertical: contador_vertical PORT MAP(
+		hsync => hsync_temp,
+		clk50MHz => clk50mhz,
+		reset => reset,
+		v_cuenta => vcnt
 	);
 	
-	Inst_generador_hsync :  generador_hsync PORT MAP(
-		h_cuenta => h_cuenta,
-		clk50MHz => clk50MHz,
-		reset  => reset,
-      hsync      => hsync
+	Inst_generador_blank: generador_blank PORT MAP(
+		hctr => hcnt,
+		vctr => vcnt,
+		blank => blank
 	);
 	
-	Inst_generador_vsync :  generador_vsync PORT MAP(
-		v_cuenta => v_cuenta,
-		clk50MHz => clk50MHz,
-		reset  => reset,
-      vsync      => vsync
+	Inst_generador_hsync: generador_hsync PORT MAP(
+		h_cuenta => hcnt,
+		clk50MHz => clk50mhz,
+		reset => reset,
+		hsync => hsync_temp
 	);
 	
-	Inst_generador_blank :  generador_blank PORT MAP(
-		hctr => h_cuenta,
-		vctr => v_cuenta,
-      blank      => blank
+	Inst_generador_vsync: generador_vsync PORT MAP(
+		v_cuenta => vcnt,
+		clk50MHz => clk50mhz,
+		reset => reset,
+		vsync => vsync
 	);
 	
-	Inst_image_generator :  image_generator PORT MAP(
-		hctr => h_cuenta,
-		vctr => v_cuenta,
-		clk50MHz => clk50MHz,
-		reset  => reset,
-		R  => R,
-		G  => G,
-		B  => B,
-      blank      => blank
+	Inst_image_generator: image_generator PORT MAP(
+		hctr => hcnt,
+		vctr => vcnt,
+		blank => blank,
+		clk50MHz => clk50mhz,
+		reset => reset,
+		R => R,
+		G => G,
+		B => B
 	);
-	
-	
+
+	hsync <= hsync_temp;
 
 end Behavioral;
 

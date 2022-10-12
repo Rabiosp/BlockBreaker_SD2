@@ -78,6 +78,7 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1664993592" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1664993592">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1664993592" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="2554848325795106970" xil_pn:start_ts="1664993592">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -126,7 +127,6 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
@@ -168,6 +168,7 @@
     <transform xil_pn:end_ts="1664994814" xil_pn:in_ck="4785535742428" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="6587536580693756888" xil_pn:start_ts="1664994777">
       <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="mips.bgn"/>
