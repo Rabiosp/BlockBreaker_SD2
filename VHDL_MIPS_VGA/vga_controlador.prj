@@ -1,0 +1,7 @@
+vhdl work "vga_gen_imagen.vhd"
+vhdl work "vga_generador_vsync.vhd"
+vhdl work "vga_generador_hsync.vhd"
+vhdl work "vga_generador_blank.vhd"
+vhdl work "vga_cont_vert.vhd"
+vhdl work "vga_cont_horiz.vhd"
+vhdl work "vga_controlador.vhd"

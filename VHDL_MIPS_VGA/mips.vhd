@@ -54,7 +54,13 @@ entity mips is
 		-- puerto serial
 		rx       : in std_logic;
 		tx       : out std_logic;
-		atn      : in std_logic);
+		atn      : in std_logic;
+		hsync     : out STD_LOGIC;
+		vsync     : out STD_LOGIC;
+		R     : out STD_LOGIC;
+		G     : out STD_LOGIC;
+		B     : out STD_LOGIC
+		);
 end mips;
 
 architecture Behavioral of mips is
@@ -180,25 +186,26 @@ architecture Behavioral of mips is
 		);
 	END COMPONENT;
 	COMPONENT md_io
-	Port ( 
-		dir      : in  STD_LOGIC_VECTOR (31 downto 0);
-		datain   : in  STD_LOGIC_VECTOR (31 downto 0);
-		memwrite : in  STD_LOGIC;
-		memread  : in  STD_LOGIC;
-  	   tipoAcc  : in STD_LOGIC_VECTOR (2 downto 0); --tipo de operacin a realizar, cargar bytes, half word y word
-		clk      : in  STD_LOGIC;
-		clk50mhz : in STD_LOGIC;
-		reset    : in STD_LOGIC;
-		north    : in STD_LOGIC;
-		south    : in STD_LOGIC;
-		sw       : in STD_LOGIC_VECTOR (3 downto 0);
-		dataout  : out  STD_LOGIC_VECTOR (31 downto 0);
-		salida   : out std_logic_vector(7 downto 0)
-		--LCD_E    : out std_logic;
-		--LCD_RS   : out std_logic;
-		--LCD_RW   : out std_logic;
-		--LCD_DB   : out std_logic_vector(7 downto 0)
-		 );
+	PORT(
+		dir : IN std_logic_vector(31 downto 0);
+		datain : IN std_logic_vector(31 downto 0);
+		memwrite : IN std_logic;
+		memread : IN std_logic;
+		tipoAcc : IN std_logic_vector(2 downto 0);
+		clk : IN std_logic;
+		clk50mhz : IN std_logic;
+		reset : IN std_logic;
+		north : IN std_logic;
+		south : IN std_logic;
+		sw : IN std_logic_vector(3 downto 0);          
+		dataout : OUT std_logic_vector(31 downto 0);
+		salida : OUT std_logic_vector(7 downto 0);
+		hsync : OUT std_logic;
+		vsync : OUT std_logic;
+		R : OUT std_logic;
+		G : OUT std_logic;
+		B : OUT std_logic
+		);
 	END COMPONENT;
 	COMPONENT mux32
 	PORT(
@@ -421,7 +428,7 @@ begin
 		zero   => cero,
 		sal    => sel_mux_branch
 	);
-	Inst_md_io : md_io PORT MAP (
+	Inst_md_io: md_io PORT MAP(
 		dir      => salida_alu,
 		datain   => lee_reg2,
 		memwrite => memwrite,
@@ -434,11 +441,12 @@ begin
 		south    => south,
 		sw       => sw,
 		dataout  => salida_mem,
-		salida   => salida
-		--LCD_E    => LCD_E,
-		--LCD_RS   => LCD_RS,
-		--LCD_RW   => LCD_RW,
-		--LCD_DB   => LCD_DB
+		salida   => salida,
+		hsync => hsync,
+		vsync => vsync,
+		R => R,
+		G => G,
+		B => B
 	);
 	Inst_mux32_branch: mux32 PORT MAP(
 		e0  => pc_mas_4,
