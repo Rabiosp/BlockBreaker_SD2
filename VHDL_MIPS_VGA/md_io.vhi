@@ -1,5 +1,5 @@
 
--- VHDL Instantiation Created from source file md_io.vhd -- 16:37:35 10/12/2022
+-- VHDL Instantiation Created from source file md_io.vhd -- 10:46:56 10/17/2022
 --
 -- Notes: 
 -- 1) This instantiation template has been automatically generated using types
@@ -21,6 +21,8 @@
 		sw : IN std_logic_vector(3 downto 0);          
 		dataout : OUT std_logic_vector(31 downto 0);
 		salida : OUT std_logic_vector(7 downto 0);
+		sevenSegment : OUT std_logic_vector(7 downto 0);
+		sevenSegmentEnable : OUT std_logic_vector(2 downto 0);
 		hsync : OUT std_logic;
 		vsync : OUT std_logic;
 		R : OUT std_logic;
@@ -43,6 +45,8 @@
 		sw => ,
 		dataout => ,
 		salida => ,
+		sevenSegment => ,
+		sevenSegmentEnable => ,
 		hsync => ,
 		vsync => ,
 		R => ,

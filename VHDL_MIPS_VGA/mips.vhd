@@ -55,6 +55,8 @@ entity mips is
 		rx       : in std_logic;
 		tx       : out std_logic;
 		atn      : in std_logic;
+		sevenSegment: out std_logic_vector(7 downto 0);
+		sevenSegmentEnable: out std_logic_vector(2 downto 0);
 		hsync     : out STD_LOGIC;
 		vsync     : out STD_LOGIC;
 		R     : out STD_LOGIC;
@@ -200,6 +202,8 @@ architecture Behavioral of mips is
 		sw : IN std_logic_vector(3 downto 0);          
 		dataout : OUT std_logic_vector(31 downto 0);
 		salida : OUT std_logic_vector(7 downto 0);
+		sevenSegment : OUT std_logic_vector(7 downto 0);
+		sevenSegmentEnable : OUT std_logic_vector(2 downto 0);
 		hsync : OUT std_logic;
 		vsync : OUT std_logic;
 		R : OUT std_logic;
@@ -442,6 +446,8 @@ begin
 		sw       => sw,
 		dataout  => salida_mem,
 		salida   => salida,
+		sevenSegment => sevenSegment,
+		sevenSegmentEnable => sevenSegmentEnable,
 		hsync => hsync,
 		vsync => vsync,
 		R => R,

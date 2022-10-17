@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: Universidad Católica
--- Engineer: Vicente González
+-- Company: Universidad Catlica
+-- Engineer: Vicente Gonzlez
 -- 
 -- Create Date:    14:28:41 06/14/2017 
 -- Design Name: 
@@ -34,6 +34,7 @@ entity decodificador is
            csMem     : out  STD_LOGIC;
            csParPort : out  STD_LOGIC;
            csLCD     : out  STD_LOGIC;
+			  cs7seg     : out  STD_LOGIC;
 			  csEntrada : out STD_LOGIC);
 end decodificador;
 
@@ -54,6 +55,10 @@ begin
 	
 	-- habilitador de lectura de las llaves
 	csEntrada <= '1' when ent = X"FFFFD000" else
+					 '0';
+	
+	-- habilitador de escritura del 7 segmentos
+	cs7seg    <= '1' when ent = X"FFFFE000" else
 					 '0';
 					 
 end Behavioral;
