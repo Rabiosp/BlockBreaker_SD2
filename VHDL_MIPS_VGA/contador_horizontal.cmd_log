@@ -1,1 +1,0 @@
-vhdtdtfi -prj VHDL_MIPS -o /home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/contador_horizontal.vhi -module contador_horizontal -template /opt/Xilinx/14.7/ISE_DS/ISE/data/vhdlinst.tft -deleteonerror -lib work vga_cont_horiz.vhd 
