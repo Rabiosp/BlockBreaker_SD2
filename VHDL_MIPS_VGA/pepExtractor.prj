@@ -1,0 +1,17 @@
+work	"decodificador.vhd"
+<<<<<<< HEAD
+=======
+work	"entrada.vhd"
+work	"general.vhd"
+work	"md.vhd"
+work	"md_io.vhd"
+work	"salida_par.vhd"
+work	"seven_seg.vhd"
+work	"vga_cont_horiz.vhd"
+work	"vga_cont_vert.vhd"
+work	"vga_controlador.vhd"
+work	"vga_gen_imagen.vhd"
+work	"vga_generador_blank.vhd"
+work	"vga_generador_hsync.vhd"
+work	"vga_generador_vsync.vhd"
+>>>>>>> fd4f01c5254a38cf4d991e6a65bef431036ebc3b

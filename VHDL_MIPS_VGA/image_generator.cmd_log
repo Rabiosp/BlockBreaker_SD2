@@ -1,0 +1,5 @@
+vhdtdtfi -prj VHDL_MIPS -o /home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/image_generator.vhi -module image_generator -template /opt/Xilinx/14.7/ISE_DS/ISE/data/vhdlinst.tft -deleteonerror -lib work vga_gen_imagen.vhd 
+<<<<<<< HEAD
+vhdtdtfi -prj VHDL_MIPS -o /home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/image_generator.vhi -module image_generator -template /opt/Xilinx/14.7/ISE_DS/ISE/data/vhdlinst.tft -deleteonerror -lib work vga_gen_imagen.vhd 
+=======
+>>>>>>> fd4f01c5254a38cf4d991e6a65bef431036ebc3b
