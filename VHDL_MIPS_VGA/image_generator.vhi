@@ -1,5 +1,5 @@
 
--- VHDL Instantiation Created from source file image_generator.vhd -- 16:25:47 10/12/2022
+-- VHDL Instantiation Created from source file image_generator.vhd -- 17:55:45 10/17/2022
 --
 -- Notes: 
 -- 1) This instantiation template has been automatically generated using types
@@ -12,7 +12,11 @@
 		vctr : IN std_logic_vector(9 downto 0);
 		blank : IN std_logic;
 		clk50MHz : IN std_logic;
-		reset : IN std_logic;          
+		reset : IN std_logic;
+		writeBuffer : IN std_logic;
+		siEscribirBuffer : IN std_logic;
+		dir : IN std_logic_vector(11 downto 0);
+		datos : IN std_logic_vector(31 downto 0);          
 		R : OUT std_logic;
 		G : OUT std_logic;
 		B : OUT std_logic
@@ -25,6 +29,10 @@
 		blank => ,
 		clk50MHz => ,
 		reset => ,
+		writeBuffer => ,
+		siEscribirBuffer => ,
+		dir => ,
+		datos => ,
 		R => ,
 		G => ,
 		B => 

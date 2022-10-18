@@ -37,13 +37,15 @@ v_cuenta_int <= CONV_INTEGER (v_cuenta);
 -- vsync generation flip-flop, which is initialized to one state
 process (clk50MHz,reset,v_cuenta_int)
 begin
-	if reset = '1' then
-		vsync <= '1';
-	elsif clk50MHz='1' and clk50MHz'event then
-		if (v_cuenta_int >= 500) and (v_cuenta_int <= 502) then --valores originales 500 y 502
-			vsync <= '0';
-		else
+	if clk50MHz='1' and clk50MHz'event then
+		if reset = '1' then
 			vsync <= '1';
+		else
+			if (v_cuenta_int >= 500) and (v_cuenta_int <= 502) then --valores originales 500 y 502
+				vsync <= '0';
+			else
+				vsync <= '1';
+			end if;
 		end if;
 	end if;
 end process;

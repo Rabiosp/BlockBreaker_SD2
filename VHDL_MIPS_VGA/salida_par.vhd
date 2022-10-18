@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: Universidad Católica
--- Engineer: Vicente González
+-- Company: Universidad Catlica
+-- Engineer: Vicente Gonzlez
 -- 
 -- Create Date:    14:35:08 06/14/2017 
 -- Design Name: 
@@ -31,6 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity salida_par is
     Port ( sel : in  STD_LOGIC;
+			  reset : in std_logic;
            write_cntl : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            data : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -43,8 +44,12 @@ begin
 	process (clk)
 	begin
 		if clk'event and clk = '1' then
-			if sel = '1' and write_cntl = '1' then
-				salida <= data;
+			if(reset='0')then
+				if sel = '1' and write_cntl = '1' then
+					salida <= data;
+				end if;
+			else
+				salida <= (others =>'0');
 			end if;
 		end if;
 	end process;

@@ -160,6 +160,7 @@ begin
 		cargaCantLSB <= '0';	-- no cargamos CantMSBLSB
 		cargaCantMSB <= '0';
 		decCantMSBLSB <= '0';	-- no decrementamos CantMSBLSB
+		cargaPal <= '0';
 		-- CantMSBLSB conserva su valor por defecto
 		nextCantMSB <= CantMSBLSB(15 downto 8);
 		nextCantLSB <= CantMSBLSB(7 downto 0);

@@ -42,13 +42,15 @@ hsync <= hsync_aux;
 
 process (clk50MHz,reset,change_h)
 begin
-	if reset = '1' then
-		hsync_aux <= '1';
-	elsif clk50MHz='1' and clk50MHz'event then
-		if change_h = '1' then
-			hsync_aux <= not hsync_aux;
+	if clk50MHz='1' and clk50MHz'event then
+		if reset = '1' then
+			hsync_aux <= '1';
 		else
-			hsync_aux <= hsync_aux;
+			if change_h = '1' then
+				hsync_aux <= not hsync_aux;
+			else
+				hsync_aux <= hsync_aux;
+			end if;
 		end if;
 	end if;
 end process;

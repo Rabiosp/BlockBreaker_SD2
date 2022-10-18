@@ -41,14 +41,16 @@ h_cuenta <= CONV_STD_LOGIC_VECTOR (h_cuenta_int, 11);
 
 process (clk50MHz,reset,h_cuenta_int)
 begin
-	if reset = '1' then
-		h_cuenta_int <= 0;
-	elsif clk50MHz='1' and clk50MHz'event then
-	-- para saber que se ha llegado a la cuenta 1587
-		if h_cuenta_int = 1586 then --ajustar bien la cuenta
+	if clk50MHz='1' and clk50MHz'event then
+		if reset = '1' then
 			h_cuenta_int <= 0;
 		else
-			h_cuenta_int <= h_cuenta_int + 1;
+		-- para saber que se ha llegado a la cuenta 1587
+			if h_cuenta_int = 1586 then --ajustar bien la cuenta
+				h_cuenta_int <= 0;
+			else
+				h_cuenta_int <= h_cuenta_int + 1;
+			end if;
 		end if;
 	end if;
 end process;

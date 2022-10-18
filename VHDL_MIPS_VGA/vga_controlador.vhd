@@ -34,6 +34,10 @@ entity vga_controlador is
            reset : in  STD_LOGIC;
            hsync : out  STD_LOGIC;
            vsync : out  STD_LOGIC;
+			  writeBuffer: in std_logic;
+			  siEscribirBuffer: in std_logic;
+			  dir: in std_logic_vector(9 downto 0);
+			  datos: in std_logic_vector(31 downto 0);
            R : out  STD_LOGIC;
            G : out  STD_LOGIC;
            B : out  STD_LOGIC);
@@ -92,7 +96,11 @@ architecture Behavioral of vga_controlador is
 		vctr : IN std_logic_vector(9 downto 0);
 		blank : IN std_logic;
 		clk50MHz : IN std_logic;
-		reset : IN std_logic;          
+		reset : IN std_logic;
+		writeBuffer : IN std_logic;
+		siEscribirBuffer : IN std_logic;
+		dir : IN std_logic_vector(9 downto 0);
+		datos : IN std_logic_vector(31 downto 0);          
 		R : OUT std_logic;
 		G : OUT std_logic;
 		B : OUT std_logic
@@ -103,6 +111,7 @@ architecture Behavioral of vga_controlador is
 	signal hcnt : std_logic_vector(10 downto 0);
 	signal vcnt : std_logic_vector(9 downto 0);
 	signal blank : std_logic;
+	
 	
 begin
 
@@ -145,12 +154,18 @@ begin
 		blank => blank,
 		clk50MHz => clk50mhz,
 		reset => reset,
+		writeBuffer => writeBuffer,
+		siEscribirBuffer => siEscribirBuffer,
+		dir => dir,
+		datos => datos,
 		R => R,
 		G => G,
 		B => B
 	);
 
 	hsync <= hsync_temp;
+	
+	
 
 end Behavioral;
 

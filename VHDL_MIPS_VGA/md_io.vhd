@@ -44,6 +44,8 @@ entity md_io is
 			  sw        : in STD_LOGIC_VECTOR (3 downto 0);
            dataout   : out  STD_LOGIC_VECTOR (31 downto 0);
 			  salida    : out std_logic_vector(7 downto 0);
+			  sevenSegment: out std_logic_vector(7 downto 0);
+			  sevenSegmentEnable: out std_logic_vector(2 downto 0);
 			  hsync     : out STD_LOGIC;
 			  vsync     : out STD_LOGIC;
 			  R     : out STD_LOGIC;
@@ -62,12 +64,15 @@ architecture Behavioral of md_io is
 	END COMPONENT;
 
 	COMPONENT decodificador
-    Port ( ent       : in  STD_LOGIC_VECTOR (31 downto 0);
-           csMem     : out  STD_LOGIC;
-           csParPort : out  STD_LOGIC;
-           csLCD     : out  STD_LOGIC;
-			  csEntrada : out STD_LOGIC
-			);
+	PORT(
+		ent : IN std_logic_vector(31 downto 0);          
+		csMem : OUT std_logic;
+		csParPort : OUT std_logic;
+		csLCD : OUT std_logic;
+		cs7seg : OUT std_logic;
+		csVideoBuffer : OUT std_logic;
+		csEntrada : OUT std_logic
+		);
 	END COMPONENT;
 
 	COMPONENT md
@@ -84,6 +89,7 @@ architecture Behavioral of md_io is
 
 	COMPONENT salida_par
     Port ( sel        : in  STD_LOGIC;
+			  reset 		 : in std_logic;
            write_cntl : in  STD_LOGIC;
            clk        : in  STD_LOGIC;
            data       : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -94,12 +100,28 @@ architecture Behavioral of md_io is
 	COMPONENT vga_controlador
 	PORT(
 		clk50mhz : IN std_logic;
-		reset : IN std_logic;    
-		hsync : OUT std_logic;      
+		reset : IN std_logic;
+		writeBuffer : IN std_logic;
+		siEscribirBuffer : IN std_logic;
+		dir : IN std_logic_vector(9 downto 0);
+		datos : IN std_logic_vector(31 downto 0);          
+		hsync : OUT std_logic;
 		vsync : OUT std_logic;
 		R : OUT std_logic;
 		G : OUT std_logic;
 		B : OUT std_logic
+		);
+	END COMPONENT;
+	
+	COMPONENT seven_seg
+	PORT(
+		sel : IN std_logic;
+		reset: in std_logic;
+		write_cnt2 : IN std_logic;
+		clk : IN std_logic;
+		data_in : IN std_logic_vector(9 downto 0);          
+		sevenSegment : OUT std_logic_vector(7 downto 0);
+		SevenSegmentEnable : OUT std_logic_vector(2 downto 0)
 		);
 	END COMPONENT;
 
@@ -109,6 +131,8 @@ architecture Behavioral of md_io is
 	signal csSalidaPar : STD_LOGIC;
 	signal csLCD       : STD_LOGIC;
 	signal csEntrada   : STD_LOGIC;
+	signal cs7seg      : STD_LOGIC;
+	signal csVideoBuffer: std_logic;
 	signal datosMem    : STD_LOGIC_VECTOR (31 downto 0);
 	signal datosEntrada: STD_LOGIC_VECTOR (5 downto 0);
 	
@@ -131,7 +155,9 @@ begin
       csMem     => csMem,
 		csParPort => csSalidaPar,
       csLCD     => csLCD,
-		csEntrada => csEntrada
+		csEntrada => csEntrada,
+		csVideoBuffer => csVideoBuffer,
+		cs7seg => cs7seg
 	);
 
 	Inst_md: md PORT MAP(
@@ -147,6 +173,7 @@ begin
 
 	Inst_salida_par: salida_par PORT MAP(
 		sel => csSalidaPar,
+		reset => reset,
       write_cntl => memwrite,
       clk => clk,
       data=> datain(7 downto 0),
@@ -158,9 +185,23 @@ begin
 		reset => reset,
 		hsync => hsync,
 		vsync => vsync,
+		writeBuffer => memwrite,
+		siEscribirBuffer => csVideoBuffer,
+		dir => dir(11 downto 2),
+		datos => datain,
 		R => R,
 		G => G,
 		B => B
+	);
+	
+	Inst_seven_seg: seven_seg PORT MAP(
+		sel => cs7seg,
+		reset => reset,
+		write_cnt2 => memwrite,
+		clk => clk,
+		data_in => datain(9 downto 0),
+		sevenSegment => sevenSegment,
+		SevenSegmentEnable => sevenSegmentEnable
 	);
 
 
