@@ -2,8 +2,9 @@
 Release 14.7 Trace  (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
-3 -fastpaths -xml mips.twx mips.ncd -o mips.twr mips.pcf
+/media/Programas/Aplicaciones/Linux/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce
+-intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips.twx mips.ncd -o mips.twr
+mips.pcf
 
 Design file:              mips.ncd
 Physical constraint file: mips.pcf
@@ -33,13 +34,13 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
  Minimum period is   1.730ns.
 --------------------------------------------------------------------------------
 
-Paths for end point Inst_divCLK100a50/tmp (SLICE_X13Y34.A6), 1 path
+Paths for end point Inst_divCLK100a50/tmp (SLICE_X15Y33.C5), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     9.125ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     9.079ns (requirement - (data path - clock path skew + uncertainty))
   Source:               Inst_divCLK100a50/tmp (FF)
   Destination:          Inst_divCLK100a50/tmp (FF)
   Requirement:          10.000ns
-  Data Path Delay:      0.840ns (Levels of Logic = 1)
+  Data Path Delay:      0.886ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk100mhz_BUFGP rising at 10.000ns
@@ -55,28 +56,28 @@ Slack (setup path):     9.125ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y34.AQ      Tcko                  0.391   Inst_divCLK100a50/tmp
+    SLICE_X15Y33.CQ      Tcko                  0.391   Inst_divCLK100a50/tmp
                                                        Inst_divCLK100a50/tmp
-    SLICE_X13Y34.A6      net (fanout=2)        0.127   Inst_divCLK100a50/tmp
-    SLICE_X13Y34.CLK     Tas                   0.322   Inst_divCLK100a50/tmp
-                                                       Inst_divCLK100a50/tmp_INV_49_o1_INV_0
+    SLICE_X15Y33.C5      net (fanout=2)        0.173   Inst_divCLK100a50/tmp
+    SLICE_X15Y33.CLK     Tas                   0.322   Inst_divCLK100a50/tmp
+                                                       Inst_divCLK100a50/tmp_INV_157_o1_INV_0
                                                        Inst_divCLK100a50/tmp
     -------------------------------------------------  ---------------------------
-    Total                                      0.840ns (0.713ns logic, 0.127ns route)
-                                                       (84.9% logic, 15.1% route)
+    Total                                      0.886ns (0.713ns logic, 0.173ns route)
+                                                       (80.5% logic, 19.5% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: NET "clk100mhz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point Inst_divCLK100a50/tmp (SLICE_X13Y34.A6), 1 path
+Paths for end point Inst_divCLK100a50/tmp (SLICE_X15Y33.C5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.438ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.472ns (requirement - (clock path skew + uncertainty - data path))
   Source:               Inst_divCLK100a50/tmp (FF)
   Destination:          Inst_divCLK100a50/tmp (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.438ns (Levels of Logic = 1)
+  Data Path Delay:      0.472ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk100mhz_BUFGP rising at 10.000ns
   Destination Clock:    clk100mhz_BUFGP rising at 10.000ns
@@ -86,15 +87,15 @@ Slack (hold path):      0.438ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y34.AQ      Tcko                  0.198   Inst_divCLK100a50/tmp
+    SLICE_X15Y33.CQ      Tcko                  0.198   Inst_divCLK100a50/tmp
                                                        Inst_divCLK100a50/tmp
-    SLICE_X13Y34.A6      net (fanout=2)        0.025   Inst_divCLK100a50/tmp
-    SLICE_X13Y34.CLK     Tah         (-Th)    -0.215   Inst_divCLK100a50/tmp
-                                                       Inst_divCLK100a50/tmp_INV_49_o1_INV_0
+    SLICE_X15Y33.C5      net (fanout=2)        0.059   Inst_divCLK100a50/tmp
+    SLICE_X15Y33.CLK     Tah         (-Th)    -0.215   Inst_divCLK100a50/tmp
+                                                       Inst_divCLK100a50/tmp_INV_157_o1_INV_0
                                                        Inst_divCLK100a50/tmp
     -------------------------------------------------  ---------------------------
-    Total                                      0.438ns (0.413ns logic, 0.025ns route)
-                                                       (94.3% logic, 5.7% route)
+    Total                                      0.472ns (0.413ns logic, 0.059ns route)
+                                                       (87.5% logic, 12.5% route)
 
 --------------------------------------------------------------------------------
 
@@ -113,7 +114,7 @@ Slack: 9.606ns (period - min period limit)
   Min period limit: 0.394ns (2538.071MHz) (Tcp)
   Physical resource: Inst_divCLK100a50/tmp/CLK
   Logical resource: Inst_divCLK100a50/tmp/CK
-  Location pin: SLICE_X13Y34.CLK
+  Location pin: SLICE_X15Y33.CLK
   Clock network: clk100mhz_BUFGP
 --------------------------------------------------------------------------------
 
@@ -130,7 +131,7 @@ Clock to Setup on destination clock clk100mhz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk100mhz      |    0.875|         |         |         |
+clk100mhz      |    0.921|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -148,14 +149,14 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Tue Oct 18 20:51:03 2022 
+Analysis completed Tue Oct 18 23:31:09 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 407 MB
+Peak Memory Usage: 413 MB
 
 
 

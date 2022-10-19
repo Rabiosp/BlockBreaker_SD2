@@ -1,5 +1,5 @@
 
--- VHDL Instantiation Created from source file seven_seg.vhd -- 20:36:53 10/18/2022
+-- VHDL Instantiation Created from source file seven_seg.vhd -- 22:02:33 10/18/2022
 --
 -- Notes: 
 -- 1) This instantiation template has been automatically generated using types

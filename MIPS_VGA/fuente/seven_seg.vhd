@@ -45,7 +45,7 @@ architecture Behavioral of seven_seg is
 	signal digito,C,D,U : std_logic_vector(3 downto 0);
 	signal valorC, valorD, valorU: unsigned(9 downto 0);
 	signal contador : unsigned(1 downto 0);
-	signal contadorclk : unsigned(31 downto 0);
+	signal contadorclk : unsigned(14 downto 0);
 	signal clkreduc : std_logic;
 
 begin
@@ -53,12 +53,12 @@ begin
 ENTRADA: process(sel, clk, write_cnt2, data_in)
 begin
 	if(clk'event and clk='1') then
-		if(reset='0')then
+		if(reset='1')then
+			valorC <= to_unsigned(0,10);
+		else
 			if(write_cnt2='1' and sel='1')then
 				valorC <= unsigned(data_in);
 			end if;
-		else
-			valorC <= to_unsigned(0,10);
 		end if;
 	end if;
 end process;
@@ -67,14 +67,18 @@ REDUCTORCLK: process(clk, contadorclk)
 begin
 	if(clk'event and clk='1') then
 		if(reset='0')then
-			if (contadorclk<12500000) then
+			if (contadorclk<12500) then
 				contadorclk <= contadorclk +1;
+				clkreduc <= '0';
+			elsif(contadorclk<25000)then
+				contadorclk <= contadorclk +1;
+				clkreduc <= '1';
 			else
-				contadorclk <= to_unsigned(0,32);
-				clkreduc <= not(clkreduc);
+				contadorclk <= to_unsigned(0,15);
+				clkreduc <= clkreduc;
 			end if;
 		else
-			contadorclk <= to_unsigned(0,32);
+			contadorclk <= to_unsigned(0,15);
 		end if;
 	end if;
 end process;
@@ -222,16 +226,16 @@ with digito select
          "10001110" when "1111",   --F
          "11000000" when others;   --0
 
-with contador select
-	sevenSegmentEnable <= "110" when to_unsigned(0,2),
-								 "101" when to_unsigned(1,2),
-								 "011" when to_unsigned(2,2),
+with std_logic_vector(contador) select
+	sevenSegmentEnable <= "110" when "00",
+								 "101" when "01",
+								 "011" when "10",
 								 "111" when others;
 
-with contador select
-	digito <= U when to_unsigned(0,2),
-				 D when to_unsigned(1,2),
-				 C when to_unsigned(2,2),
+with std_logic_vector(contador) select
+	digito <= U when "00",
+				 D when "01",
+				 C when "10",
 				 "1111" when others;
 
 

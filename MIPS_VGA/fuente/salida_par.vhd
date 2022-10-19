@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity salida_par is
     Port ( sel : in  STD_LOGIC;
-			  reset : in std_logic;
+			  reset : in  STD_LOGIC;
            write_cntl : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            data : in  STD_LOGIC_VECTOR (7 downto 0);
@@ -49,7 +49,7 @@ begin
 					salida <= data;
 				end if;
 			else
-				salida <= (others =>'0');
+				salida <= (others=>'0');
 			end if;
 		end if;
 	end process;

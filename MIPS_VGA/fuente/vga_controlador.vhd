@@ -93,11 +93,12 @@ architecture Behavioral of vga_controlador is
 	
 	COMPONENT image_generator
 	PORT(
-		hctr : IN std_logic_vector(10 downto 0);
+		hsync : std_logic;
+		--hctr : IN std_logic_vector(10 downto 0);
 		vctr : IN std_logic_vector(9 downto 0);
 		blank : IN std_logic;
 		clk50MHz : IN std_logic;
-		clk : clk in std_logic;
+		clk : in std_logic;
 		reset : IN std_logic;
 		writeBuffer : IN std_logic;
 		siEscribirBuffer : IN std_logic;
@@ -150,7 +151,8 @@ begin
 	);
 	
 	Inst_image_generator: image_generator PORT MAP(
-		hctr => hcnt,
+		hsync => hsync_temp,
+		--hctr => hcnt,
 		vctr => vcnt,
 		blank => blank,
 		clk50MHz => clk50mhz,

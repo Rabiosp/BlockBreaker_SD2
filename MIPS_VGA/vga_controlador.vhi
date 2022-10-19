@@ -1,5 +1,5 @@
 
--- VHDL Instantiation Created from source file vga_controlador.vhd -- 20:43:01 10/18/2022
+-- VHDL Instantiation Created from source file vga_controlador.vhd -- 22:04:52 10/18/2022
 --
 -- Notes: 
 -- 1) This instantiation template has been automatically generated using types
@@ -9,6 +9,7 @@
 	COMPONENT vga_controlador
 	PORT(
 		clk50mhz : IN std_logic;
+		clk : IN std_logic;
 		reset : IN std_logic;
 		writeBuffer : IN std_logic;
 		siEscribirBuffer : IN std_logic;
@@ -24,6 +25,7 @@
 
 	Inst_vga_controlador: vga_controlador PORT MAP(
 		clk50mhz => ,
+		clk => ,
 		reset => ,
 		hsync => ,
 		vsync => ,

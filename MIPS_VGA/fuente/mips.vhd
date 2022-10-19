@@ -47,21 +47,19 @@ entity mips is
 		sw       : in std_logic_vector (3 downto 0);
 		-- interfaz con el LCD de la placa
 		salida   : out std_logic_vector(7 downto 0);
-		--LCD_E    : out std_logic;
-		--LCD_RS   : out std_logic;
-		--LCD_RW   : out std_logic;
-		--LCD_DB   : out std_logic_vector(7 downto 0);
 		-- puerto serial
 		rx       : in std_logic;
 		tx       : out std_logic;
 		atn      : in std_logic;
-		sevenSegment: out std_logic_vector(7 downto 0);
-		sevenSegmentEnable: out std_logic_vector(2 downto 0);
-		hsync     : out STD_LOGIC;
-		vsync     : out STD_LOGIC;
-		R     : out STD_LOGIC;
-		G     : out STD_LOGIC;
-		B     : out STD_LOGIC
+		--7Segmentos
+		sevenSegment : OUT std_logic_vector(7 downto 0);
+		sevenSegmentEnable : OUT std_logic_vector(2 downto 0);
+		--VGA
+		hsync : OUT std_logic;
+		vsync : OUT std_logic;
+		Red : OUT std_logic_vector(2 downto 0);
+		Green : OUT std_logic_vector(2 downto 0);
+		Blue : OUT std_logic_vector(1 downto 0)
 		);
 end mips;
 
@@ -85,12 +83,6 @@ architecture Behavioral of mips is
     Port ( 
 		clk50mhz : in  STD_LOGIC;
       clk : out  STD_LOGIC
-		);
-	END COMPONENT;
-	COMPONENT divCLK100a50 is
-    Port ( 
-		clk100mhz : in  STD_LOGIC;
-      clk50mhz : out  STD_LOGIC
 		);
 	END COMPONENT;
 	COMPONENT JR_detect
@@ -278,6 +270,12 @@ architecture Behavioral of mips is
 		Zero_extend : out STD_LOGIC
 		);
 	END COMPONENT;
+	COMPONENT divCLK100a50
+	PORT(
+		clk100mhz : IN std_logic;          
+		clk50mhz : OUT std_logic
+		);
+	END COMPONENT;
 
 
 	-- Definimos seales para interconexin
@@ -333,6 +331,11 @@ architecture Behavioral of mips is
 	signal reset : std_logic;
 	signal clk : std_logic;
 	signal clk50mhz : std_logic;
+	
+	signal R : std_logic;
+	signal G : std_logic;
+	signal B : std_logic;
+	
 begin
 
 	inst_prog : prog PORT MAP (
@@ -352,11 +355,6 @@ begin
 	Inst_divisorCLK :  divisorCLK PORT MAP(
 		clk50mhz => clk50mhz,
       clk      => clk
-	);
-	
-	Inst_divCLK100a50 :  divCLK100a50 PORT MAP(
-		clk100mhz => clk100mhz,
-      clk50mhz  => clk50mhz
 	);
 
 	Inst_antirebote: antirebote PORT MAP(
@@ -529,6 +527,13 @@ begin
 		regwrite    => regwrite,
 		Zero_extend => Zero_extend
 	);
+	Inst_divCLK100a50: divCLK100a50 PORT MAP(
+		clk100mhz => clk100mhz,
+		clk50mhz => clk50mhz
+	);
 
+Red <= R&R&R;
+Green <= G&G&G;
+Blue <= B&B;
 end Behavioral;
 

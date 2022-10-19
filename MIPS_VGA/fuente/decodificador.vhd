@@ -33,8 +33,8 @@ entity decodificador is
     Port ( ent       : in  STD_LOGIC_VECTOR (31 downto 0);
            csMem     : out  STD_LOGIC;
            csParPort : out  STD_LOGIC;
-			  cs7seg     : out  STD_LOGIC;
-			  csVideoBuffer: out std_logic;
+			  cs7seg		: out  STD_LOGIC;
+			  csVideoBuffer		: out  STD_LOGIC;
 			  csEntrada : out STD_LOGIC);
 end decodificador;
 
@@ -53,12 +53,12 @@ begin
 	csEntrada <= '1' when ent = X"FFFFD000" else
 					 '0';
 	
-	-- habilitador de escritura del 7 segmentos
-	cs7seg    <= '1' when ent = X"FFFFE000" else
+	-- habilitador de escritura de 7 segmentos
+	cs7seg <= '1' when ent = X"FFFFE000" else
 					 '0';
 	
-	-- habilitador de escritura del búfer de video
-	csVideoBuffer    <= '1' when ent(31 downto 12) = X"FFFFA" else
+	-- habilitador de escritura de buffer video
+	csVideoBuffer <= '1' when ent(31 downto 12) = X"FFFFA" else
 					 '0';
 					 
 end Behavioral;

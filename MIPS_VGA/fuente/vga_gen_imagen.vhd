@@ -25,7 +25,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity image_generator is
 	Port (
-			hctr : in std_logic_vector (10 downto 0);
+			hsync : in std_logic;
+			--hctr : in std_logic_vector (10 downto 0);
 			vctr : in std_logic_vector (9 downto 0);
 			blank : in std_logic; -- blank interval signal
 			clk50MHz : in std_logic; -- main clock
@@ -52,10 +53,9 @@ architecture Behavioral of image_generator is
 	signal videoBuffer : memBuffer;
 	signal posx, posy, conty : unsigned(4 downto 0);
 	signal contx : unsigned(5 downto 0);
-	signal clkconty : std_logic;
 
 begin
-hctr_int <= to_INTEGER(unsigned(hctr));
+--hctr_int <= to_INTEGER(unsigned(hctr));
 vctr_int <= to_INTEGER(unsigned(vctr));
 -- utilizamos biestables de salida para evitar posibles Glitches
 -- Iniiciaizamos los biestables a cero
@@ -99,14 +99,41 @@ end process;
 --G_int <= color(1);
 --B_int <= color(0);
 
---Parte de escritura del buffer de memoria
+--Parte de escritura del buffer de memoria con el clk mips
 ESCRIBIRBUFFER: process(clk, datos, dir)
 begin
 	if(clk'event and clk='1')then
-		if(writebuffer='1' and siEscribirBuffer='1') then
-			if(unsigned(dir)<24)then
-				videoBuffer(to_integer(unsigned(dir))) <= datos;
+		if(reset='0')then
+			if(writebuffer='1' and siEscribirBuffer='1') then
+				if(unsigned(dir)<24)then
+					videoBuffer(to_integer(unsigned(dir))) <= datos;
+				end if;
 			end if;
+		else
+			videoBuffer(0) <= X"AAAAAAAA";
+			videoBuffer(1) <= X"FFFFFFFF";
+			videoBuffer(2) <= X"FFFFFFFF";
+			videoBuffer(3) <= X"FFFFFFFF";
+			videoBuffer(4) <= X"AAAAAAAA";
+			videoBuffer(5) <= X"BBBBBBBB";
+			videoBuffer(6) <= X"CCCCCCCC";
+			videoBuffer(7) <= X"DDDDDDDD";
+			videoBuffer(8) <= X"EEEEEEEE";
+			videoBuffer(9) <= X"FFFFFFFF";
+			videoBuffer(10) <= X"00000000";
+			videoBuffer(11) <= X"11111111";
+			videoBuffer(12) <= X"22222222";
+			videoBuffer(13) <= X"33333333";
+			videoBuffer(14) <= X"44444444";
+			videoBuffer(15) <= X"55555555";
+			videoBuffer(16) <= X"66666666";
+			videoBuffer(17) <= X"77777777";
+			videoBuffer(18) <= X"88888888";
+			videoBuffer(19) <= X"99999999";
+			videoBuffer(20) <= X"FFFFFFFF";
+			videoBuffer(21) <= X"FFFFFFFF";
+			videoBuffer(22) <= X"FFFFFFFF";
+			videoBuffer(23) <= X"55555555";
 		end if;
 	end if;
 end process;
@@ -134,25 +161,16 @@ begin
 	end if;
 end process;
 
-CLOCKCONTY: process(clk50mhz, hctr_int)
-begin
-	if(clk50mhz'event and clk50mhz='1')then
-		if(hctr_int>1258)then
-			clkconty <= '1';
-		else
-			clkconty <= '0';
-		end if;
-	end if;
-end process;
 
-CONTPOSY: process(clkconty)
+CONTPOSY: process(hsync)
 begin
-	if(clkconty'event and clkconty='1')then
+	if(hsync'event and hsync='0')then
 		if(reset='1' or vctr_int>479)then
 			posy <= to_unsigned(0,5);
 			conty <= to_unsigned(0,5);
 		else
 			if(conty = 19)then
+			   conty <= to_unsigned(0,5);
 				if(posy = 23)then
 					posy <= posy;
 				else
@@ -166,7 +184,7 @@ begin
 	end if;
 end process;
 
-pixel <= videoBuffer(to_integer(posy))(to_integer(posx));
+pixel <= videoBuffer(to_integer(posy))(to_integer(31-posx));
 R_int <= pixel;
 G_int <= pixel;
 B_int <= pixel;

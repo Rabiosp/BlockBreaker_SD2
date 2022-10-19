@@ -144,7 +144,7 @@ begin
 	end process;
 	
 	-- circuito de salida Mealy y Moore
-   OUTPUT_DECODE: process (state, atn, readyRx, rxData, pal, cantMSBLSB, contBytes)
+   OUTPUT_DECODE: process (state, atn, readyRx, rxData, pal, cantMSBLSB, contbytes)
    begin
 		-- salidas por defecto para evitar latches
 		resetTx <= '0';	-- no reset del UART TX

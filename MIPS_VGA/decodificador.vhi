@@ -1,5 +1,5 @@
 
--- VHDL Instantiation Created from source file decodificador.vhd -- 20:40:28 10/18/2022
+-- VHDL Instantiation Created from source file decodificador.vhd -- 22:18:10 10/18/2022
 --
 -- Notes: 
 -- 1) This instantiation template has been automatically generated using types
@@ -11,6 +11,7 @@
 		ent : IN std_logic_vector(31 downto 0);          
 		csMem : OUT std_logic;
 		csParPort : OUT std_logic;
+		csLCD : OUT std_logic;
 		cs7seg : OUT std_logic;
 		csVideoBuffer : OUT std_logic;
 		csEntrada : OUT std_logic
@@ -21,6 +22,7 @@
 		ent => ,
 		csMem => ,
 		csParPort => ,
+		csLCD => ,
 		cs7seg => ,
 		csVideoBuffer => ,
 		csEntrada => 

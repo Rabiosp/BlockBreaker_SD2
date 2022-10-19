@@ -44,13 +44,14 @@ entity md_io is
 			  sw        : in STD_LOGIC_VECTOR (3 downto 0);
            dataout   : out  STD_LOGIC_VECTOR (31 downto 0);
 			  salida    : out std_logic_vector(7 downto 0);
-			  sevenSegment: out std_logic_vector(7 downto 0);
-			  sevenSegmentEnable: out std_logic_vector(2 downto 0);
-			  hsync     : out STD_LOGIC;
-			  vsync     : out STD_LOGIC;
-			  R     : out STD_LOGIC;
-			  G     : out STD_LOGIC;
-			  B     : out STD_LOGIC
+			  sevenSegment : OUT std_logic_vector(7 downto 0);
+			  sevenSegmentEnable : OUT std_logic_vector(2 downto 0);
+			  hsync : OUT std_logic;
+		  	  vsync : OUT std_logic;
+			  R : OUT std_logic;
+			  G : OUT std_logic;
+			  B : OUT std_logic
+			  
 			  );
 end md_io;
 
@@ -88,29 +89,12 @@ architecture Behavioral of md_io is
 
 	COMPONENT salida_par
     Port ( sel        : in  STD_LOGIC;
-			  reset 		 : in std_logic;
+			  reset        : in  STD_LOGIC;
            write_cntl : in  STD_LOGIC;
            clk        : in  STD_LOGIC;
            data       : in  STD_LOGIC_VECTOR (7 downto 0);
            salida     : out  STD_LOGIC_VECTOR (7 downto 0)
 			);
-	END COMPONENT;
-	
-	COMPONENT vga_controlador
-	PORT(
-		clk50mhz : IN std_logic;
-		clk : in std_logic;
-		reset : IN std_logic;
-		writeBuffer : IN std_logic;
-		siEscribirBuffer : IN std_logic;
-		dir : IN std_logic_vector(9 downto 0);
-		datos : IN std_logic_vector(31 downto 0);          
-		hsync : OUT std_logic;
-		vsync : OUT std_logic;
-		R : OUT std_logic;
-		G : OUT std_logic;
-		B : OUT std_logic
-		);
 	END COMPONENT;
 	
 	COMPONENT seven_seg
@@ -124,14 +108,31 @@ architecture Behavioral of md_io is
 		SevenSegmentEnable : OUT std_logic_vector(2 downto 0)
 		);
 	END COMPONENT;
-
+	
+	COMPONENT vga_controlador
+	PORT(
+		clk50mhz : IN std_logic;
+		clk : IN std_logic;
+		reset : IN std_logic;
+		writeBuffer : IN std_logic;
+		siEscribirBuffer : IN std_logic;
+		dir : IN std_logic_vector(9 downto 0);
+		datos : IN std_logic_vector(31 downto 0);          
+		hsync : OUT std_logic;
+		vsync : OUT std_logic;
+		R : OUT std_logic;
+		G : OUT std_logic;
+		B : OUT std_logic
+		);
+	END COMPONENT;
 
 -- Definimos seales para interconexin interna en este mdulo
 	signal csMem       : STD_LOGIC;
 	signal csSalidaPar : STD_LOGIC;
+	signal csLCD       : STD_LOGIC;
+	signal csVideoBuffer       : STD_LOGIC;
+	signal cs7seg       : STD_LOGIC;
 	signal csEntrada   : STD_LOGIC;
-	signal cs7seg      : STD_LOGIC;
-	signal csVideoBuffer: std_logic;
 	signal datosMem    : STD_LOGIC_VECTOR (31 downto 0);
 	signal datosEntrada: STD_LOGIC_VECTOR (5 downto 0);
 	
@@ -178,9 +179,19 @@ begin
       salida => salida
 	);
 	
+	Inst_seven_seg: seven_seg PORT MAP(
+		sel => cs7seg,
+		reset => reset,
+		write_cnt2 => memwrite,
+		clk => clk,
+		data_in => datain(9 downto 0),
+		sevenSegment => sevenSegment,
+		SevenSegmentEnable => sevenSegmentEnable
+	);
+	
 	Inst_vga_controlador: vga_controlador PORT MAP(
 		clk50mhz => clk50mhz,
-		clk <= clk,
+		clk => clk,
 		reset => reset,
 		hsync => hsync,
 		vsync => vsync,
@@ -192,17 +203,6 @@ begin
 		G => G,
 		B => B
 	);
-	
-	Inst_seven_seg: seven_seg PORT MAP(
-		sel => cs7seg,
-		reset => reset,
-		write_cnt2 => memwrite,
-		clk => clk,
-		data_in => datain(9 downto 0),
-		sevenSegment => sevenSegment,
-		SevenSegmentEnable => sevenSegmentEnable
-	);
-
 
 end Behavioral;
 
