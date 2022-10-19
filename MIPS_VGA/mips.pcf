@@ -1,0 +1,45 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Tue Oct 18 20:48:49 2022
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "3.3";
+COMP "B" LOCATE = SITE "A11" LEVEL 1;
+COMP "G" LOCATE = SITE "C11" LEVEL 1;
+COMP "R" LOCATE = SITE "C9" LEVEL 1;
+COMP "rx" LOCATE = SITE "H17" LEVEL 1;
+COMP "tx" LOCATE = SITE "H18" LEVEL 1;
+COMP "reset1" LOCATE = SITE "F17" LEVEL 1;
+COMP "atn" LOCATE = SITE "J16" LEVEL 1;
+COMP "sw<0>" LOCATE = SITE "C17" LEVEL 1;
+COMP "sw<1>" LOCATE = SITE "C18" LEVEL 1;
+COMP "sw<2>" LOCATE = SITE "D17" LEVEL 1;
+COMP "sw<3>" LOCATE = SITE "D18" LEVEL 1;
+COMP "hsync" LOCATE = SITE "B12" LEVEL 1;
+COMP "north" LOCATE = SITE "E18" LEVEL 1;
+COMP "south" LOCATE = SITE "E16" LEVEL 1;
+COMP "vsync" LOCATE = SITE "A12" LEVEL 1;
+COMP "salida<0>" LOCATE = SITE "P15" LEVEL 1;
+COMP "salida<1>" LOCATE = SITE "P16" LEVEL 1;
+COMP "salida<2>" LOCATE = SITE "N15" LEVEL 1;
+COMP "salida<3>" LOCATE = SITE "N16" LEVEL 1;
+COMP "salida<4>" LOCATE = SITE "U17" LEVEL 1;
+COMP "salida<5>" LOCATE = SITE "U18" LEVEL 1;
+COMP "salida<6>" LOCATE = SITE "T17" LEVEL 1;
+COMP "salida<7>" LOCATE = SITE "T18" LEVEL 1;
+COMP "sevenSegmentEnable<0>" LOCATE = SITE "B2" LEVEL 1;
+COMP "sevenSegmentEnable<1>" LOCATE = SITE "A2" LEVEL 1;
+COMP "sevenSegmentEnable<2>" LOCATE = SITE "B3" LEVEL 1;
+COMP "sevenSegment<0>" LOCATE = SITE "A3" LEVEL 1;
+COMP "sevenSegment<1>" LOCATE = SITE "B4" LEVEL 1;
+COMP "sevenSegment<2>" LOCATE = SITE "A4" LEVEL 1;
+COMP "sevenSegment<3>" LOCATE = SITE "C4" LEVEL 1;
+COMP "sevenSegment<4>" LOCATE = SITE "C5" LEVEL 1;
+COMP "sevenSegment<5>" LOCATE = SITE "D6" LEVEL 1;
+COMP "sevenSegment<6>" LOCATE = SITE "C6" LEVEL 1;
+COMP "sevenSegment<7>" LOCATE = SITE "A5" LEVEL 1;
+COMP "reset0" LOCATE = SITE "F18" LEVEL 1;
+COMP "clk100mhz" LOCATE = SITE "V10" LEVEL 1;
+NET "clk100mhz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
+SCHEMATIC END;
+

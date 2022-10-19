@@ -1,1 +1,0 @@
-vhdtdtfi -prj VHDL_MIPS -o /home/maxi/Documentos/GitHub/BlockBreaker_SD2/VHDL_MIPS_VGA/contador_vertical.vhi -module contador_vertical -template /opt/Xilinx/14.7/ISE_DS/ISE/data/vhdlinst.tft -deleteonerror -lib work vga_cont_vert.vhd 
