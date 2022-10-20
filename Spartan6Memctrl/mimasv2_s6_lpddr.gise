@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="mimasv2_s6_lpddr.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="mimasv2_s6_lpddr.bld"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="mimasv2_s6_lpddr.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="mimasv2_s6_lpddr.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="mimasv2_s6_lpddr.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="mimasv2_s6_lpddr.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="mimasv2_s6_lpddr.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mimasv2_s6_lpddr.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="mimasv2_s6_lpddr.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="mimasv2_s6_lpddr.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="mimasv2_s6_lpddr.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="mimasv2_s6_lpddr_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="mimasv2_s6_lpddr_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="mimasv2_s6_lpddr_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="mimasv2_s6_lpddr_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="mimasv2_s6_lpddr_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="mimasv2_s6_lpddr_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="mimasv2_s6_lpddr_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1666284377" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1666284377">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1666284377" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-1755664630127156896" xil_pn:start_ts="1666284377">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1666284377" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="4293727948878124353" xil_pn:start_ts="1666284377">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1666284377" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1666284377">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1666284377" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-8923887276745830430" xil_pn:start_ts="1666284377">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1666284377" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="250970745293037926" xil_pn:start_ts="1666284377">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1666284377" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-1150542552885549173" xil_pn:start_ts="1666284377">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1666284390" xil_pn:in_ck="-3769908660642113306" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-8486975744815761488" xil_pn:start_ts="1666284377">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr.lso"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr.ngc"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr.ngr"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr.prj"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr.stx"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr.syr"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr.xst"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1666284437" xil_pn:in_ck="2423108657195247052" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-5581375131742844531" xil_pn:start_ts="1666284437">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1666284444" xil_pn:in_ck="-1474039081219390482" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-8641952075576329950" xil_pn:start_ts="1666284437">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr.bld"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr.ngd"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1666284456" xil_pn:in_ck="-3100950680877755761" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="1405206279585514545" xil_pn:start_ts="1666284444">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr_map.map"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr_map.mrp"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr_map.ngm"/>
+      <outfile xil_pn:name="mimasv2_s6_lpddr_map.xrpt"/>
+    </transform>
+  </transforms>
+
+</generated_project>
