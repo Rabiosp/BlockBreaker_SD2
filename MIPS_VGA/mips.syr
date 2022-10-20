@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> 
 Reading design: mips.prj
@@ -330,7 +330,7 @@ Elaborating entity <divCLK100a50> (architecture <Behavioral>) from library <work
 Synthesizing Unit <mips>.
     Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/MIPS_VGA/fuente/mips.vhd".
     Summary:
-	no macro.
+	inferred   3 Multiplexer(s).
 Unit <mips> synthesized.
 
 Synthesizing Unit <prog>.
@@ -809,7 +809,7 @@ Synthesizing Unit <image_generator>.
 	inferred   5 Adder/Subtractor(s).
 	inferred 790 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-	inferred  51 Multiplexer(s).
+	inferred  35 Multiplexer(s).
 Unit <image_generator> synthesized.
 
 Synthesizing Unit <mux32>.
@@ -912,7 +912,7 @@ Macro Statistics
  15-bit comparator greater                             : 2
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 224
+# Multiplexers                                         : 211
  1-bit 2-to-1 multiplexer                              : 42
  1-bit 24-to-1 multiplexer                             : 32
  1-bit 32-to-1 multiplexer                             : 1
@@ -921,9 +921,9 @@ Macro Statistics
  11-bit 2-to-1 multiplexer                             : 1
  15-bit 2-to-1 multiplexer                             : 2
  16-bit 2-to-1 multiplexer                             : 2
- 2-bit 2-to-1 multiplexer                              : 6
- 3-bit 2-to-1 multiplexer                              : 11
- 32-bit 2-to-1 multiplexer                             : 39
+ 2-bit 2-to-1 multiplexer                              : 7
+ 3-bit 2-to-1 multiplexer                              : 13
+ 32-bit 2-to-1 multiplexer                             : 23
  32-bit 31-to-1 multiplexer                            : 2
  32-bit 4-to-1 multiplexer                             : 7
  32-bit 7-to-1 multiplexer                             : 1
@@ -962,8 +962,8 @@ The following registers are absorbed into counter <contBytes>: 1 register on sig
 Unit <control_prog> synthesized (advanced).
 
 Synthesizing (advanced) Unit <image_generator>.
-The following registers are absorbed into counter <posy>: 1 register on signal <posy>.
 The following registers are absorbed into counter <conty>: 1 register on signal <conty>.
+The following registers are absorbed into counter <posy>: 1 register on signal <posy>.
 The following registers are absorbed into counter <contx>: 1 register on signal <contx>.
 The following registers are absorbed into counter <posx>: 1 register on signal <posx>.
 Unit <image_generator> synthesized (advanced).
@@ -1120,7 +1120,7 @@ Macro Statistics
  15-bit comparator greater                             : 2
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 281
+# Multiplexers                                         : 268
  1-bit 2-to-1 multiplexer                              : 42
  1-bit 24-to-1 multiplexer                             : 32
  1-bit 31-to-1 multiplexer                             : 64
@@ -1129,9 +1129,9 @@ Macro Statistics
  10-bit 2-to-1 multiplexer                             : 20
  15-bit 2-to-1 multiplexer                             : 2
  16-bit 2-to-1 multiplexer                             : 1
- 2-bit 2-to-1 multiplexer                              : 6
- 3-bit 2-to-1 multiplexer                              : 11
- 32-bit 2-to-1 multiplexer                             : 39
+ 2-bit 2-to-1 multiplexer                              : 7
+ 3-bit 2-to-1 multiplexer                              : 13
+ 32-bit 2-to-1 multiplexer                             : 23
  32-bit 4-to-1 multiplexer                             : 7
  32-bit 7-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 27
@@ -1231,10 +1231,6 @@ INFO:Xst:2261 - The FF/Latch <Inst_md_io/Inst_seven_seg/valorD_9> in Unit <mips>
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block mips, actual ratio is 71.
-FlipFlop Inst_pc/s_10 has been replicated 1 time(s)
-FlipFlop Inst_pc/s_9 has been replicated 1 time(s)
-FlipFlop inst_prog/Inst_control_prog/state_FSM_FFd11 has been replicated 1 time(s)
-FlipFlop inst_prog/Inst_control_prog/state_FSM_FFd12 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -1246,8 +1242,8 @@ Unit <mips> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 2040
- Flip-Flops                                            : 2040
+# Registers                                            : 2036
+ Flip-Flops                                            : 2036
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -1272,26 +1268,25 @@ Top Level Output File Name         : mips.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3766
+# BELS                             : 3731
 #      GND                         : 1
 #      INV                         : 18
 #      LUT1                        : 70
-#      LUT2                        : 82
-#      LUT3                        : 102
-#      LUT4                        : 322
-#      LUT5                        : 542
-#      LUT6                        : 2102
+#      LUT2                        : 83
+#      LUT3                        : 99
+#      LUT4                        : 295
+#      LUT5                        : 273
+#      LUT6                        : 2375
 #      MUXCY                       : 223
-#      MUXF7                       : 113
+#      MUXF7                       : 103
 #      VCC                         : 1
 #      XORCY                       : 190
-# FlipFlops/Latches                : 2041
-#      FD                          : 528
-#      FDE                         : 1085
+# FlipFlops/Latches                : 2037
+#      FD                          : 96
+#      FDE                         : 1001
 #      FDR                         : 43
-#      FDRE                        : 149
+#      FDRE                        : 885
 #      FDS                         : 12
-#      FDSE                        : 224
 # RAMS                             : 160
 #      RAM128X1D                   : 128
 #      RAM128X1S                   : 32
@@ -1300,8 +1295,8 @@ Primitive and Black Box Usage:
 # Clock Buffers                    : 3
 #      BUFG                        : 2
 #      BUFGP                       : 1
-# IO Buffers                       : 40
-#      IBUF                        : 10
+# IO Buffers                       : 43
+#      IBUF                        : 13
 #      OBUF                        : 30
 
 Device utilization summary:
@@ -1311,23 +1306,23 @@ Selected Device : 6slx9csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2041  out of  11440    17%  
- Number of Slice LUTs:                 3815  out of   5720    66%  
-    Number used as Logic:              3238  out of   5720    56%  
+ Number of Slice Registers:            2037  out of  11440    17%  
+ Number of Slice LUTs:                 3790  out of   5720    66%  
+    Number used as Logic:              3213  out of   5720    56%  
     Number used as Memory:              577  out of   1440    40%  
        Number used as RAM:              576
        Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4631
-   Number with an unused Flip Flop:    2590  out of   4631    55%  
-   Number with an unused LUT:           816  out of   4631    17%  
-   Number of fully used LUT-FF pairs:  1225  out of   4631    26%  
-   Number of unique control sets:        64
+ Number of LUT Flip Flop pairs used:   4608
+   Number with an unused Flip Flop:    2571  out of   4608    55%  
+   Number with an unused LUT:           818  out of   4608    17%  
+   Number of fully used LUT-FF pairs:  1219  out of   4608    26%  
+   Number of unique control sets:        61
 
 IO Utilization: 
- Number of IOs:                          41
- Number of bonded IOBs:                  41  out of    200    20%  
+ Number of IOs:                          44
+ Number of bonded IOBs:                  44  out of    200    22%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
@@ -1355,7 +1350,7 @@ Clock Signal                                                  | Clock buffer(FF 
 --------------------------------------------------------------+------------------------------------------------------------------+-------+
 clk100mhz                                                     | BUFGP                                                            | 1     |
 Inst_divCLK100a50/tmp                                         | BUFG                                                             | 38    |
-Inst_divisorCLK/tmp                                           | BUFG                                                             | 2151  |
+Inst_divisorCLK/tmp                                           | BUFG                                                             | 2147  |
 Inst_md_io/Inst_vga_controlador/Inst_generador_hsync/hsync_aux| NONE(Inst_md_io/Inst_vga_controlador/Inst_image_generator/posy_4)| 10    |
 Inst_md_io/Inst_seven_seg/clkreduc                            | NONE(Inst_md_io/Inst_seven_seg/contador_1)                       | 2     |
 --------------------------------------------------------------+------------------------------------------------------------------+-------+
@@ -1369,10 +1364,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 17.090ns (Maximum Frequency: 58.515MHz)
+   Minimum period: 18.599ns (Maximum Frequency: 53.766MHz)
    Minimum input arrival time before clock: 3.939ns
    Maximum output required time after clock: 6.170ns
-   Maximum combinational path delay: No path found
+   Maximum combinational path delay: 5.330ns
 
 Timing Details:
 ---------------
@@ -1427,38 +1422,39 @@ Delay:               5.945ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Inst_divisorCLK/tmp'
-  Clock period: 17.090ns (frequency: 58.515MHz)
-  Total number of paths / destination ports: 3260505188 / 5255
+  Clock period: 18.599ns (frequency: 53.766MHz)
+  Total number of paths / destination ports: 3727734464 / 6191
 -------------------------------------------------------------------------
-Delay:               17.090ns (Levels of Logic = 15)
-  Source:            Inst_pc/s_9_1 (FF)
-  Destination:       Inst_reg/reg_0_31 (FF)
+Delay:               18.599ns (Levels of Logic = 15)
+  Source:            Inst_pc/s_9 (FF)
+  Destination:       Inst_reg/reg_0_24 (FF)
   Source Clock:      Inst_divisorCLK/tmp rising
   Destination Clock: Inst_divisorCLK/tmp rising
 
-  Data Path: Inst_pc/s_9_1 to Inst_reg/reg_0_31
+  Data Path: Inst_pc/s_9 to Inst_reg/reg_0_24
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               5   0.447   0.819  Inst_pc/s_9_1 (Inst_pc/s_9_1)
-     LUT6:I4->O          278   0.203   2.069  inst_LPM_MUX32191 (instruccion<22>)
-     LUT6:I5->O            1   0.205   0.827  Inst_reg/mux_81 (Inst_reg/mux_81)
-     LUT6:I2->O            1   0.203   0.000  Inst_reg/mux_3 (Inst_reg/mux_3)
-     MUXF7:I1->O           2   0.140   0.617  Inst_reg/mux_2_f7 (Inst_reg/GND_20_o_X_20_o_wide_mux_2_OUT<0>)
-     LUT6:I5->O           10   0.205   0.857  Inst_reg/Mmux_rd1111 (lee_reg1<0>)
-     LUT6:I5->O          110   0.205   1.904  Inst_alu/Mmux_shift_amount11 (Inst_alu/shift_amount<0>)
-     LUT6:I5->O            9   0.205   0.934  Inst_alu/Sh1201 (Inst_alu/Sh120)
-     LUT4:I2->O            1   0.203   0.580  Inst_alu/Mmux_s_mux317 (Inst_alu/Mmux_s_mux316)
+     FD:C->Q              37   0.447   1.467  Inst_pc/s_9 (Inst_pc/s_9)
+     LUT6:I4->O           12   0.203   1.253  inst_LPM_MUX32161 (ext_signo<1>)
+     LUT6:I1->O            5   0.203   0.715  Inst_jr_detect/jr<5>1 (jr_detect_sig)
+     LUT6:I5->O            7   0.205   0.774  Inst_control1/Mmux_aluop21 (aluop<1>)
+     LUT5:I4->O          110   0.205   2.008  Inst_alu_control/s<3> (alu_cntl<1>)
+     LUT6:I4->O          120   0.203   1.930  Inst_alu/Mmux_shift_amount41 (Inst_alu/shift_amount<3>)
+     LUT6:I5->O            4   0.205   0.912  Inst_alu/Mmux_s_mux210111 (Inst_alu/Mmux_s_mux21011)
+     LUT4:I1->O            1   0.205   0.580  Inst_alu/Mmux_s_mux317 (Inst_alu/Mmux_s_mux316)
      LUT5:I4->O            1   0.205   0.580  Inst_alu/Mmux_s_mux318 (Inst_alu/Mmux_s_mux317)
-     LUT6:I5->O            1   0.205   0.000  Inst_alu/Mmux_s_mux319_G (N996)
-     MUXF7:I1->O          39   0.140   1.392  Inst_alu/Mmux_s_mux319 (salida_alu<8>)
-     LUT5:I4->O            2   0.205   0.617  Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0354_inv1_SW0_SW0 (N440)
-     LUT6:I5->O           16   0.205   1.005  Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0354_inv1_1 (Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0354_inv11)
-     LUT6:I5->O           32   0.205   1.291  Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0362_inv1 (Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0362_inv)
-     FDE:CE                    0.322          Inst_md_io/Inst_vga_controlador/Inst_image_generator/videoBuffer_4_0
+     LUT6:I5->O            1   0.205   0.000  Inst_alu/Mmux_s_mux319_G (N745)
+     MUXF7:I1->O          39   0.140   1.391  Inst_alu/Mmux_s_mux319 (salida_alu<8>)
+     RAM128X1S:A6->O       4   0.148   0.788  Inst_md_io/Inst_md/Mram_mem018 (Inst_md_io/Inst_md/hwtemp1<7>)
+     LUT6:I4->O            1   0.203   0.808  Inst_md_io/Inst_md/Mmux_dataout1012 (Inst_md_io/Inst_md/Mmux_dataout1012)
+     LUT6:I3->O           16   0.205   1.005  Inst_md_io/Inst_md/Mmux_dataout1014 (Inst_md_io/Inst_md/Mmux_dataout101)
+     LUT6:I5->O            2   0.205   0.617  Inst_mux32_lui/Mmux_s171 (Inst_mux32_lui/Mmux_s17)
+     LUT6:I5->O           16   0.205   0.000  Inst_mux32_lui/Mmux_s172 (escribe_reg<24>)
+     FDE:D                     0.102          Inst_reg/reg_1_24
     ----------------------------------------
-    Total                     16.995ns (3.503ns logic, 13.492ns route)
-                                       (20.6% logic, 79.4% route)
+    Total                     18.599ns (3.773ns logic, 14.826ns route)
+                                       (20.3% logic, 79.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Inst_md_io/Inst_vga_controlador/Inst_generador_hsync/hsync_aux'
@@ -1476,7 +1472,7 @@ Delay:               3.967ns (Levels of Logic = 1)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q           197   0.447   2.279  Inst_md_io/Inst_vga_controlador/Inst_image_generator/posy_1 (Inst_md_io/Inst_vga_controlador/Inst_image_generator/posy_1)
-     LUT6:I3->O            5   0.205   0.714  Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0489_inv (Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0489_inv)
+     LUT6:I3->O            5   0.205   0.714  Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0522_inv (Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0522_inv)
      FDRE:CE                   0.322          Inst_md_io/Inst_vga_controlador/Inst_image_generator/posy_0
     ----------------------------------------
     Total                      3.967ns (0.974ns logic, 2.993ns route)
@@ -1506,7 +1502,7 @@ Delay:               2.163ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Inst_divisorCLK/tmp'
-  Total number of paths / destination ports: 223 / 222
+  Total number of paths / destination ports: 221 / 220
 -------------------------------------------------------------------------
 Offset:              3.939ns (Levels of Logic = 2)
   Source:            atn (PAD)
@@ -1570,7 +1566,7 @@ Offset:              6.170ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Inst_divCLK100a50/tmp'
   Total number of paths / destination ports: 10 / 10
 -------------------------------------------------------------------------
-Offset:              3.820ns (Levels of Logic = 1)
+Offset:              4.524ns (Levels of Logic = 2)
   Source:            Inst_md_io/Inst_vga_controlador/Inst_image_generator/G (FF)
   Destination:       Red<2> (PAD)
   Source Clock:      Inst_divCLK100a50/tmp rising
@@ -1579,11 +1575,31 @@ Offset:              3.820ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              8   0.447   0.802  Inst_md_io/Inst_vga_controlador/Inst_image_generator/G (Inst_md_io/Inst_vga_controlador/Inst_image_generator/G)
+     FDR:C->Q              3   0.447   0.651  Inst_md_io/Inst_vga_controlador/Inst_image_generator/G (Inst_md_io/Inst_vga_controlador/Inst_image_generator/G)
+     LUT2:I1->O            3   0.205   0.650  Green<1>1 (Green_1_OBUF)
+     OBUF:I->O                 2.571          Green_2_OBUF (Green<2>)
+    ----------------------------------------
+    Total                      4.524ns (3.223ns logic, 1.301ns route)
+                                       (71.2% logic, 28.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Delay:               5.330ns (Levels of Logic = 3)
+  Source:            siRojo (PAD)
+  Destination:       Red<2> (PAD)
+
+  Data Path: siRojo to Red<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.684  siRojo_IBUF (siRojo_IBUF)
+     LUT2:I0->O            3   0.203   0.650  Red<1>1 (Red_1_OBUF)
      OBUF:I->O                 2.571          Red_2_OBUF (Red<2>)
     ----------------------------------------
-    Total                      3.820ns (3.018ns logic, 0.802ns route)
-                                       (79.0% logic, 21.0% route)
+    Total                      5.330ns (3.996ns logic, 1.334ns route)
+                                       (75.0% logic, 25.0% route)
 
 =========================================================================
 
@@ -1605,7 +1621,7 @@ Clock to Setup on destination clock Inst_divisorCLK/tmp
                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------+---------+---------+---------+---------+
-Inst_divisorCLK/tmp|   17.090|         |         |         |
+Inst_divisorCLK/tmp|   18.599|         |         |         |
 -------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Inst_md_io/Inst_seven_seg/clkreduc
@@ -1613,7 +1629,7 @@ Clock to Setup on destination clock Inst_md_io/Inst_seven_seg/clkreduc
                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------+---------+---------+---------+---------+
-Inst_divisorCLK/tmp               |    5.477|         |         |         |
+Inst_divisorCLK/tmp               |    4.600|         |         |         |
 Inst_md_io/Inst_seven_seg/clkreduc|    2.163|         |         |         |
 ----------------------------------+---------+---------+---------+---------+
 
@@ -1623,7 +1639,7 @@ Clock to Setup on destination clock Inst_md_io/Inst_vga_controlador/Inst_generad
 Source Clock                                                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------------------------------------+---------+---------+---------+---------+
 Inst_divCLK100a50/tmp                                         |         |         |    3.015|         |
-Inst_divisorCLK/tmp                                           |         |         |    6.641|         |
+Inst_divisorCLK/tmp                                           |         |         |    5.764|         |
 Inst_md_io/Inst_vga_controlador/Inst_generador_hsync/hsync_aux|         |         |    3.967|         |
 --------------------------------------------------------------+---------+---------+---------+---------+
 
@@ -1638,13 +1654,13 @@ clk100mhz      |    1.913|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 21.37 secs
+Total REAL time to Xst completion: 101.00 secs
+Total CPU time to Xst completion: 95.88 secs
  
 --> 
 
 
-Total memory usage is 420076 kilobytes
+Total memory usage is 422468 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

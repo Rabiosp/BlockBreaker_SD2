@@ -55,6 +55,9 @@ entity mips is
 		sevenSegment : OUT std_logic_vector(7 downto 0);
 		sevenSegmentEnable : OUT std_logic_vector(2 downto 0);
 		--VGA
+		siRojo : IN std_logic;
+		siVerde : in std_logic;
+		siAzul: in std_logic;
 		hsync : OUT std_logic;
 		vsync : OUT std_logic;
 		Red : OUT std_logic_vector(2 downto 0);
@@ -532,8 +535,9 @@ begin
 		clk50mhz => clk50mhz
 	);
 
-Red <= R&R&R;
-Green <= G&G&G;
-Blue <= B&B;
+
+Red <= R&R&R when siRojo='0' else "000";
+Green <= G&G&G when siVerde='0' else "000";
+Blue <= B&B when siAzul='0' else "00";
 end Behavioral;
 

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Oct 18 23:30:40 2022
+// Written by: Map P.20131013 on Wed Oct 19 15:33:41 2022
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -13,14 +13,15 @@ COMP "Blue<1>" LOCATE = SITE "B11" LEVEL 1;
 COMP "Green<0>" LOCATE = SITE "C10" LEVEL 1;
 COMP "Green<1>" LOCATE = SITE "A10" LEVEL 1;
 COMP "Green<2>" LOCATE = SITE "C11" LEVEL 1;
-COMP "sw<0>" LOCATE = SITE "C17" LEVEL 1;
-COMP "sw<1>" LOCATE = SITE "C18" LEVEL 1;
-COMP "sw<2>" LOCATE = SITE "D17" LEVEL 1;
-COMP "sw<3>" LOCATE = SITE "D18" LEVEL 1;
+COMP "sw<0>" LOCATE = SITE "M16" LEVEL 1;
+COMP "sw<1>" LOCATE = SITE "L17" LEVEL 1;
+COMP "sw<2>" LOCATE = SITE "K17" LEVEL 1;
+COMP "sw<3>" LOCATE = SITE "K18" LEVEL 1;
 COMP "hsync" LOCATE = SITE "B12" LEVEL 1;
-COMP "north" LOCATE = SITE "E18" LEVEL 1;
-COMP "south" LOCATE = SITE "E16" LEVEL 1;
+COMP "north" LOCATE = SITE "M18" LEVEL 1;
+COMP "south" LOCATE = SITE "L18" LEVEL 1;
 COMP "vsync" LOCATE = SITE "A12" LEVEL 1;
+COMP "siVerde" LOCATE = SITE "C18" LEVEL 1;
 COMP "salida<0>" LOCATE = SITE "T18" LEVEL 1;
 COMP "salida<1>" LOCATE = SITE "T17" LEVEL 1;
 COMP "salida<2>" LOCATE = SITE "U18" LEVEL 1;
@@ -43,6 +44,8 @@ COMP "sevenSegment<4>" LOCATE = SITE "C5" LEVEL 1;
 COMP "sevenSegment<5>" LOCATE = SITE "D6" LEVEL 1;
 COMP "sevenSegment<6>" LOCATE = SITE "C6" LEVEL 1;
 COMP "sevenSegment<7>" LOCATE = SITE "A5" LEVEL 1;
+COMP "siAzul" LOCATE = SITE "C17" LEVEL 1;
+COMP "siRojo" LOCATE = SITE "D17" LEVEL 1;
 COMP "reset0" LOCATE = SITE "F18" LEVEL 1;
 COMP "clk100mhz" LOCATE = SITE "V10" LEVEL 1;
 NET "clk100mhz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
