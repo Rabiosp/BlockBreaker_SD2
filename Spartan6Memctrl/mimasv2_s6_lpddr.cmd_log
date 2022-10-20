@@ -1,3 +1,0 @@
-xst -intstyle ise -ifn "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/Spartan6Memctrl/mimasv2_s6_lpddr.xst" -ofn "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/Spartan6Memctrl/mimasv2_s6_lpddr.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc mimasv2_s6_lpddr/user_design/par/mimasv2_s6_lpddr.ucf -p xc6slx9-csg324-3 mimasv2_s6_lpddr.ngc mimasv2_s6_lpddr.ngd  
-map -intstyle ise -p xc6slx9-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mimasv2_s6_lpddr_map.ncd mimasv2_s6_lpddr.ngd mimasv2_s6_lpddr.pcf 
