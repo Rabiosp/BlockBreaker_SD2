@@ -1,0 +1,16 @@
+[Inputs]
+hsync
+blank
+clk50MHz
+clk
+reset
+writeBuffer
+siEscribirBuffer
+=vctr[9:0]=
+=dir[9:0]=
+=datos[7:0]=
+[Outputs]
+=R[2:0]=
+=G[2:0]=
+=B[1:0]=
+[BiDir]

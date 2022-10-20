@@ -88,12 +88,14 @@ architecture Behavioral of mips is
       clk : out  STD_LOGIC
 		);
 	END COMPONENT;
+	
 	COMPONENT JR_detect
    PORT( 
 		funct : IN  STD_LOGIC_VECTOR (5 downto 0);
 		jr : OUT  STD_LOGIC
 		);
 	END COMPONENT;
+	
 	COMPONENT antirebote
 	PORT(
 		boton1 : IN std_logic;
@@ -102,6 +104,7 @@ architecture Behavioral of mips is
 		reset : OUT std_logic
 		);
 	END COMPONENT;
+	
 	COMPONENT pc	-- Program Counter
 	PORT(
 		e : IN std_logic_vector(31 downto 0);
@@ -110,12 +113,14 @@ architecture Behavioral of mips is
 		s : OUT std_logic_vector(31 downto 0)
 		);
 	END COMPONENT;
+	
 	COMPONENT suma_4	-- sumador para realizar PC + 4
 	PORT(
 		e : IN std_logic_vector(31 downto 0);          
 		s : OUT std_logic_vector(31 downto 0)
 		);
 	END COMPONENT;
+	
 	COMPONENT mi	-- Memoria de Instrucciones
 	PORT(
 		dir : IN std_logic_vector(NUM_BITS_MEMORIA_INSTRUCCIONES-1 downto 0);
@@ -128,6 +133,7 @@ architecture Behavioral of mips is
 		clk   : in std_logic
 		);
 	END COMPONENT;
+	
 	COMPONENT mux5_4a1
 	PORT(
 		e0 : IN std_logic_vector(4 downto 0);
@@ -138,6 +144,7 @@ architecture Behavioral of mips is
 		s : OUT std_logic_vector(4 downto 0)
 		);
 	END COMPONENT;
+	
 	COMPONENT reg
 	PORT(
 		rr1 : IN std_logic_vector(4 downto 0);
@@ -151,12 +158,14 @@ architecture Behavioral of mips is
 		rd2 : OUT std_logic_vector(31 downto 0)
 		);
 	END COMPONENT;
+	
 	COMPONENT shift_left16
 	PORT(
 		ent : IN std_logic_vector(15 downto 0);
 		sal : OUT std_logic_vector(31 downto 0)       
 		);
 	END COMPONENT;
+	
 	COMPONENT alu
 	Port ( 
 		op1     : in  STD_LOGIC_VECTOR (31 downto 0);
@@ -167,6 +176,7 @@ architecture Behavioral of mips is
 		zero    : out STD_LOGIC
 		);
 	END COMPONENT;
+	
 	COMPONENT control_branch
 	PORT(
 		branch : IN std_logic;
@@ -175,6 +185,7 @@ architecture Behavioral of mips is
 		sal : OUT std_logic
 		);
 	END COMPONENT;
+	
 	COMPONENT exten_signo_cero
 	PORT(
 		e : IN std_logic_vector(15 downto 0);
@@ -182,6 +193,7 @@ architecture Behavioral of mips is
 		s : OUT std_logic_vector(31 downto 0)
 		);
 	END COMPONENT;
+	
 	COMPONENT md_io
 	PORT(
 		dir : IN std_logic_vector(31 downto 0);
@@ -206,6 +218,7 @@ architecture Behavioral of mips is
 		B : OUT std_logic
 		);
 	END COMPONENT;
+	
 	COMPONENT mux32
 	PORT(
 		e0 : IN std_logic_vector(31 downto 0);
@@ -214,6 +227,7 @@ architecture Behavioral of mips is
 		s : OUT std_logic_vector(31 downto 0)
 		);
 	END COMPONENT;
+	
 	COMPONENT mux32_4a1
 	PORT(
 		e0 : IN std_logic_vector(31 downto 0);
@@ -224,18 +238,21 @@ architecture Behavioral of mips is
 		s : OUT std_logic_vector(31 downto 0)
 		);
 	END COMPONENT;
+	
 	COMPONENT shift_left
 	PORT(
 		e : IN std_logic_vector(29 downto 0);          
 		s : OUT std_logic_vector(31 downto 0)
 		);
 	END COMPONENT;
+	
 	COMPONENT shift_left_j
    PORT( 
 		ent : IN  STD_LOGIC_VECTOR (25 downto 0);
 		sal : OUT STD_LOGIC_VECTOR (27 downto 0)
 		);
 	END COMPONENT;
+	
 	COMPONENT sumador32
 	PORT(
 		e1 : IN std_logic_vector(31 downto 0);
@@ -252,6 +269,7 @@ architecture Behavioral of mips is
 		s : OUT std_logic_vector(3 downto 0)
 		);
 	END COMPONENT;
+	
 	COMPONENT control1
 	PORT(
 		op          : in  STD_LOGIC_VECTOR (5 downto 0);
@@ -273,6 +291,7 @@ architecture Behavioral of mips is
 		Zero_extend : out STD_LOGIC
 		);
 	END COMPONENT;
+	
 	COMPONENT divCLK100a50
 	PORT(
 		clk100mhz : IN std_logic;          
@@ -539,5 +558,6 @@ begin
 Red <= R&R&R when siRojo='0' else "000";
 Green <= G&G&G when siVerde='0' else "000";
 Blue <= B&B when siAzul='0' else "00";
+
 end Behavioral;
 

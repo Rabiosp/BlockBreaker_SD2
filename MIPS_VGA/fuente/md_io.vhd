@@ -71,6 +71,7 @@ architecture Behavioral of md_io is
 		csParPort : OUT std_logic;
 		cs7seg : OUT std_logic;
 		csVideoBuffer : OUT std_logic;
+		csMillis : OUT std_logic;
 		csEntrada : OUT std_logic
 		);
 	END COMPONENT;
@@ -125,6 +126,16 @@ architecture Behavioral of md_io is
 		B : OUT std_logic
 		);
 	END COMPONENT;
+	
+	COMPONENT contador_miliseg
+	PORT(
+		clk : IN std_logic;
+		reset : IN std_logic;
+		escribir : IN std_logic;
+		csMilliseg : IN std_logic;          
+		miliseg : OUT std_logic_vector(31 downto 0)
+		);
+	END COMPONENT;
 
 -- Definimos seales para interconexin interna en este mdulo
 	signal csMem       : STD_LOGIC;
@@ -132,15 +143,19 @@ architecture Behavioral of md_io is
 	signal csLCD       : STD_LOGIC;
 	signal csVideoBuffer       : STD_LOGIC;
 	signal cs7seg       : STD_LOGIC;
+	signal csMillis       : STD_LOGIC;
 	signal csEntrada   : STD_LOGIC;
 	signal datosMem    : STD_LOGIC_VECTOR (31 downto 0);
 	signal datosEntrada: STD_LOGIC_VECTOR (5 downto 0);
+	signal datosMilisegundos : STD_LOGIC_VECTOR (31 downto 0);
+	signal pixel : std_logic_VECTOR (7 downto 0);
 	
 begin
 
 	-- Multiplexor de salida
 	dataout <= datosMem                                    when csMem = '1'     else
 			     "00000000000000000000000000" & datosEntrada when csEntrada = '1' else
+				  datosMilisegundos									 when csMillis = '1'  else
 			     (others => '0');
 
 	Inst_entrada: entrada PORT MAP (
@@ -156,6 +171,7 @@ begin
 		csParPort => csSalidaPar,
 		cs7seg => cs7seg,
 		csVideoBuffer => csVideoBuffer,
+		csMillis => csMillis,
 		csEntrada => csEntrada
 	);
 
@@ -202,6 +218,14 @@ begin
 		R => R,
 		G => G,
 		B => B
+	);
+	
+	Inst_contador_miliseg: contador_miliseg PORT MAP(
+		clk => clk,
+		reset => reset,
+		miliseg => datosMilisegundos,
+		escribir => memwrite,
+		csMilliseg => csMillis
 	);
 
 end Behavioral;

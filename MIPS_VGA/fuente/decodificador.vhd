@@ -35,6 +35,7 @@ entity decodificador is
            csParPort : out  STD_LOGIC;
 			  cs7seg		: out  STD_LOGIC;
 			  csVideoBuffer		: out  STD_LOGIC;
+			  csMillis : out std_logic;
 			  csEntrada : out STD_LOGIC);
 end decodificador;
 
@@ -42,24 +43,22 @@ architecture Behavioral of decodificador is
 
 begin
 	-- memoria
-	csMem     <= '1' when ent(31 downto 16) = X"1001" else
-	             '0';
+	csMem     <= '1' when ent(31 downto 16) = X"1001" else '0';
 	
 	-- Puerto paralelo de salida
-	csParPort <= '1' when ent = X"FFFF8000" else
-	             '0';
+	csParPort <= '1' when ent = X"FFFF8000" else '0';
 	
 	-- habilitador de lectura de las llaves
-	csEntrada <= '1' when ent = X"FFFFD000" else
-					 '0';
+	csEntrada <= '1' when ent = X"FFFFD000" else '0';
 	
 	-- habilitador de escritura de 7 segmentos
-	cs7seg <= '1' when ent = X"FFFFE000" else
-					 '0';
+	cs7seg <= '1' when ent = X"FFFFE000" else '0';
 	
 	-- habilitador de escritura de buffer video
-	csVideoBuffer <= '1' when ent(31 downto 12) = X"FFFFA" else
-					 '0';
+	csVideoBuffer <= '1' when ent(31 downto 12) = X"FFFFA" else '0';
+					 
+	-- habilitador de escritura de buffer video
+	csMillis <= '1' when ent = X"FFFFB000" else '0';
 					 
 end Behavioral;
 

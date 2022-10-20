@@ -226,16 +226,16 @@ with digito select
          "10001110" when "1111",   --F
          "11000000" when others;   --0
 
-with std_logic_vector(contador) select
-	sevenSegmentEnable <= "110" when "00",
-								 "101" when "01",
-								 "011" when "10",
+with contador select
+	sevenSegmentEnable <= "110" when to_unsigned(0,2),
+								 "101" when to_unsigned(1,2),
+								 "011" when to_unsigned(2,2),
 								 "111" when others;
 
-with std_logic_vector(contador) select
-	digito <= U when "00",
-				 D when "01",
-				 C when "10",
+with contador select
+	digito <= U when to_unsigned(0,2),
+				 D when to_unsigned(1,2),
+				 C when to_unsigned(2,2),
 				 "1111" when others;
 
 
