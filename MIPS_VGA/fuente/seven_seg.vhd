@@ -90,7 +90,7 @@ begin
 	if(clk'event and clk='1') then
 		--centena
 		if (valorC>999) then
-			C <= "1111";
+			C <= "1110";
 			valorD <= valorC;
 		elsif (valorC>=900) then
 			C <= "1001";
@@ -120,7 +120,7 @@ begin
 			C <= "0001";
 			valorD <= valorC-100;
 		else
-			C <= "0000";
+			C <= "1111";
 			valorD <= valorC;
 		end if;
 	end if;
@@ -131,7 +131,7 @@ begin
 	if(clk'event and clk='1') then
 		--Decena
 		if (valorD>99) then
-			D <= "1111";
+			D <= "1110";
 			valorU <= valorD;
 		elsif (valorD>=90) then
 			D <= "1001";
@@ -161,7 +161,11 @@ begin
 			D <= "0001";
 			valorU <= valorD-10;
 		else
-			D <= "0000";
+			if(C="1111")then
+				D <= "1111";
+			else 
+				D <= "0000";
+			end if;
 			valorU <= valorD;
 		end if;
 	end if;
@@ -172,7 +176,7 @@ begin
 	if(clk'event and clk='1') then
 		--Unidad
 		if (valorU>9) then
-			U <= "1111";
+			U <= "1110";
 		elsif (valorU=9) then
 			U <= "1001";
 		elsif (valorU=8) then
@@ -223,7 +227,7 @@ with digito select
          "11000110" when "1100",   --C
          "10100001" when "1101",   --d
          "10000110" when "1110",   --E
-         "10001110" when "1111",   --F
+         "11111111" when "1111",   --F (todo apagado)
          "11000000" when others;   --0
 
 with contador select

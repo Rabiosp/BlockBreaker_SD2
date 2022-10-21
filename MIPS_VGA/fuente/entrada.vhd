@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: Universidad Católica
--- Engineer: Vicente González
+-- Company: Universidad Catlica
+-- Engineer: Vicente Gonzlez
 -- 
 -- Create Date:    16:36:42 06/13/2019 
 -- Design Name: 
@@ -40,7 +40,7 @@ architecture Behavioral of entrada is
 
 begin
 
-	alMIPS <= sw & south & north;
+	alMIPS <= not(sw) & not(south) & not(north);
 
 end Behavioral;
 
