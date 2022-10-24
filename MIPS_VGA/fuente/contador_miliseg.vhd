@@ -52,7 +52,7 @@ begin
 					contador <= to_unsigned(0,15);
 				end if;
 			else
-				if(contador<24999)then
+				if(contador<19999)then
 					contador <= contador + 1;
 					Milisegundos <= Milisegundos;
 				else
