@@ -6,37 +6,16 @@
 	dirMillis:	.word 0xFFFFB000
 	
 .text
-	##Segmento donde se cargan las constantes a la memoria
-	lui $t0,0x1001
-	ori $t0, $t0, 0x0000
-	lui $t1,0xFFFF
-	ori $t1, $t1, 0xA000 
-	sw $t1,0($t0)
-	addi $t0,$t0,4
-	lui $t1,0xFFFF
-	ori $t1, $t1, 0xE000 
-	sw $t1,0($t0)
-	addi $t0,$t0,4
-	lui $t1,0xFFFF
-	ori $t1, $t1, 0x8000 
-	sw $t1,0($t0)
-	addi $t0,$t0,4
-	lui $t1,0xFFFF
-	ori $t1, $t1, 0xD000 
-	sw $t1,0($t0)
-	addi $t0,$t0,4
-	lui $t1,0xFFFF
-	ori $t1, $t1, 0xB000 
-	sw $t1,0($t0)
-	
+	jal data
+
 	#Se carga en el 7 seg
-	addi $t0, $zero, 169
-	lw $t1,dir7seg
-	sw $t0, 0($t1)
+	addi	$t0, $zero, 169
+	lw	$t1,dir7seg
+	sw	$t0, 0($t1)
 	#Se carga en los LEDs
-	addi $t0, $zero, 0x00A7
-	lw $t1,dirLEDS
-	sw $t0, 0($t1)
+	addi 	$t0, $zero, 0x00A7
+	lw 	$t1,dirLEDS
+	sw 	$t0, 0($t1)
 	
 	##Se imprime la primera pantalla de VGA
 	addi $t0, $zero, 1
@@ -98,3 +77,29 @@ esperar1seg:
 	bne $t9, $s0,esperar1seg	##Se espera hasta que los millis sean 1 segundo
 	sw $t0, 0($t0)	##Se escribe algo en el millis para resetear la cuenta
 	j bucle
+	
+data:
+	##Segmento donde se cargan las constantes a la memoria
+	lui	$t0,0x1001
+	ori 	$t0, $t0, 0x0000
+	 
+	lui 	$t1,0xFFFF
+	ori 	$t1, $t1, 0xA000 
+	sw 	$t1,0($t0)
+	addi	$t0,$t0,4
+	lui	$t1,0xFFFF
+	ori 	$t1, $t1, 0xE000 
+	sw 	$t1,0($t0)
+	addi 	$t0,$t0,4
+	lui 	$t1,0xFFFF
+	ori 	$t1, $t1, 0x8000 
+	sw 	$t1,0($t0)
+	addi 	$t0,$t0,4
+	lui 	$t1,0xFFFF
+	ori 	$t1, $t1, 0xD000 
+	sw 	$t1,0($t0)
+	addi 	$t0,$t0,4
+	lui 	$t1,0xFFFF
+	ori 	$t1, $t1, 0xB000 
+	sw 	$t1,0($t0)
+	jr	$ra
