@@ -1,0 +1,3 @@
+xst -intstyle ise -ifn "C:/dev/Assembler/BlockBreaker_SD2/MIPS_VGA/mips.xst" -ofn "C:/dev/Assembler/BlockBreaker_SD2/MIPS_VGA/mips.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc fuente/mips.ucf -p xc6slx9-csg324-3 mips.ngc mips.ngd  
+map -intstyle ise -p xc6slx9-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mips_map.ncd mips.ngd mips.pcf 

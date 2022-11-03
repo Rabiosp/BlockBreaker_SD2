@@ -5,20 +5,24 @@
 ## 0xffffa000: displayAdress
 ## El dato que envio debe ser: hex de 8 digitos para cada pixel 1 o 0
 ## 
-.data 
+.data
+	dirVGA:		.word 0xFFFFA000
+	dir7seg:	.word 0xFFFFE000
+	dirLEDS:	.word 0xFFFF8000
+	dirEntradas:	.word 0xFFFFD000
+	dirMillis:	.word 0xFFFFB000
 
-frameBuffer:	.word	0xffffa000
-xPos:		.word	0
-yPos:		.word	0
-xConversion:	.word	64 ## need?
-yConversion:	.word	4  ## need?
-ballY: 		.word	1
-VelX		.word	
-VelY		.word
-platform:	.word	0x0000f000
+	platform:	.word	0x0000F000
+	xPos:		.word	0
+	ballX:		.word	0
+	ballY: 		.word	1
+	VelX		.word	0
+	VelY		.word	0
+	
 
 
 .text
+	jal	data
 ### DRAW BACKGROUND
 	la	$t0, frameBuffer
 	li	$t1, 8192		##512*256 ???
@@ -134,7 +138,45 @@ updatePlatformPosition:
 
 exitMoving:
 
+data:
+	##Segmento donde se cargan las constantes a la memoria
+	lui	$t0,0x1001
+	ori 	$t0, $t0, 0x0000 ##primera direccion en la memoria de .data
+	# dirVGA:		.word 0xFFFFA000
+	lui 	$t1,0xFFFF
+	ori 	$t1, $t1, 0xA000 
+	sw 	$t1,0($t0)
 	
+	# dir7seg:	.word 0xFFFFE000
+	addi	$t0,$t0,4
+	lui	$t1,0xFFFF
+	ori 	$t1, $t1, 0xE000 
+	sw 	$t1,0($t0)
+	
+	# dirLEDS:	.word 0xFFFF8000
+	addi 	$t0,$t0,4
+	lui 	$t1,0xFFFF
+	ori 	$t1, $t1, 0x8000 
+	sw 	$t1,0($t0)
+	
+	# dirEntradas:	.word 0xFFFFD000
+	addi 	$t0,$t0,4
+	lui 	$t1,0xFFFF
+	ori 	$t1, $t1, 0xD000 
+	sw 	$t1,0($t0)
+	
+	# dirMillis:	.word 0xFFFFB000
+	addi 	$t0,$t0,4
+	lui 	$t1,0xFFFF
+	ori 	$t1, $t1, 0xB000 
+	sw 	$t1,0($t0)
+	jr	$ra
+	
+	# platform:	.word	0x0000F000
+	addi 	$t0, $t0, 4
+	lui 	$t1, 0x0000
+	ori 	$t1, $t1, 0xF000
+
 
 	
 	
