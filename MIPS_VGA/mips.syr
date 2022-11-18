@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: mips.prj
@@ -1692,12 +1692,12 @@ clk100mhz      |    1.913|         |         |         |
 
 
 Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 23.69 secs
+Total CPU time to Xst completion: 23.86 secs
  
 --> 
 
 
-Total memory usage is 423664 kilobytes
+Total memory usage is 423768 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
