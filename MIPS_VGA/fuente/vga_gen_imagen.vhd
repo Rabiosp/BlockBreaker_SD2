@@ -33,9 +33,11 @@ entity image_generator is
 			clk : in std_logic; -- main clock
 			reset : in std_logic; -- global reset
 			writeBuffer: in std_logic;
+			readBuffer: in std_logic;
 			siEscribirBuffer: in std_logic;
 			dir: in std_logic_vector(9 downto 0);
 			datos: in std_logic_vector(31 downto 0);
+			datosOUT: out std_logic_vector(31 downto 0);
 			R : out std_logic; -- Red colour signal
 			G : out std_logic; -- Green colour signal
 			B : out std_logic); -- Blue colour signal
@@ -165,6 +167,15 @@ pixel <= videoBuffer(to_integer(posy))(to_integer(31-posx));
 R_int <= pixel;
 G_int <= pixel;
 B_int <= pixel;
+
+LeerBuffer: process(readBuffer,siEscribirBuffer,videoBuffer,dir)
+begin
+if(readBuffer='1' and siEscribirBuffer='1')then
+	datosOUT <= videoBuffer(to_integer(unsigned(dir)));
+else
+	datosOUT <= x"00000000";
+end if;
+end process;
 
 end Behavioral;
 

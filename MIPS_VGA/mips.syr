@@ -575,7 +575,7 @@ Unit <control_branch> synthesized.
 Synthesizing Unit <md_io>.
     Related source file is "/home/maxi/Documentos/GitHub/BlockBreaker_SD2/MIPS_VGA/fuente/md_io.vhd".
     Summary:
-	inferred   3 Multiplexer(s).
+	inferred   4 Multiplexer(s).
 Unit <md_io> synthesized.
 
 Synthesizing Unit <entrada>.
@@ -775,46 +775,48 @@ Synthesizing Unit <image_generator>.
     Found 5-bit adder for signal <posy[4]_GND_39_o_add_137_OUT> created at line 1241.
     Found 5-bit adder for signal <conty[4]_GND_39_o_add_139_OUT> created at line 1241.
     Found 5-bit subtractor for signal <GND_39_o_GND_39_o_sub_148_OUT<4:0>> created at line 1314.
-    Found 1-bit 32-to-1 multiplexer for signal <pixel> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<31>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<30>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<29>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<28>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<27>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<26>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<25>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<24>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<23>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<22>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<21>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<20>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<19>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<18>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<17>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<16>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<15>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<14>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<13>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<12>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<11>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<10>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<9>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<8>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<7>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<6>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<5>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<4>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<3>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<2>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<1>> created at line 164.
-    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<0>> created at line 164.
-    Found 10-bit comparator greater for signal <dir[9]_GND_39_o_LessThan_2_o> created at line 108
-    Found 10-bit comparator greater for signal <GND_39_o_vctr_int[9]_LessThan_135_o> created at line 145
+INFO:Xst:3019 - HDL ADVISOR - 1024 flip-flops were inferred for signal <videoBuffer>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Found 1-bit 32-to-1 multiplexer for signal <pixel> created at line 166.
+    Found 32-bit 24-to-1 multiplexer for signal <dir[4]_X_39_o_wide_mux_149_OUT> created at line 174.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<31>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<30>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<29>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<28>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<27>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<26>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<25>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<24>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<23>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<22>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<21>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<20>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<19>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<18>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<17>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<16>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<15>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<14>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<13>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<12>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<11>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<10>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<9>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<8>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<7>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<6>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<5>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<4>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<3>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<2>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<1>> created at line 166.
+    Found 1-bit 24-to-1 multiplexer for signal <posy[4]_X_39_o_wide_mux_146_OUT<0>> created at line 166.
+    Found 10-bit comparator greater for signal <dir[9]_GND_39_o_LessThan_2_o> created at line 110
+    Found 10-bit comparator greater for signal <GND_39_o_vctr_int[9]_LessThan_135_o> created at line 147
     Summary:
 	inferred   5 Adder/Subtractor(s).
 	inferred 790 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-	inferred  35 Multiplexer(s).
+	inferred  37 Multiplexer(s).
 Unit <image_generator> synthesized.
 
 Synthesizing Unit <contador_miliseg>.
@@ -931,7 +933,7 @@ Macro Statistics
  15-bit comparator greater                             : 3
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 218
+# Multiplexers                                         : 221
  1-bit 2-to-1 multiplexer                              : 42
  1-bit 24-to-1 multiplexer                             : 32
  1-bit 32-to-1 multiplexer                             : 1
@@ -942,7 +944,8 @@ Macro Statistics
  16-bit 2-to-1 multiplexer                             : 2
  2-bit 2-to-1 multiplexer                              : 7
  3-bit 2-to-1 multiplexer                              : 13
- 32-bit 2-to-1 multiplexer                             : 25
+ 32-bit 2-to-1 multiplexer                             : 27
+ 32-bit 24-to-1 multiplexer                            : 1
  32-bit 31-to-1 multiplexer                            : 2
  32-bit 4-to-1 multiplexer                             : 7
  32-bit 7-to-1 multiplexer                             : 1
@@ -1144,9 +1147,9 @@ Macro Statistics
  15-bit comparator greater                             : 3
  32-bit comparator equal                               : 1
  32-bit comparator greater                             : 2
-# Multiplexers                                         : 274
+# Multiplexers                                         : 308
  1-bit 2-to-1 multiplexer                              : 42
- 1-bit 24-to-1 multiplexer                             : 32
+ 1-bit 24-to-1 multiplexer                             : 64
  1-bit 31-to-1 multiplexer                             : 64
  1-bit 32-to-1 multiplexer                             : 1
  1-bit 4-to-1 multiplexer                              : 6
@@ -1155,7 +1158,7 @@ Macro Statistics
  16-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 7
  3-bit 2-to-1 multiplexer                              : 13
- 32-bit 2-to-1 multiplexer                             : 24
+ 32-bit 2-to-1 multiplexer                             : 26
  32-bit 4-to-1 multiplexer                             : 7
  32-bit 7-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 30
@@ -1258,7 +1261,10 @@ INFO:Xst:2261 - The FF/Latch <Inst_md_io/Inst_seven_seg/valorU_6> in Unit <mips>
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block mips, actual ratio is 72.
+Found area constraint ratio of 100 (+ 5) on block mips, actual ratio is 75.
+FlipFlop Inst_antirebote/reset has been replicated 1 time(s)
+FlipFlop inst_prog/Inst_control_prog/state_FSM_FFd11 has been replicated 1 time(s)
+FlipFlop inst_prog/Inst_control_prog/state_FSM_FFd12 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -1270,8 +1276,8 @@ Unit <mips> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 2080
- Flip-Flops                                            : 2080
+# Registers                                            : 2083
+ Flip-Flops                                            : 2083
 # Shift Registers                                      : 1
  2-bit shift register                                  : 1
 
@@ -1296,21 +1302,21 @@ Top Level Output File Name         : mips.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3824
+# BELS                             : 4102
 #      GND                         : 1
 #      INV                         : 20
 #      LUT1                        : 115
-#      LUT2                        : 73
-#      LUT3                        : 113
-#      LUT4                        : 294
-#      LUT5                        : 296
-#      LUT6                        : 2308
+#      LUT2                        : 71
+#      LUT3                        : 96
+#      LUT4                        : 291
+#      LUT5                        : 331
+#      LUT6                        : 2564
 #      MUXCY                       : 268
-#      MUXF7                       : 101
+#      MUXF7                       : 110
 #      VCC                         : 1
 #      XORCY                       : 234
-# FlipFlops/Latches                : 2081
-#      FD                          : 97
+# FlipFlops/Latches                : 2084
+#      FD                          : 100
 #      FDE                         : 1001
 #      FDR                         : 58
 #      FDRE                        : 917
@@ -1334,19 +1340,19 @@ Selected Device : 6slx9csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2081  out of  11440    18%  
- Number of Slice LUTs:                 3796  out of   5720    66%  
-    Number used as Logic:              3219  out of   5720    56%  
+ Number of Slice Registers:            2084  out of  11440    18%  
+ Number of Slice LUTs:                 4065  out of   5720    71%  
+    Number used as Logic:              3488  out of   5720    60%  
     Number used as Memory:              577  out of   1440    40%  
        Number used as RAM:              576
        Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4631
-   Number with an unused Flip Flop:    2550  out of   4631    55%  
-   Number with an unused LUT:           835  out of   4631    18%  
-   Number of fully used LUT-FF pairs:  1246  out of   4631    26%  
-   Number of unique control sets:        67
+ Number of LUT Flip Flop pairs used:   4951
+   Number with an unused Flip Flop:    2867  out of   4951    57%  
+   Number with an unused LUT:           886  out of   4951    17%  
+   Number of fully used LUT-FF pairs:  1198  out of   4951    24%  
+   Number of unique control sets:        65
 
 IO Utilization: 
  Number of IOs:                          44
@@ -1378,7 +1384,7 @@ Clock Signal                                                  | Clock buffer(FF 
 --------------------------------------------------------------+------------------------------------------------------------------+-------+
 clk100mhz                                                     | BUFGP                                                            | 1     |
 Inst_divCLK100a50/tmp                                         | BUFG                                                             | 38    |
-Inst_divisorCLK/tmp                                           | BUFG                                                             | 2191  |
+Inst_divisorCLK/tmp                                           | BUFG                                                             | 2194  |
 Inst_md_io/Inst_vga_controlador/Inst_generador_hsync/hsync_aux| NONE(Inst_md_io/Inst_vga_controlador/Inst_image_generator/posy_4)| 10    |
 Inst_md_io/Inst_seven_seg/clkreduc                            | NONE(Inst_md_io/Inst_seven_seg/contador_1)                       | 2     |
 --------------------------------------------------------------+------------------------------------------------------------------+-------+
@@ -1392,8 +1398,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 18.607ns (Maximum Frequency: 53.742MHz)
-   Minimum input arrival time before clock: 4.291ns
+   Minimum period: 18.405ns (Maximum Frequency: 54.333MHz)
+   Minimum input arrival time before clock: 4.425ns
    Maximum output required time after clock: 6.170ns
    Maximum combinational path delay: 5.330ns
 
@@ -1450,37 +1456,40 @@ Delay:               5.945ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Inst_divisorCLK/tmp'
-  Clock period: 18.607ns (frequency: 53.742MHz)
-  Total number of paths / destination ports: 4082266808 / 6310
+  Clock period: 18.405ns (frequency: 54.333MHz)
+  Total number of paths / destination ports: 6215893345 / 6313
 -------------------------------------------------------------------------
-Delay:               18.607ns (Levels of Logic = 13)
+Delay:               18.405ns (Levels of Logic = 16)
   Source:            Inst_pc/s_9 (FF)
-  Destination:       Inst_md_io/Inst_vga_controlador/Inst_image_generator/videoBuffer_16_31 (FF)
+  Destination:       Inst_reg/reg_0_31 (FF)
   Source Clock:      Inst_divisorCLK/tmp rising
   Destination Clock: Inst_divisorCLK/tmp rising
 
-  Data Path: Inst_pc/s_9 to Inst_md_io/Inst_vga_controlador/Inst_image_generator/videoBuffer_16_31
+  Data Path: Inst_pc/s_9 to Inst_reg/reg_0_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              38   0.447   1.481  Inst_pc/s_9 (Inst_pc/s_9)
-     LUT6:I4->O          279   0.203   2.069  inst_LPM_MUX32191 (instruccion<22>)
-     LUT6:I5->O            1   0.205   0.808  Inst_reg/mux_81 (Inst_reg/mux_81)
-     LUT6:I3->O            1   0.205   0.000  Inst_reg/mux_3 (Inst_reg/mux_3)
+     FD:C->Q              37   0.447   1.467  Inst_pc/s_9 (Inst_pc/s_9)
+     LUT6:I4->O          256   0.203   2.067  inst_LPM_MUX32191 (instruccion<22>)
+     LUT6:I5->O            1   0.205   0.827  Inst_reg/mux_81 (Inst_reg/mux_81)
+     LUT6:I2->O            1   0.203   0.000  Inst_reg/mux_3 (Inst_reg/mux_3)
      MUXF7:I1->O           2   0.140   0.617  Inst_reg/mux_2_f7 (Inst_reg/GND_20_o_X_20_o_wide_mux_2_OUT<0>)
-     LUT6:I5->O            9   0.205   0.830  Inst_reg/Mmux_rd1111 (lee_reg1<0>)
-     LUT6:I5->O          114   0.205   1.914  Inst_alu/Mmux_shift_amount11 (Inst_alu/shift_amount<0>)
-     LUT6:I5->O            4   0.205   0.912  Inst_alu/Sh1131 (Inst_alu/Sh113)
-     LUT6:I3->O            2   0.205   0.617  Inst_alu/Mmux_s_mux53 (Inst_alu/Mmux_s_mux52)
-     LUT6:I5->O            1   0.205   0.684  Inst_alu/Mmux_s_mux52_SW0 (N790)
-     LUT6:I4->O           35   0.203   1.335  Inst_alu/Mmux_s_mux57 (salida_alu<13>)
-     LUT6:I5->O            2   0.205   0.721  Inst_md_io/Inst_decodificador/cs7seg<31>114_SW1 (N915)
-     LUT6:I4->O          133   0.203   1.964  Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0353_inv1_1 (Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0353_inv11)
-     LUT6:I5->O           32   0.205   1.291  Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0360_inv1 (Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0360_inv)
-     FDRE:CE                   0.322          Inst_md_io/Inst_vga_controlador/Inst_image_generator/videoBuffer_1_0
+     LUT6:I5->O           10   0.205   0.857  Inst_reg/Mmux_rd1111 (lee_reg1<0>)
+     LUT6:I5->O           94   0.205   1.942  Inst_alu/Mmux_shift_amount11 (Inst_alu/shift_amount<0>)
+     LUT6:I4->O            3   0.203   0.898  Inst_alu/Sh1041 (Inst_alu/Sh104)
+     LUT6:I2->O            1   0.203   0.684  Inst_alu/Mmux_s_mux315 (Inst_alu/Mmux_s_mux314)
+     LUT5:I3->O            1   0.203   0.580  Inst_alu/Mmux_s_mux316 (Inst_alu/Mmux_s_mux315)
+     LUT6:I5->O            1   0.205   0.000  Inst_alu/Mmux_s_mux319_G (N999)
+     MUXF7:I1->O          38   0.140   1.377  Inst_alu/Mmux_s_mux319 (salida_alu<8>)
+     LUT6:I5->O            2   0.205   0.617  Inst_md_io/Inst_decodificador/cs7seg<31>114_SW0_SW0 (N942)
+     LUT6:I5->O            5   0.205   0.715  Inst_md_io/Inst_decodificador/cs7seg<31>14_1 (Inst_md_io/Inst_decodificador/cs7seg<31>14)
+     LUT4:I3->O           17   0.205   1.256  Inst_md_io/Mmux_dataout11111 (Inst_md_io/Mmux_dataout1111)
+     LUT6:I3->O            2   0.205   0.617  Inst_mux32_lui/Mmux_s76 (Inst_mux32_lui/Mmux_s75)
+     LUT6:I5->O           16   0.205   0.000  Inst_mux32_lui/Mmux_s77 (escribe_reg<15>)
+     FDE:D                     0.102          Inst_reg/reg_1_15
     ----------------------------------------
-    Total                     18.607ns (3.363ns logic, 15.244ns route)
-                                       (18.1% logic, 81.9% route)
+    Total                     18.211ns (3.689ns logic, 14.522ns route)
+                                       (20.3% logic, 79.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Inst_md_io/Inst_vga_controlador/Inst_generador_hsync/hsync_aux'
@@ -1498,7 +1507,7 @@ Delay:               3.967ns (Levels of Logic = 1)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q           197   0.447   2.279  Inst_md_io/Inst_vga_controlador/Inst_image_generator/posy_1 (Inst_md_io/Inst_vga_controlador/Inst_image_generator/posy_1)
-     LUT6:I3->O            5   0.205   0.714  Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0522_inv (Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0522_inv)
+     LUT6:I3->O            5   0.205   0.714  Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0527_inv1 (Inst_md_io/Inst_vga_controlador/Inst_image_generator/_n0527_inv)
      FDRE:CE                   0.322          Inst_md_io/Inst_vga_controlador/Inst_image_generator/posy_0
     ----------------------------------------
     Total                      3.967ns (0.974ns logic, 2.993ns route)
@@ -1528,9 +1537,9 @@ Delay:               2.163ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Inst_divisorCLK/tmp'
-  Total number of paths / destination ports: 221 / 220
+  Total number of paths / destination ports: 225 / 223
 -------------------------------------------------------------------------
-Offset:              4.291ns (Levels of Logic = 4)
+Offset:              4.425ns (Levels of Logic = 4)
   Source:            sw<3> (PAD)
   Destination:       Inst_reg/reg_0_5 (FF)
   Destination Clock: Inst_divisorCLK/tmp rising
@@ -1540,13 +1549,13 @@ Offset:              4.291ns (Levels of Logic = 4)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      IBUF:I->O             1   1.222   0.827  sw_3_IBUF (sw_3_IBUF)
-     LUT4:I0->O            1   0.203   0.808  Inst_mux32_lui/Mmux_s281_SW0 (N523)
-     LUT4:I1->O            2   0.205   0.721  Inst_mux32_lui/Mmux_s281 (Inst_mux32_lui/Mmux_s28)
-     LUT6:I4->O           16   0.203   0.000  Inst_mux32_lui/Mmux_s285 (escribe_reg<5>)
+     LUT4:I0->O            1   0.203   0.944  Inst_mux32_lui/Mmux_s283_SW0 (N503)
+     LUT6:I0->O            2   0.203   0.721  Inst_mux32_lui/Mmux_s284_SW0 (N471)
+     LUT6:I4->O           16   0.203   0.000  Inst_mux32_lui/Mmux_s288 (escribe_reg<5>)
      FDE:D                     0.102          Inst_reg/reg_1_5
     ----------------------------------------
-    Total                      4.291ns (1.935ns logic, 2.356ns route)
-                                       (45.1% logic, 54.9% route)
+    Total                      4.425ns (1.933ns logic, 2.492ns route)
+                                       (43.7% logic, 56.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Inst_divisorCLK/tmp'
@@ -1640,7 +1649,7 @@ Clock to Setup on destination clock Inst_divCLK100a50/tmp
 Source Clock                                                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------------------------------------+---------+---------+---------+---------+
 Inst_divCLK100a50/tmp                                         |    5.945|         |         |         |
-Inst_divisorCLK/tmp                                           |    5.724|         |         |         |
+Inst_divisorCLK/tmp                                           |    5.758|         |         |         |
 Inst_md_io/Inst_vga_controlador/Inst_generador_hsync/hsync_aux|         |    7.274|         |         |
 --------------------------------------------------------------+---------+---------+---------+---------+
 
@@ -1649,7 +1658,7 @@ Clock to Setup on destination clock Inst_divisorCLK/tmp
                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -------------------+---------+---------+---------+---------+
-Inst_divisorCLK/tmp|   18.607|         |         |         |
+Inst_divisorCLK/tmp|   18.405|         |         |         |
 -------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock Inst_md_io/Inst_seven_seg/clkreduc
@@ -1657,7 +1666,7 @@ Clock to Setup on destination clock Inst_md_io/Inst_seven_seg/clkreduc
                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ----------------------------------+---------+---------+---------+---------+
-Inst_divisorCLK/tmp               |    5.168|         |         |         |
+Inst_divisorCLK/tmp               |    5.161|         |         |         |
 Inst_md_io/Inst_seven_seg/clkreduc|    2.163|         |         |         |
 ----------------------------------+---------+---------+---------+---------+
 
@@ -1666,8 +1675,8 @@ Clock to Setup on destination clock Inst_md_io/Inst_vga_controlador/Inst_generad
                                                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------------------------------------+---------+---------+---------+---------+
-Inst_divCLK100a50/tmp                                         |         |         |    3.015|         |
-Inst_divisorCLK/tmp                                           |         |         |    6.332|         |
+Inst_divCLK100a50/tmp                                         |         |         |    3.045|         |
+Inst_divisorCLK/tmp                                           |         |         |    6.223|         |
 Inst_md_io/Inst_vga_controlador/Inst_generador_hsync/hsync_aux|         |         |    3.967|         |
 --------------------------------------------------------------+---------+---------+---------+---------+
 
@@ -1682,15 +1691,15 @@ clk100mhz      |    1.913|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 20.72 secs
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 23.69 secs
  
 --> 
 
 
-Total memory usage is 421040 kilobytes
+Total memory usage is 423664 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
-Number of infos    :   15 (   0 filtered)
+Number of infos    :   16 (   0 filtered)
 

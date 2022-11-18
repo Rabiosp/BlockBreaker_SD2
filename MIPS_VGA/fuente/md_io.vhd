@@ -116,9 +116,11 @@ architecture Behavioral of md_io is
 		clk : IN std_logic;
 		reset : IN std_logic;
 		writeBuffer : IN std_logic;
+		readBuffer : IN std_logic;
 		siEscribirBuffer : IN std_logic;
 		dir : IN std_logic_vector(9 downto 0);
-		datos : IN std_logic_vector(31 downto 0);          
+		datos : IN std_logic_vector(31 downto 0);
+      lineaOUT : out std_logic_vector(31 downto 0);		
 		hsync : OUT std_logic;
 		vsync : OUT std_logic;
 		R : OUT std_logic;
@@ -148,6 +150,7 @@ architecture Behavioral of md_io is
 	signal datosMem    : STD_LOGIC_VECTOR (31 downto 0);
 	signal datosEntrada: STD_LOGIC_VECTOR (5 downto 0);
 	signal datosMilisegundos : STD_LOGIC_VECTOR (31 downto 0);
+	signal datosVideoBuffer : STD_LOGIC_VECTOR (31 downto 0);
 	signal pixel : std_logic_VECTOR (7 downto 0);
 	
 begin
@@ -156,6 +159,7 @@ begin
 	dataout <= datosMem                                    when csMem = '1'     else
 			     "00000000000000000000000000" & datosEntrada when csEntrada = '1' else
 				  datosMilisegundos									 when csMillis = '1'  else
+				  datosVideoBuffer 									 when csVideoBuffer = '1'  else
 			     (others => '0');
 
 	Inst_entrada: entrada PORT MAP (
@@ -212,9 +216,11 @@ begin
 		hsync => hsync,
 		vsync => vsync,
 		writeBuffer => memwrite,
+		readBuffer => memread,
 		siEscribirBuffer => csVideoBuffer,
 		dir => dir(11 downto 2),
 		datos => datain,
+		lineaOUT => datosVideoBuffer,
 		R => R,
 		G => G,
 		B => B

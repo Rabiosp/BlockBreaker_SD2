@@ -36,9 +36,11 @@ entity vga_controlador is
            hsync : out  STD_LOGIC;
            vsync : out  STD_LOGIC;
 			  writeBuffer: in std_logic;
+			  readBuffer : IN std_logic;
 			  siEscribirBuffer: in std_logic;
 			  dir: in std_logic_vector(9 downto 0);
 			  datos: in std_logic_vector(31 downto 0);
+			  lineaOUT : out std_logic_vector(31 downto 0);
            R : out  STD_LOGIC;
            G : out  STD_LOGIC;
            B : out  STD_LOGIC);
@@ -101,9 +103,11 @@ architecture Behavioral of vga_controlador is
 		clk : in std_logic;
 		reset : IN std_logic;
 		writeBuffer : IN std_logic;
+		readBuffer : IN std_logic;
 		siEscribirBuffer : IN std_logic;
 		dir : IN std_logic_vector(9 downto 0);
-		datos : IN std_logic_vector(31 downto 0);         
+		datos : IN std_logic_vector(31 downto 0);
+		datosOUT: out std_logic_vector(31 downto 0);
 		R : OUT std_logic;
 		G : OUT std_logic;
 		B : OUT std_logic
@@ -159,9 +163,11 @@ begin
 		clk => clk,
 		reset => reset,
 		writeBuffer => writeBuffer,
+		readBuffer => readBuffer,
 		siEscribirBuffer => siEscribirBuffer,
 		dir => dir,
 		datos => datos,
+		datosOUT => lineaOUT,
 		R => R,
 		G => G,
 		B => B

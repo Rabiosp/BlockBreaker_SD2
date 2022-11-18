@@ -34,13 +34,13 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
  Minimum period is   1.730ns.
 --------------------------------------------------------------------------------
 
-Paths for end point Inst_divCLK100a50/tmp (SLICE_X17Y33.A6), 1 path
+Paths for end point Inst_divCLK100a50/tmp (SLICE_X13Y34.C5), 1 path
 --------------------------------------------------------------------------------
-Slack (setup path):     9.129ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     9.079ns (requirement - (data path - clock path skew + uncertainty))
   Source:               Inst_divCLK100a50/tmp (FF)
   Destination:          Inst_divCLK100a50/tmp (FF)
   Requirement:          10.000ns
-  Data Path Delay:      0.836ns (Levels of Logic = 1)
+  Data Path Delay:      0.886ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk100mhz_BUFGP rising at 0.000ns
   Destination Clock:    clk100mhz_BUFGP rising at 10.000ns
@@ -56,28 +56,28 @@ Slack (setup path):     9.129ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y33.AQ      Tcko                  0.391   Inst_divCLK100a50/tmp
+    SLICE_X13Y34.CQ      Tcko                  0.391   Inst_divCLK100a50/tmp
                                                        Inst_divCLK100a50/tmp
-    SLICE_X17Y33.A6      net (fanout=2)        0.123   Inst_divCLK100a50/tmp
-    SLICE_X17Y33.CLK     Tas                   0.322   Inst_divCLK100a50/tmp
+    SLICE_X13Y34.C5      net (fanout=2)        0.173   Inst_divCLK100a50/tmp
+    SLICE_X13Y34.CLK     Tas                   0.322   Inst_divCLK100a50/tmp
                                                        Inst_divCLK100a50/tmp_INV_164_o1_INV_0
                                                        Inst_divCLK100a50/tmp
     -------------------------------------------------  ---------------------------
-    Total                                      0.836ns (0.713ns logic, 0.123ns route)
-                                                       (85.3% logic, 14.7% route)
+    Total                                      0.886ns (0.713ns logic, 0.173ns route)
+                                                       (80.5% logic, 19.5% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: NET "clk100mhz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point Inst_divCLK100a50/tmp (SLICE_X17Y33.A6), 1 path
+Paths for end point Inst_divCLK100a50/tmp (SLICE_X13Y34.C5), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.434ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.472ns (requirement - (clock path skew + uncertainty - data path))
   Source:               Inst_divCLK100a50/tmp (FF)
   Destination:          Inst_divCLK100a50/tmp (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.434ns (Levels of Logic = 1)
+  Data Path Delay:      0.472ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
   Source Clock:         clk100mhz_BUFGP rising at 10.000ns
   Destination Clock:    clk100mhz_BUFGP rising at 10.000ns
@@ -87,15 +87,15 @@ Slack (hold path):      0.434ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y33.AQ      Tcko                  0.198   Inst_divCLK100a50/tmp
+    SLICE_X13Y34.CQ      Tcko                  0.198   Inst_divCLK100a50/tmp
                                                        Inst_divCLK100a50/tmp
-    SLICE_X17Y33.A6      net (fanout=2)        0.021   Inst_divCLK100a50/tmp
-    SLICE_X17Y33.CLK     Tah         (-Th)    -0.215   Inst_divCLK100a50/tmp
+    SLICE_X13Y34.C5      net (fanout=2)        0.059   Inst_divCLK100a50/tmp
+    SLICE_X13Y34.CLK     Tah         (-Th)    -0.215   Inst_divCLK100a50/tmp
                                                        Inst_divCLK100a50/tmp_INV_164_o1_INV_0
                                                        Inst_divCLK100a50/tmp
     -------------------------------------------------  ---------------------------
-    Total                                      0.434ns (0.413ns logic, 0.021ns route)
-                                                       (95.2% logic, 4.8% route)
+    Total                                      0.472ns (0.413ns logic, 0.059ns route)
+                                                       (87.5% logic, 12.5% route)
 
 --------------------------------------------------------------------------------
 
@@ -114,7 +114,7 @@ Slack: 9.606ns (period - min period limit)
   Min period limit: 0.394ns (2538.071MHz) (Tcp)
   Physical resource: Inst_divCLK100a50/tmp/CLK
   Logical resource: Inst_divCLK100a50/tmp/CK
-  Location pin: SLICE_X17Y33.CLK
+  Location pin: SLICE_X13Y34.CLK
   Clock network: clk100mhz_BUFGP
 --------------------------------------------------------------------------------
 
@@ -131,7 +131,7 @@ Clock to Setup on destination clock clk100mhz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk100mhz      |    0.871|         |         |         |
+clk100mhz      |    0.921|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -149,14 +149,14 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Tue Nov  1 15:07:06 2022 
+Analysis completed Fri Nov 18 17:50:12 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 414 MB
+Peak Memory Usage: 416 MB
 
 
 
