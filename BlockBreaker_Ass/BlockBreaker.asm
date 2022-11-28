@@ -18,10 +18,10 @@
 	addi	$t0, $zero, 000
 	lw	$t1, dir7seg
 	sw	$t0, 0($t1)
-	# Se carga en los LEDs
-	addi 	$t0, $zero, 0x0007
-	lw 	$t1,dirLEDS
-	sw 	$t0, 0($t1)
+	# Se carga en los LEDs 3 vidas
+	addi 	$k1, $zero, 0x0007
+	lw 	$t1, dirLEDS
+	sw 	$k1, 0($t1)
 	## Se imprime la primera pantalla de VGA con la plataforma
 	lw	$t0, platform
 	lw 	$t1, dirVGA
@@ -63,7 +63,9 @@ gameUpdateLoop:
 	## Leer la entrada y mover la plataforma accordingly
 	## Se actualiza las posiciones
 	## 92($t1) es la direccion de la ultima linea de la pantalla
-	
+	beq	$k0, 1, updateLifeCounter
+	 
+	exitUpdateLifeCounter:
 	## Sleep()
 	lw 	$t1, dirMillis
 	sw 	$t0, 0($t1)	 ## Se escribe algo en el millis para resetear la cuenta
@@ -78,6 +80,12 @@ gameUpdateLoop:
 	## Move Ball
 	jal	moveBall	
 	j	check_keypress
+	
+updateLifeCounter:
+	lw 	$t1, dirLEDS
+	sw 	$k1, 0($t1)
+	j	exitUpdateLifeCounter
+	
 	
 updatePlatform:
 	lw	$t0, platform
@@ -196,7 +204,7 @@ ballLeft:
 		lw	$t0, ($a0)	## pelota
 		lw	$t1, platform	## plataforma
 		and	$t2, $t0, $t1
-		beq	$t2, $zero, reset
+		beq	$t2, $zero, loseLife
 	
 		## XOR
 		xor	$t2, $t0, $t1
@@ -249,7 +257,38 @@ setVelocityZeroX:
 	sw	$t0, xVel
 	j	donePlatformX
 	
+loseLife:
+	addi	$k0, $zero, 1
+	srl	$k1, $k1, 1
+	lw 	$t1, dirLEDS
+	sw 	$k1, 0($t1)
+	j	softReset
+	
+	
+softReset:
+	lw 	$t0, dirVGA
+	##Platform
+	lw	$t1, platformReset
+	sw 	$t1, platform
+	#posBall, yVel, Ball
+	lw	$t1, posBall
+	add	$t1, $t1, $t0
+	sw	$zero, ($t1)  ## 0 linea actual [ATENCION] puede borrar los bloques que esten en la misma linea
+	
+	li	$t1, -1
+	sw	$t1, yVel
+
+	sw 	$s2, 88($t0)
+	
+	# PosBall
+	li	$t1, 88
+	sw 	$t1, posBall
+	
+	## xVel
+	sw	$zero, xVel
+	j	gameUpdateLoop
 reset:
+	li	$k1, 3
 	lw 	$t0, dirVGA
 	##Platform
 	lw	$t1, platformReset
@@ -339,9 +378,12 @@ data:
 	addi	$t1, $zero, -1
 	sw 	$t1,0($t0)
 	
-	# ball:		.word	0x00004000 REGISTER $s2
+	# ball:	.word	0x00004000 REGISTER $s2
 	lui 	$s2,0x0000
 	ori 	$s2, $s2, 0x4000 
+	
+	# loseLife: ,word 1	REGISTER $k0 [1: loseLife 0: dont loseLife]
+	li 	$k0, 0
 	
 	
 	jr	$ra
