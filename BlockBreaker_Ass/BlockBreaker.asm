@@ -15,11 +15,11 @@
 	jal data
 
 	# Se carga en el 7 seg
-	addi	$t0, $zero, 123
+	addi	$t0, $zero, 000
 	lw	$t1,dir7seg
 	sw	$t0, 0($t1)
 	# Se carga en los LEDs
-	addi 	$t0, $zero, 0x1111
+	addi 	$t0, $zero, 0x0007
 	lw 	$t1,dirLEDS
 	sw 	$t0, 0($t1)
 	## Se imprime la primera pantalla de VGA con la plataforma
@@ -67,7 +67,7 @@ gameUpdateLoop:
 	## Sleep()
 	lw 	$t1, dirMillis
 	sw 	$t0, 0($t1)	 ## Se escribe algo en el millis para resetear la cuenta
-	addi 	$s0, $zero, 100  ## 100 ms gets us 10fps
+	addi 	$s0, $zero, 33  ## 100 ms gets us 10fps
 	sleep:
 	lw 	$t0, 0($t1)	##Se lee el valor del contador de millis
 	bne 	$t0, $s0,sleep	##Se espera hasta que los millis sean 1 segundo
@@ -121,27 +121,32 @@ moveBall:
 	
 		### branch si choca contra bloques
 
-		
 		lw	$t0, ($t3)	## Linea de screen actual
 		lw	$t1, ($t4)	## Linea siguiente			
 		#or	$t2, $t0, $t1	## or entre lineas actual y siguiente [DEPRECATED] para espacio vacio
-		
+	
 		sw	$zero, ($t3)	## 0 linea actual		
 		sw	$t0, ($t4)	## Pelota a la linea siguiente
-		
+	
 		jr	$ra
+		
 		
 	ballDown:
 		lw	$t0, dirVGA	
 		lw	$t1, posBall	## Posicion actual
-		### branch para irse hacia arriva si choca con la plataforma		
+		### branch para irse hacia arriba si choca con la plataforma		
 		### function setVelocityUp
+		add	$a0, $t0, $t1	## Posicion nueva como argumento
+		li	$t5, 88
+		beq	$t5, $t1, checkColissionPlatform
 		
 		addi	$t2, $t1, 4	## Posicion nueva
 		sw	$t2, posBall	## Guardar posicion nueva
 	
 		add	$t3, $t0, $t1	## Posicion actual ADDRESS
 		add	$t4, $t0, $t2	## Posicion nueva ADDRESS
+		
+			
 	
 		### branch si choca contra bloques
 
@@ -150,13 +155,30 @@ moveBall:
 		lw	$t1, ($t4)	## Linea siguiente			
 		#or	$t2, $t0, $t1	## or entre lineas actual y siguiente [DEPRECATED] para espacio vacio
 		
+		lw	$t0, ($t3)	## Linea de screen actual
+		lw	$t1, ($t4)	## Linea siguiente			
+		#or	$t2, $t0, $t1	## or entre lineas actual y siguiente [DEPRECATED] para espacio vacio
+	
 		sw	$zero, ($t3)	## 0 linea actual		
 		sw	$t0, ($t4)	## Pelota a la linea siguiente
-		
+	
 		jr	$ra
+		
+	checkColissionPlatform:
+		lw	$t0, ($a0)
+		lw	$t1, platform
+		and	$t2, $t0, $t1
+		beq	$t2, $zero, reset
+		j	setVelocityUp
+	
 		
 setVelocityDown:
 	li	$t0, 1
+	sw	$t0, yVel
+	j	gameUpdateLoop
+	
+setVelocityUp:
+	li	$t0, -1
 	sw	$t0, yVel
 	j	gameUpdateLoop
 	
