@@ -64,7 +64,6 @@ gameUpdateLoop:
 	## Se actualiza las posiciones
 	## 92($t1) es la direccion de la ultima linea de la pantalla
 	beq	$k0, 1, updateLifeCounter
-	 
 	exitUpdateLifeCounter:
 	## Sleep()
 	lw 	$t1, dirMillis
@@ -82,6 +81,7 @@ gameUpdateLoop:
 	j	check_keypress
 	
 updateLifeCounter:
+	li	$k0, 0
 	lw 	$t1, dirLEDS
 	sw 	$k1, 0($t1)
 	j	exitUpdateLifeCounter
@@ -262,7 +262,16 @@ loseLife:
 	srl	$k1, $k1, 1
 	lw 	$t1, dirLEDS
 	sw 	$k1, 0($t1)
+	beq	$k1, $zero, gameOver
 	j	softReset
+	
+gameOver:
+	lw	$t9, dirEntradas
+	lw	$t9, ($t9)
+	## SW_3 RESET
+	andi	$t8, $t9, 4
+	bne	$t8, $zero, reset
+	j	gameOver
 	
 	
 softReset:
@@ -288,7 +297,7 @@ softReset:
 	sw	$zero, xVel
 	j	gameUpdateLoop
 reset:
-	li	$k1, 3
+	li	$k1, 7
 	lw 	$t0, dirVGA
 	##Platform
 	lw	$t1, platformReset
