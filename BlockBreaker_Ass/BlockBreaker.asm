@@ -16,7 +16,7 @@
 
 	# Se carga en el 7 seg
 	addi	$t0, $zero, 000
-	lw	$t1,dir7seg
+	lw	$t1, dir7seg
 	sw	$t0, 0($t1)
 	# Se carga en los LEDs
 	addi 	$t0, $zero, 0x0007
@@ -103,9 +103,14 @@ move_right:
 	
 moveBall:
 	#BALL
+	lw	$t0, xVel
+	beq	$t0, 1, ballRight
+	beq	$t0, -1, ballLeft
+	endMoveX:
 	lw	$t0, yVel
 	beq	$t0, -1, ballUp
-	beq	$t0, 1, ballDown		
+	beq	$t0, 1, ballDown	
+		
 	ballUp:
 		lw	$t0, dirVGA	
 		lw	$t1, posBall	## Posicion actual
@@ -121,10 +126,9 @@ moveBall:
 	
 		### branch si choca contra bloques
 
-		lw	$t0, ($t3)	## Linea de screen actual
+		lw	$t0, ($t3)	## Linea de screen actual $t0
 		lw	$t1, ($t4)	## Linea siguiente			
-		#or	$t2, $t0, $t1	## or entre lineas actual y siguiente [DEPRECATED] para espacio vacio
-	
+			
 		sw	$zero, ($t3)	## 0 linea actual		
 		sw	$t0, ($t4)	## Pelota a la linea siguiente
 	
@@ -145,30 +149,64 @@ moveBall:
 	
 		add	$t3, $t0, $t1	## Posicion actual ADDRESS
 		add	$t4, $t0, $t2	## Posicion nueva ADDRESS
-		
 			
-	
 		### branch si choca contra bloques
 
-		
 		lw	$t0, ($t3)	## Linea de screen actual
-		lw	$t1, ($t4)	## Linea siguiente			
-		#or	$t2, $t0, $t1	## or entre lineas actual y siguiente [DEPRECATED] para espacio vacio
-		
-		lw	$t0, ($t3)	## Linea de screen actual
-		lw	$t1, ($t4)	## Linea siguiente			
-		#or	$t2, $t0, $t1	## or entre lineas actual y siguiente [DEPRECATED] para espacio vacio
-	
+		lw	$t1, ($t4)	## Linea siguiente		
+			
 		sw	$zero, ($t3)	## 0 linea actual		
 		sw	$t0, ($t4)	## Pelota a la linea siguiente
 	
 		jr	$ra
 		
+		
+ballRight:
+	lw	$t0, dirVGA	
+	lw	$t1, posBall
+	add	$t2, $t0, $t1
+	lw	$t0, ($t2)	## Linea de screen actual pelota
+	
+	srl	$a0, $t0, 1
+	beq	$a0, $zero, setVelocityLeft
+	srl	$t0, $t0, 1
+	sw	$t0, ($t2)
+	doneSVL:
+	j	endMoveX
+ballLeft:
+	lw	$t0, dirVGA	
+	lw	$t1, posBall
+	add	$t2, $t0, $t1
+	lw	$t0, ($t2)	## Linea de screen actual pelota
+	
+	sll	$a0, $t0, 1
+	beq	$a0, $zero, setVelocityRight
+	sll	$t0, $t0, 1
+	sw	$t0, ($t2)
+	doneSVR:
+	j	endMoveX
+	
+		
+		
 	checkColissionPlatform:
-		lw	$t0, ($a0)
-		lw	$t1, platform
+		lw	$t0, ($a0)	## pelota
+		lw	$t1, platform	## plataforma
 		and	$t2, $t0, $t1
 		beq	$t2, $zero, reset
+	
+		## XOR
+		xor	$t2, $t0, $t1
+		sll	$t3, $t1, 3	#...11011...#
+		srl	$t4, $t1, 3
+		and	$t5, $t1, $t3
+		and	$t6, $t1, $t4	#...11011...#
+		or	$t1, $t5, $t6
+		
+		
+		blt	$t2, $t1, setVelocityLeftPlatform
+		bgt	$t2, $t1, setVelocityRightPlatform
+		beq	$t2, $t1, setVelocityZeroX
+		donePlatformX:
 		j	setVelocityUp
 	
 		
@@ -181,6 +219,31 @@ setVelocityUp:
 	li	$t0, -1
 	sw	$t0, yVel
 	j	gameUpdateLoop
+
+setVelocityRightPlatform:
+	li	$t9, 1
+	sw	$t9, xVel
+	j	donePlatformX
+
+setVelocityLeftPlatform:
+	li	$t9, -1
+	sw	$t9, xVel
+	j	donePlatformX
+	
+setVelocityRight:
+	li	$t9, 1
+	sw	$t9, xVel
+	j	doneSVR
+
+setVelocityLeft:
+	li	$t9, -1
+	sw	$t9, xVel
+	j	doneSVL
+	
+setVelocityZeroX:
+	li	$t0, 0
+	sw	$t0, xVel
+	j	donePlatformX
 	
 reset:
 	lw 	$t0, dirVGA
@@ -200,6 +263,9 @@ reset:
 	# PosBall
 	li	$t1, 88
 	sw 	$t1, posBall
+	
+	## xVel
+	sw	$zero, xVel
 			
 	j	gameUpdateLoop
 		
