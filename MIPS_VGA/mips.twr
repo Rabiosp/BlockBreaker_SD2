@@ -1,10 +1,9 @@
 --------------------------------------------------------------------------------
-Release 14.7 Trace  (lin64)
+Release 14.7 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-/media/Programas/Aplicaciones/Linux/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce
--intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mips.twx mips.ncd -o mips.twr
-mips.pcf
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+-n 3 -fastpaths -xml mips.twx mips.ncd -o mips.twr mips.pcf
 
 Design file:              mips.ncd
 Physical constraint file: mips.pcf
@@ -149,14 +148,14 @@ Design statistics:
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Fri Nov 18 18:46:03 2022 
+Analysis completed Sun Nov 27 21:14:30 2022 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 416 MB
+Peak Memory Usage: 4586 MB
 
 
 

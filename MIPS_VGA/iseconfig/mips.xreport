@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2022-11-18T18:44:43</DateModified>
+  <DateModified>2022-11-27T12:31:04</DateModified>
   <ModuleName>mips</ModuleName>
   <SummaryTimeStamp>2022-11-18T18:42:14</SummaryTimeStamp>
-  <SavedFilePath>/home/maxi/Documentos/GitHub/BlockBreaker_SD2/MIPS_VGA/iseconfig/mips.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/maxi/Documentos/GitHub/BlockBreaker_SD2/MIPS_VGA/</ImplementationReportsDirectory>
+  <SavedFilePath>C:/dev/Assembler/BlockBreaker_SD2/MIPS_VGA/iseconfig/mips.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/dev/Assembler/BlockBreaker_SD2/MIPS_VGA\</ImplementationReportsDirectory>
   <DateInitialized>2022-10-18T18:48:05</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

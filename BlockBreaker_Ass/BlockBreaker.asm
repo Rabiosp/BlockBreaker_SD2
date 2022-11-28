@@ -5,6 +5,7 @@
 	dirEntradas:	.word 	0xFFFFD000
 	dirMillis:	.word 	0xFFFFB000
 	platform:	.word	0x0003F000 ## 0x100100014
+	platformReset:	.word	0x0003F000 ## 0x100100014
 	
 .text
 	jal data
@@ -33,11 +34,9 @@ check_keypress:
 	## SW_2
 	andi	$t8, $t9, 2
 	bne	$t8, $zero, move_right
-	
-	## SW_n
-	#andi	$t8, $t9, 0x0000
-	#bne	$t8, $zero, move_right
-	
+	## SW_3 RESET
+	andi	$t8, $t9, 4
+	bne	$t8, $zero, reset
 	
 	j	gameUpdateLoop
 	
@@ -48,8 +47,8 @@ gameUpdateLoop:
 	
 	## Sleep()
 	lw 	$t1,dirMillis
-	sw 	$t0, 0($t1)	##Se escribe algo en el millis para resetear la cuenta
-	addi 	$s0, $zero, 100
+	sw 	$t0, 0($t1)	 ## Se escribe algo en el millis para resetear la cuenta
+	addi 	$s0, $zero, 17  ## 100 ms gets us 10fps
 	sleep:
 	lw 	$t0, 0($t1)	##Se lee el valor del contador de millis
 	bne 	$t0, $s0,sleep	##Se espera hasta que los millis sean 1 segundo
@@ -79,6 +78,13 @@ move_right:
 	srl	$t1, $t0, 1	
 	sw	$t1, platform
 	j	gameUpdateLoop
+	
+reset:
+	##Platform
+	lw	$t1, platformReset
+	sw 	$t1, platform
+	j	gameUpdateLoop
+	
 		
 data:
 	##Segmento donde se cargan las constantes a la memoria
@@ -113,7 +119,13 @@ data:
 	ori 	$t1, $t1, 0xB000 
 	sw 	$t1,0($t0)
 	
-	# platform:	.word	0x0001E000
+	# platform:	.word	0x0003f000
+	addi 	$t0,$t0,4
+	lui 	$t1,0x0003
+	ori 	$t1, $t1, 0xF000 
+	sw 	$t1,0($t0)
+	
+	# platformReset:.word	0x0003f000
 	addi 	$t0,$t0,4
 	lui 	$t1,0x0003
 	ori 	$t1, $t1, 0xF000 
