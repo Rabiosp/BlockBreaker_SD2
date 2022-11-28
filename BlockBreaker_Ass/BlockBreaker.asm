@@ -103,13 +103,17 @@ move_right:
 	
 moveBall:
 	#BALL
+	lw	$t0, yVel
+	beq	$t0, -1, ballUp
+	beq	$t0, 1, ballDown
+	endMoveY:
 	lw	$t0, xVel
 	beq	$t0, 1, ballRight
 	beq	$t0, -1, ballLeft
 	endMoveX:
-	lw	$t0, yVel
-	beq	$t0, -1, ballUp
-	beq	$t0, 1, ballDown	
+	jr	$ra
+	
+		
 		
 	ballUp:
 		lw	$t0, dirVGA	
@@ -132,7 +136,7 @@ moveBall:
 		sw	$zero, ($t3)	## 0 linea actual		
 		sw	$t0, ($t4)	## Pelota a la linea siguiente
 	
-		jr	$ra
+		j	endMoveY
 		
 		
 	ballDown:
@@ -158,7 +162,7 @@ moveBall:
 		sw	$zero, ($t3)	## 0 linea actual		
 		sw	$t0, ($t4)	## Pelota a la linea siguiente
 	
-		jr	$ra
+		j	endMoveY
 		
 		
 ballRight:

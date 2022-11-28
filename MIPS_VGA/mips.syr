@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Reading design: mips.prj
 
@@ -1689,11 +1689,11 @@ clk100mhz      |    1.913|         |         |         |
 
 
 Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 21.22 secs
+Total CPU time to Xst completion: 21.11 secs
  
 --> 
 
-Total memory usage is 4538136 kilobytes
+Total memory usage is 4538520 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
