@@ -15,9 +15,8 @@
 	jal data
 
 	# Se carga en el 7 seg
-	addi	$t0, $zero, 000
 	lw	$t1, dir7seg
-	sw	$t0, 0($t1)
+	sw	$s4, 0($t1)
 	# Se carga en los LEDs 3 vidas
 	addi 	$k1, $zero, 0x0007
 	lw 	$t1, dirLEDS
@@ -65,6 +64,7 @@ gameUpdateLoop:
 	## 92($t1) es la direccion de la ultima linea de la pantalla
 	beq	$k0, 1, updateLifeCounter
 	exitUpdateLifeCounter:
+	
 	## Sleep()
 	lw 	$t1, dirMillis
 	sw 	$t0, 0($t1)	 ## Se escribe algo en el millis para resetear la cuenta
@@ -84,8 +84,12 @@ updateLifeCounter:
 	li	$k0, 0
 	lw 	$t1, dirLEDS
 	sw 	$k1, 0($t1)
-	j	exitUpdateLifeCounter
+	j	updateScore
 	
+updateScore:
+	lw	$t1, dir7seg
+	sw	$s4, 0($t1)
+	j	exitUpdateLifeCounter
 	
 updatePlatform:
 	lw	$t0, platform
@@ -258,6 +262,7 @@ setVelocityZeroX:
 	j	donePlatformX
 	
 loseLife:
+	addi	$s4, $s4, -10
 	addi	$k0, $zero, 1
 	srl	$k1, $k1, 1
 	lw 	$t1, dirLEDS
@@ -266,6 +271,8 @@ loseLife:
 	j	softReset
 	
 gameOver:
+	lw	$t1, dir7seg
+	sw	$s4, 0($t1)
 	lw	$t9, dirEntradas
 	lw	$t9, ($t9)
 	## SW_3 RESET
@@ -297,7 +304,8 @@ softReset:
 	sw	$zero, xVel
 	j	gameUpdateLoop
 reset:
-	li	$k1, 7
+	li	$s4, 30		#score
+	li	$k1, 7		#lifeCounter
 	lw 	$t0, dirVGA
 	##Platform
 	lw	$t1, platformReset
@@ -393,6 +401,9 @@ data:
 	
 	# loseLife: ,word 1	REGISTER $k0 [1: loseLife 0: dont loseLife]
 	li 	$k0, 0
+	
+	# score: .word 30	REGISTER $s4
+	li	$s4, 30
 	
 	
 	jr	$ra
