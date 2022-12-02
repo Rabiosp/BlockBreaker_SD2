@@ -22,7 +22,7 @@ sleep:
 	## Sleep()
 	lw 	$t1, dirMillis
 	sw 	$t0, 0($t1)	 ## Se escribe algo en el millis para resetear la cuenta
-	addi 	$s0, $zero, 33  ## 100 ms gets us 10fps
+	addi 	$s0, $zero, 500  ## 3 ms gets us 30fps
 	sleepLoop:
 	lw 	$t0, 0($t1)		##Se lee el valor del contador de millis
 	bne 	$t0, $s0,sleepLoop	##Se espera hasta que los millis sean 1 segundo
@@ -50,7 +50,6 @@ gameUpdateLoop:
 	## 92($t1) es la direccion de la ultima linea de la pantalla
 	beq	$k0, 1, updateLifeCounter
 	exitUpdateLifeCounter:
-	
 	jal	sleep
 	## Update Platform
 	jal	updatePlatform
@@ -108,6 +107,7 @@ moveBall:
 	ballUp:
 		lw	$t0, dirVGA	
 		lw	$t1, posBall	## Posicion actual
+		lw	$v0, posBall	## Posicion actual auxiliar por si halla choque
 		### branch para irse hacia abajo si choca con el borde		
 		### function setVelocity Down
 		beq	$t1, $zero, setVelocityDown
@@ -121,13 +121,28 @@ moveBall:
 		### branch si choca contra bloques
 
 		lw	$t0, ($t3)	## Linea de screen actual $t0
-		lw	$t1, ($t4)	## Linea siguiente			
-			
-		sw	$zero, ($t3)	## 0 linea actual		
-		sw	$t0, ($t4)	## Pelota a la linea siguiente
+		lw	$t1, ($t4)	## Linea siguiente	
+		
+		and	$t2, $t0, $t1
+		bnez	$t2, collisionGoingUp
+		
+		### Si no hay colision la nueva linea es or de la nueva y de la pelota [USAR $s2]				
+		### Actualizacion de lineas sin choque
+		xor	$v0, $s2, $t0
+		sw	$v0, ($t3)	## linea actual -> $s4 xor $t0
+		
+		or	$v0, $s2, $t1
+		sw	$v0, ($t4)	## Pelota a la linea siguiente -> $s4 or $t1
 	
 		j	endMoveY
 		
+			collisionGoingUp:
+				sw	$t0, ($t3)	# linea actual -> $t0
+				sw	$zero, ($t4)	# linea siguiente -> $zero
+				addi	$s4, $s4, 10	# score + 10
+				addi	$k0, $zero, 1	# update Score and Life
+				sw	$v0, posBall	# posBall a actual
+				j	setVelocityDown
 		
 	ballDown:
 		lw	$t0, dirVGA	
@@ -154,6 +169,27 @@ moveBall:
 	
 		j	endMoveY
 		
+		checkColissionPlatform:
+			lw	$t0, ($a0)	## pelota
+			lw	$t1, platform	## plataforma
+			and	$t2, $t0, $t1
+			beq	$t2, $zero, loseLife
+		
+			## XOR
+			xor	$t2, $t0, $t1
+			sll	$t3, $t1, 3	#...11011...#
+			srl	$t4, $t1, 3
+			and	$t5, $t1, $t3
+			and	$t6, $t1, $t4	#...11011...#
+			or	$t1, $t5, $t6
+			
+			
+			blt	$t2, $t1, setVelocityLeftPlatform
+			bgt	$t2, $t1, setVelocityRightPlatform
+			beq	$t2, $t1, setVelocityZeroX
+			donePlatformX:
+			j	setVelocityUp
+		
 		
 ballRight:
 	lw	$t0, dirVGA	
@@ -161,10 +197,10 @@ ballRight:
 	add	$t2, $t0, $t1
 	lw	$t0, ($t2)	## Linea de screen actual pelota
 	
-	srl	$a0, $t0, 1
+	srl	$a0, $s2, 1
 	beq	$a0, $zero, setVelocityLeft
-	srl	$t0, $t0, 1
-	sw	$t0, ($t2)
+	srl	$s2, $s2, 1	## Posicion absoluta de la pelota en x para ustilizar en colisiones
+	sw	$s2, ($t2)
 	doneSVL:
 	j	endMoveX
 ballLeft:
@@ -173,37 +209,15 @@ ballLeft:
 	add	$t2, $t0, $t1
 	lw	$t0, ($t2)	## Linea de screen actual pelota
 	
-	sll	$a0, $t0, 1
+	sll	$a0, $s2, 1
 	beq	$a0, $zero, setVelocityRight
-	sll	$t0, $t0, 1
-	sw	$t0, ($t2)
+	sll	$s2, $s2, 1	## Posicion absoluta de la pelota en x para ustilizar en colisiones
+	sw	$s2, ($t2)
 	doneSVR:
 	j	endMoveX
 	
 		
-		
-	checkColissionPlatform:
-		lw	$t0, ($a0)	## pelota
-		lw	$t1, platform	## plataforma
-		and	$t2, $t0, $t1
-		beq	$t2, $zero, loseLife
-	
-		## XOR
-		xor	$t2, $t0, $t1
-		sll	$t3, $t1, 3	#...11011...#
-		srl	$t4, $t1, 3
-		and	$t5, $t1, $t3
-		and	$t6, $t1, $t4	#...11011...#
-		or	$t1, $t5, $t6
-		
-		
-		blt	$t2, $t1, setVelocityLeftPlatform
-		bgt	$t2, $t1, setVelocityRightPlatform
-		beq	$t2, $t1, setVelocityZeroX
-		donePlatformX:
-		j	setVelocityUp
-	
-		
+			
 setVelocityDown:
 	li	$t0, 1
 	sw	$t0, yVel
@@ -261,6 +275,10 @@ gameOver:
 	
 softReset:
 	jal	sleep
+	## ball:	.word	0x00004000 REGISTER $s2
+	lui 	$s2, 0x0000
+	ori 	$s2, $s2, 0x4000 
+	
 	lw 	$t0, dirVGA
 	##Platform
 	lw	$t1, platformReset
@@ -272,7 +290,7 @@ softReset:
 	#posBall, yVel, Ball
 	lw	$t1, posBall
 	add	$t1, $t1, $t0
-	sw	$zero, ($t1)  ## 0 linea actual [ATENCION] puede borrar los bloques que esten en la misma linea
+	sw	$zero, ($t1)  
 	
 	li	$t1, -1
 	sw	$t1, yVel
