@@ -12,37 +12,23 @@
 	yVel:		.word	-1	  	## y velocity starts at -1 (up=-1, down=1)
 	
 .text
-	jal data
-
-	# Se carga en el 7 seg
-	lw	$t1, dir7seg
-	sw	$s4, 0($t1)
-	# Se carga en los LEDs 3 vidas
-	addi 	$k1, $zero, 0x0007
-	lw 	$t1, dirLEDS
-	sw 	$k1, 0($t1)
-	## Se imprime la primera pantalla de VGA con la plataforma
-	lw	$t0, platform
-	lw 	$t1, dirVGA
-	sw 	$t0, 92($t1) ## 92($t1) es la direccion de la ultima linea de la pantalla
-	
-	## Se imprime la primera pantalla de VGA con la pelota
-	lw 	$t1, dirVGA
-	sw 	$s2, 88($t1) ## 88($t1) es la direccion de la penultima linea de la pantalla
-	
-	
-	## Cerar todas las otras lineas
-	#add	$t8, $zero, 0
-	#lui 	$t9, 0x0000
-	#ori 	$t9, $t9, 0x0000 
-	#firstFrame:
-	#sw	$t9, 0($t1)
-	#addi	$t1, $t1, 4
-	#addi	$t8, $t8, 1
-	#beq	$t8, 22, check_keypress
-	#j	firstFrame
+	jal	data
+	jal	initialValues
+	j	resetLoop
 	
 
+	
+sleep:
+	## Sleep()
+	lw 	$t1, dirMillis
+	sw 	$t0, 0($t1)	 ## Se escribe algo en el millis para resetear la cuenta
+	addi 	$s0, $zero, 33  ## 100 ms gets us 10fps
+	sleepLoop:
+	lw 	$t0, 0($t1)		##Se lee el valor del contador de millis
+	bne 	$t0, $s0,sleepLoop	##Se espera hasta que los millis sean 1 segundo
+	sw 	$t0, 0($t1)		##Se escribe algo en el millis para resetear la cuenta
+	jr	$ra
+	
 check_keypress:
 	lw	$t9, dirEntradas
 	lw	$t9, ($t9)
@@ -65,15 +51,7 @@ gameUpdateLoop:
 	beq	$k0, 1, updateLifeCounter
 	exitUpdateLifeCounter:
 	
-	## Sleep()
-	lw 	$t1, dirMillis
-	sw 	$t0, 0($t1)	 ## Se escribe algo en el millis para resetear la cuenta
-	addi 	$s0, $zero, 33  ## 100 ms gets us 10fps
-	sleep:
-	lw 	$t0, 0($t1)	##Se lee el valor del contador de millis
-	bne 	$t0, $s0,sleep	##Se espera hasta que los millis sean 1 segundo
-	sw 	$t0, 0($t1)	##Se escribe algo en el millis para resetear la cuenta
-	
+	jal	sleep
 	## Update Platform
 	jal	updatePlatform
 	## Move Ball
@@ -282,10 +260,15 @@ gameOver:
 	
 	
 softReset:
+	jal	sleep
 	lw 	$t0, dirVGA
 	##Platform
 	lw	$t1, platformReset
 	sw 	$t1, platform
+	
+	lw	$t1, platform
+	sw	$t1, 92($t0)
+	
 	#posBall, yVel, Ball
 	lw	$t1, posBall
 	add	$t1, $t1, $t0
@@ -302,14 +285,12 @@ softReset:
 	
 	## xVel
 	sw	$zero, xVel
-	j	gameUpdateLoop
-reset:
-	li	$s4, 30		#score
-	li	$k1, 7		#lifeCounter
+	j	resetLoop
+reset:	
+	
+	jal	initialValues
 	lw 	$t0, dirVGA
-	##Platform
-	lw	$t1, platformReset
-	sw 	$t1, platform
+	
 	#posBall, yVel, Ball
 	lw	$t1, posBall
 	add	$t1, $t1, $t0
@@ -327,7 +308,73 @@ reset:
 	## xVel
 	sw	$zero, xVel
 			
-	j	gameUpdateLoop
+	j	resetLoop
+	
+resetLoop:
+
+	loop:
+	
+	# loop until keypress SW4:0x0008
+	lw	$t9, dirEntradas
+	lw	$t9, ($t9)
+	## SW_4
+	andi	$t8, $t9, 8
+	bne	$t8, $zero, gameUpdateLoop
+	j loop
+
+	
+	
+initialValues:
+	##Platform
+	lw	$t1, platformReset
+	sw 	$t1, platform
+	
+	## ball:	.word	0x00004000 REGISTER $s2
+	lui 	$s2, 0x0000
+	ori 	$s2, $s2, 0x4000 
+	
+	## loseLife: ,word 1	REGISTER $k0 [1: loseLife 0: dont loseLife]
+	li 	$k0, 0
+	
+	# score: .word 40	REGISTER $s4
+	li	$s4, 40
+	
+	# blockCount: .word 4	REGISTER $s5
+	li	$s5, 4
+	
+	# lifeCount: .word 0x0015 REGISTER $k1 [4 vidas]
+	addi 	$k1, $zero, 0x000f
+	
+	
+	# Se carga en el 7 seg con el puntaje inicial extra
+	lw	$t1, dir7seg
+	sw	$s4, 0($t1)
+	
+	# Se carga en los LEDs 4 vidas
+	lw 	$t1, dirLEDS
+	sw 	$k1, 0($t1)
+	
+	## Se imprime la primera pantalla de VGA con la plataforma
+	lw	$t0, platform
+	lw 	$t1, dirVGA
+	sw 	$t0, 92($t1) ## 92($t1) es la direccion de la ultima linea de la pantalla
+	
+	## Se imprime la primera pantalla de VGA con la pelota
+	lw 	$t1, dirVGA
+	sw 	$s2, 88($t1) ## 88($t1) es la direccion de la penultima linea de la pantalla
+	
+	## Se imprimen los $s5 bloques
+	lw 	$t1, dirVGA
+	li	$t0, 0x0F000000
+	sw 	$t0, 0($t1)
+	li	$t0, 0x000000F0
+	sw	$t0, 4($t1)
+	li	$t0, 0x000F0000
+	sw	$t0, 8($t1)
+	li	$t0, 0x0000F000
+	sw	$t0, 12($t1)
+	
+	jr	$ra
 		
 data:
 	##Segmento donde se cargan las constantes a la memoria
@@ -394,16 +441,6 @@ data:
 	addi 	$t0,$t0,4
 	addi	$t1, $zero, -1
 	sw 	$t1,0($t0)
-	
-	# ball:	.word	0x00004000 REGISTER $s2
-	lui 	$s2,0x0000
-	ori 	$s2, $s2, 0x4000 
-	
-	# loseLife: ,word 1	REGISTER $k0 [1: loseLife 0: dont loseLife]
-	li 	$k0, 0
-	
-	# score: .word 30	REGISTER $s4
-	li	$s4, 30
 	
 	
 	jr	$ra
